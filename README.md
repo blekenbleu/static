@@ -1,17 +1,20 @@
 `static`
 ## Static content for GitHub Pages
-Static content (e.g. images, PDFs, HTML) in GitHub Pages repositories consume 4x storage
+Content (e.g. images, PDFs, HTML) in GitHub Pages repositories consume 3x storage
 - original
 - copied into: ./_site/
-- both in: .git/objects/pack/
+- also in: .git/objects/pack/
 
-Moving such content to a separate GitHub repository reduces:
+Moving static content to a separate GitHub repository could reduce:
 - storage overhead
 - GitHub Pages build time  
+- provided that an appropriate GitHub action replaces Jekyll
 
-Deployed as [`/static/` folder](https://blekenbleu.github.io/static/)
+### Status
+- Deployed as [`/static/` folder](https://blekenbleu.github.io/static/)
  to [GitHub Pages](https://blekenbleu.github.io/):  
-    ![settings](static.gif)
+    ![settings](static.gif)  
+- Trivial `Gemfile` and `_config.yml` were added to keep default GitHub Action from failing  
 
 ### Content
 - [altec](altec/index.htm)
