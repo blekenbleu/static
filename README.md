@@ -12,4 +12,6 @@ Moving such content to a separate GitHub repository reduces:
     ![settings](static.gif)
 
 ### Content
+- [altec](altec/index.htm)
+- [Carver](Carver/index.htm)
 - [SL-7](SL-7/index.htm)
