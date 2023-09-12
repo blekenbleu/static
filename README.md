@@ -19,7 +19,9 @@ Moving static content to a separate GitHub repository may reduce:
 
 ### To Do
 Consider using [`static.yml`](https://github.com/actions/starter-workflows/blob/main/pages/static.yml)
- as a [Custom Action](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site) 
+ as a [Custom Action](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site)  
+**Alternatively**, a `.nojekyll` file in the root directory (along with `README.md` and `index.html`),  
+but all other static content already in `_site` folder (which would be removed from `.gitignore`).  
 
 ### Content
 - [altec](altec/index.htm)
