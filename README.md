@@ -7,8 +7,10 @@ Static content (e.g. images, PDFs, HTML) in GitHub Pages repositories consume 4x
 
 Moving such content to a separate GitHub repository reduces:
 - storage overhead
-- GitHub Pages build time
-... deployed as `static` folder to [GitHub Pages](https://blekenbleu.github.io/):  
+- GitHub Pages build time  
+
+Deployed as [`/static/` folder](https://blekenbleu.github.io/static/)
+ to [GitHub Pages](https://blekenbleu.github.io/):  
     ![settings](static.gif)
 
 ### Content
