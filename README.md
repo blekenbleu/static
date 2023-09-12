@@ -5,7 +5,7 @@ Content (e.g. images, PDFs, HTML) in GitHub Pages repositories consume 3x storag
 - copied into: ./_site/
 - also in: .git/objects/pack/
 
-Moving static content to a separate GitHub repository could reduce:
+Moving static content to a separate GitHub repository may reduce:
 - storage overhead
 - GitHub Pages build time  
 - provided that an appropriate GitHub action replaces Jekyll
@@ -14,7 +14,12 @@ Moving static content to a separate GitHub repository could reduce:
 - Deployed as [`/static/` folder](https://blekenbleu.github.io/static/)
  to [GitHub Pages](https://blekenbleu.github.io/):  
     ![settings](static.gif)  
-- Trivial `Gemfile` and `_config.yml` were added to keep default GitHub Action from failing  
+- This technique is sometimes called a [GitHub Pages **project** site](https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages#types-of-github-pages-sites).  
+- Trivial `Gemfile` and `_config.yml` were added to stop *default* GitHub Action from failing  
+
+### To Do
+Consider using [`static.yml`](https://github.com/actions/starter-workflows/blob/main/pages/static.yml)
+ as a [Custom Action](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site) 
 
 ### Content
 - [altec](altec/index.htm)
