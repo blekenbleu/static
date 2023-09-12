@@ -1,2 +1,10 @@
-# static
- Static content for GitHub Pages
+`static`
+## Static content for GitHub Pages
+Static content (e.g. images, PDFs, HTML) in GitHub Pages repositories consume 4x storage
+- original
+- copied into: ./_site/
+- both in: .git/objects/pack/
+
+Moving such content to a separate GitHub repository reduces:
+- storage overhead
+- GitHub Pages build time
