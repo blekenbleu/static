@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<title>static | Static content for GitHub Pages</title>
+</head>
+<style>
+td {
+  padding: 15px;
+  background-color: #DDDDDD;
+}
+</style>
+<body>
+<div align=center>
+<table><tr><td>
+          <code>static</code>
+          <h2>Static content for GitHub Pages</h2>
+        <hr>
+<p>Content (e.g. images, PDFs, HTML) in GitHub Pages repositories consume 3x storage</p>
+<ul>
+  <li>original</li>
+  <li>copied into: ./_site/</li>
+  <li>also in: .git/objects/pack/</li>
+</ul>
+
+<p>Moving static content to a separate GitHub repository may reduce:</p>
+<ul>
+  <li>storage overhead</li>
+  <li>GitHub Pages build time</li>
+  <li>provided that an appropriate GitHub action replaces Jekyll</li>
+</ul>
+<p>Implementation:<br>
+<img src="static.gif" alt="settings" /><ul>
+  <li>This technique is sometimes called a <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages#types-of-github-pages-sites">GitHub Pages <strong>project</strong> site</a>.</li>
+  <li>For code repositories, put html in a separate folder, e.g. <code>docs/</code> with <code>.nojekyll</code>,<br>
+    and change <b>Branch</b> folder from <code>/ (root)</code>:<br>
+    <img src="docs.gif" alt="folder" /><ul>
+  <li><pre>
+$ rm _config.yml Gemfile
+$ touch .nojekyll
+$ ls -al
+total 98
+drwxr-xr-x 1 bleke None     0 Sep 13 14:53 .
+drwxr-xr-x 1 bleke None     0 Sep 12 07:37 ..
+drwxr-xr-x 1 bleke None     0 Sep 13 13:24 .git
+-rw-r--r-- 1 bleke None    66 Sep 12 07:39 .gitattributes
+-rw-r--r-- 1 bleke None    56 Sep 12 07:39 .gitignore
+-rw-r--r-- 1 bleke None     0 Sep 13 12:44 .nojekyll
+drwxr-xr-x 1 bleke None     0 Aug 16 10:26 AT-LP140XP
+drwxr-xr-x 1 bleke None     0 Aug 16 10:26 Canon
+drwxr-xr-x 1 bleke None     0 Aug 16 10:26 Carver
+drwxr-xr-x 1 bleke None     0 Aug 16 10:26 ColorRendering
+drwxr-xr-x 1 bleke None     0 Aug 16 10:26 ESP32
+drwxr-xr-x 1 bleke None     0 Sep 12 15:14 GitHubW11
+drwxr-xr-x 1 bleke None     0 Sep 10 13:52 HTML
+drwxr-xr-x 1 bleke None     0 Sep 12 10:32 ImageProcessing
+-rw-r--r-- 1 bleke None  1094 Sep 12 07:39 LICENSE
+drwxr-xr-x 1 bleke None     0 Aug 16 10:26 Mastodon
+-rw-r--r-- 1 bleke None  1903 Sep 12 15:51 README.md
+drwxr-xr-x 1 bleke None     0 Sep 12 07:53 SL-7
+drwxr-xr-x 1 bleke None     0 Sep 10 08:47 SimHub
+drwxr-xr-x 1 bleke None     0 Aug 22 07:23 TThistory
+drwxr-xr-x 1 bleke None     0 Sep 12 09:27 altec
+drwxr-xr-x 1 bleke None     0 Aug 16 10:26 covid
+drwxr-xr-x 1 bleke None     0 Aug 16 10:26 images
+-rw-r--r-- 1 bleke None  5328 Sep 13 14:47 index.html
+drwxr-xr-x 1 bleke None     0 Sep 12 07:49 microscope
+drwxr-xr-x 1 bleke None     0 Sep  9 07:33 network
+-rw-r--r-- 1 bleke None 14447 Sep 12 08:43 static.gif
+-rw-r--r-- 1 bleke None  1444 Sep 13 14:50 static.html
+drwxr-xr-x 1 bleke None     0 Sep 12 15:38 story
+</pre>
+<li><b>Alternative attempted and rejected</b>:&nbsp
+<a href="https://github.com/actions/starter-workflows/blob/main/pages/static.yml"><code class="language-plaintext highlighter-rouge">static.yml</code></a>
+ as a <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site">Custom Action</a><br />
+ This worked <i>only</i> for <code>index.html</code> in the root folder.
+</ul>
+  
+  
+</td></tr><tr><td align=center>
+static is maintained by <a href="https://github.com/blekenbleu">blekenbleu</a><br>
+</td></tr></table>
+</div>
+</body></html>
