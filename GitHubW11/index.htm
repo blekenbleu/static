@@ -51,7 +51,13 @@ Meanwhile, Jekyll for Windows functionality
 <li>&lt;details&gt; seemingly are no longer supported in markdown
 <li><code>jekyll new</code> markdown defaults to blog-specific format
 <li><code>Gemfile</code> configured for page appearances to match GitHub Pages theme<br>
- &nbsp &nbsp &nbsp causes GitHub Pages deployment action to hang in a loop.
+ &nbsp &nbsp &nbsp causes GitHub Pages deployment action to timeout:<pre>
+	$ diff Gemfile ../site
+	5c5
+	< gem 'github-pages'                            # Windows Jekyll: no theme
+	---
+	> gem 'github-pages', group: :jekyll_plugins    # GitHub Pages Action times out
+</pre>
 <li>ignores markdown files lacking front matter starting on the first line
 <br><br>
 
@@ -68,6 +74,30 @@ and default title can be overridden by a markdown <b>### heading</b> immediately
 <li>Folders with only static content (HTML, PDF, images) were <a href="https://blekenbleu.github.io/static/">moved to a separate project</a>
 </p>
 
+<details>
+<summary><b>Installation</b> - click for details</summary>
+<details>
+<summary><b>Ruby</b></summary>
+<embed width=800 src=RubyInstall.txt>
+</details>
+<details>
+<summary><b>Bundler</b></summary>
+<embed width=600 src=BundlerInstall.txt>
+</details>
+<details>
+<summary><b>Jekyll</b></summary>
+<embed width=600 src=Jekyllinstall.txt>
+</details>
+<details>
+<summary><b>bundle install</b></summary>
+<embed width=800 src=bundle_install.txt>
+</details>
+<details>
+<summary><b>webrick</b></summary>
+<embed width=800 src=webrick.txt>
+</details>
+</details>
+
 <h3>Ruby updates</h3>
 While Ruby gems can be updated, Ruby itself as installed by <a href="https://rubyinstaller.org/downloads/">RubyInstaller</a> cannot.<br>
 Ruby is used here <i>only</i> for Jekyll, but its bundled <a href="https://www.msys2.org/">MSYS2</a> gets used extensively,<br>
@@ -78,6 +108,34 @@ with several packages added.&nbsp Before replacing Ruby,<br>
 Of course, any MSYS2 <code>home/user</code> folder customizations should also be ported.<br>
 </section>
 
+<h3>github-pages issues</h3>
+As noted, Windows Jekyl requires <code>gem 'github-pages', group: :jekyll_plugins</code> in <code>Gemfile</code> to apply themes.<br>
+Beyond that, with <code>JEKYLL_GITHUB_TOKEN</code> set, <code>bundle exec jekyll serve</code> fails with:<br>
+<code>Liquid Exception: The GitHub API credentials you provided aren't valid. in /_layouts/default.html</code><pre>
+$ bundle exec github-pages health-check
+ (LoadError)4/lib/ruby/gems/3.2.0/gems/ffi-1.15.5/lib/ffi/library.rb:145:in `block in ffi_lib': Could not open library 'libcurl': The specified module could not be found.
+.
+Could not open library 'libcurl.dll': The specified module could not be found.
+.
+Could not open library 'libcurl.so.4': The specified module could not be found.
+.
+Could not open library 'libcurl.so.4.dll': The specified module could not be found.
+</pre>
+<h4>Installed, but did not help:</h4>
+<pre>$ pacman -Sy mingw-w64-x86_64-curl
+$ find /f -name curl.h -print
+/f/Ruby32-x64/msys64/mingw64/include/curl/curl.h
+$ gem install curb --platform=ruby -- --with-curl-lib="F:/Ruby32-x64/msys64/mingw64/lib" --with-curl-include="F:/Ruby32-x64/msys64/mingw64/include"
+Temporarily enhancing PATH for MSYS/MINGW...
+Building native extensions with: '--with-curl-lib=F:/Ruby32-x64/msys64/mingw64/lib --with-curl-include=F:/Ruby32-x64/msys64/mingw64/include'
+This could take a while...
+Successfully installed curb-1.0.5
+Parsing documentation for curb-1.0.5
+Installing ri documentation for curb-1.0.5
+Done installing documentation for curb after 0 seconds
+1 gem installed
+</pre>
+... but <code>bundle exec github-pages health-check</code> still fails the same way.
 </div>
 </div> 
 </body></html>

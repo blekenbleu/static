@@ -1,0 +1,152 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Install the latest PowerShell for new features and improvements! https://aka.ms/PSWindows
+
+PS C:\Users\bleke> ruby --version
+ruby 3.2.2 (2023-03-30 revision e51014f9c0) [x64-mingw-ucrt]
+PS C:\Users\bleke> gem --version
+3.4.10
+PS C:\Users\bleke> gem install bundler
+Fetching bundler-2.4.19.gem
+Successfully installed bundler-2.4.19
+Parsing documentation for bundler-2.4.19
+Installing ri documentation for bundler-2.4.19
+Done installing documentation for bundler after 0 seconds
+1 gem installed
+
+A new release of RubyGems is available: 3.4.10 → 3.4.19!
+Run `gem update --system 3.4.19` to update your installation.
+
+PS C:\Users\bleke> gem update --system 3.4.19
+Updating rubygems-update
+Fetching rubygems-update-3.4.19.gem
+Successfully installed rubygems-update-3.4.19
+Parsing documentation for rubygems-update-3.4.19
+Installing ri documentation for rubygems-update-3.4.19
+Done installing documentation for rubygems-update after 0 seconds
+Parsing documentation for rubygems-update-3.4.19
+Done installing documentation for rubygems-update after 0 seconds
+Installing RubyGems 3.4.19
+  Successfully built RubyGem
+  Name: bundler
+  Version: 2.4.19
+  File: bundler-2.4.19.gem
+Bundler 2.4.19 installed
+RubyGems 3.4.19 installed
+Regenerating binstubs
+Regenerating plugins
+Parsing documentation for rubygems-3.4.19
+Installing ri documentation for rubygems-3.4.19
+
+# 3.4.19 / 2023-08-17
+
+## Enhancements:
+
+* Installs bundler 2.4.19 as a default gem.
+
+## Performance:
+
+* Speedup building docs when updating rubygems. Pull request
+  [#6864](https://github.com/rubygems/rubygems/pull/6864) by
+  deivid-rodriguez
+
+# 3.4.18 / 2023-08-02
+
+## Enhancements:
+
+* Add poller to fetch WebAuthn OTP. Pull request
+  [#6774](https://github.com/rubygems/rubygems/pull/6774) by jenshenny
+* Remove side effects when unmarshaling old `Gem::Specification`. Pull
+  request [#6825](https://github.com/rubygems/rubygems/pull/6825) by nobu
+* Ship rubygems executables in `exe` folder. Pull request
+  [#6704](https://github.com/rubygems/rubygems/pull/6704) by hsbt
+* Installs bundler 2.4.18 as a default gem.
+
+# 3.4.17 / 2023-07-14
+
+## Enhancements:
+
+* Installs bundler 2.4.17 as a default gem.
+
+## Performance:
+
+* Avoid unnecessary work for private local gem installation. Pull request
+  [#6810](https://github.com/rubygems/rubygems/pull/6810) by
+  deivid-rodriguez
+
+# 3.4.16 / 2023-07-10
+
+## Enhancements:
+
+* Installs bundler 2.4.16 as a default gem.
+
+# 3.4.15 / 2023-06-29
+
+## Enhancements:
+
+* Installs bundler 2.4.15 as a default gem.
+
+## Bug fixes:
+
+* Autoload shellwords when it's needed. Pull request
+  [#6734](https://github.com/rubygems/rubygems/pull/6734) by ioquatix
+
+## Documentation:
+
+* Update command to test local gem command changes. Pull request
+  [#6761](https://github.com/rubygems/rubygems/pull/6761) by jenshenny
+
+# 3.4.14 / 2023-06-12
+
+## Enhancements:
+
+* Load plugin immediately. Pull request
+  [#6673](https://github.com/rubygems/rubygems/pull/6673) by kou
+* Installs bundler 2.4.14 as a default gem.
+
+## Documentation:
+
+* Clarify what the `rubygems-update` gem is for, and link to source code
+  and guides. Pull request
+  [#6710](https://github.com/rubygems/rubygems/pull/6710) by davetron5000
+
+# 3.4.13 / 2023-05-09
+
+## Enhancements:
+
+* Installs bundler 2.4.13 as a default gem.
+
+# 3.4.12 / 2023-04-11
+
+## Enhancements:
+
+* [Experimental] Add WebAuthn Support to the CLI. Pull request
+  [#6560](https://github.com/rubygems/rubygems/pull/6560) by jenshenny
+* Installs bundler 2.4.12 as a default gem.
+
+# 3.4.11 / 2023-04-10
+
+## Enhancements:
+
+* Installs bundler 2.4.11 as a default gem.
+
+
+------------------------------------------------------------------------------
+
+RubyGems installed the following executables:
+        F:/Ruby32-x64/bin/gem
+        F:/Ruby32-x64/bin/bundle
+        F:/Ruby32-x64/bin/bundler
+
+Ruby Interactive (ri) documentation was installed. ri is kind of like man
+pages for Ruby libraries. You may access it like this:
+  ri Classname
+  ri Classname.class_method
+  ri Classname#instance_method
+If you do not wish to install this documentation in the future,
+use the --no-document flag, or set it as the default in your ~/.gemrc file.
+See 'gem help env' for details.
+
+RubyGems system software updated
+PS C:\Users\bleke>

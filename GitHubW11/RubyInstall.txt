@@ -1,0 +1,170 @@
+_____       _           _____           _        _ _         ___
+|  __ \     | |         |_   _|         | |      | | |       |__ \
+| |__) |   _| |__  _   _  | |  _ __  ___| |_ __ _| | | ___ _ __ ) |
+|  _  / | | | '_ \| | | | | | | '_ \/ __| __/ _` | | |/ _ \ '__/ /
+| | \ \ |_| | |_) | |_| |_| |_| | | \__ \ || (_| | | |  __/ | / /_
+|_|  \_\__,_|_.__/ \__, |_____|_| |_|___/\__\__,_|_|_|\___|_||____|
+                    __/ |           _
+                   |___/          _|_ _  __   | | o __  _| _     _
+                                   | (_) |    |^| | | |(_|(_)\^/_>
+
+   1 - MSYS2 base installation
+   2 - MSYS2 system update (optional)
+   3 - MSYS2 and MINGW development toolchain
+
+Which components shall be installed? If unsure press ENTER [1,3]
+
+> sh -lc true
+'C:\WINDOWS\system32\drivers\etc\hosts' -> '/etc/hosts'
+'C:\WINDOWS\system32\drivers\etc\protocol' -> '/etc/protocols'
+'C:\WINDOWS\system32\drivers\etc\services' -> '/etc/services'
+'C:\WINDOWS\system32\drivers\etc\networks' -> '/etc/networks'
+gpg: /etc/pacman.d/gnupg/trustdb.gpg: trustdb created
+gpg: no ultimately trusted keys found
+gpg: starting migration from earlier GnuPG versions
+gpg: porting secret keys from '/etc/pacman.d/gnupg/secring.gpg' to gpg-agent
+gpg: migration succeeded
+==> Generating pacman master key. This may take some time.
+gpg: Generating pacman keyring master key...
+gpg: directory '/etc/pacman.d/gnupg/openpgp-revocs.d' created
+gpg: revocation certificate stored as '/etc/pacman.d/gnupg/openpgp-revocs.d/B4E1D2520A23CEC1CC67C013B1C2518D2230AAEC.rev'
+gpg: Done
+==> Updating trust database...
+gpg: marginals needed: 3  completes needed: 1  trust model: pgp
+gpg: depth: 0  valid:   1  signed:   0  trust: 0-, 0q, 0n, 0m, 0f, 1u
+==> Appending keys from msys2.gpg...
+==> Locally signing trusted keys in keyring...
+  -> Locally signed 5 keys.
+==> Importing owner trust values...
+gpg: setting ownertrust to 4
+gpg: setting ownertrust to 4
+gpg: setting ownertrust to 4
+gpg: setting ownertrust to 4
+gpg: setting ownertrust to 4
+==> Disabling revoked keys in keyring...
+  -> Disabled 4 keys.
+==> Updating trust database...
+gpg: marginals needed: 3  completes needed: 1  trust model: pgp
+gpg: depth: 0  valid:   1  signed:   5  trust: 0-, 0q, 0n, 0m, 0f, 1u
+gpg: depth: 1  valid:   5  signed:   7  trust: 0-, 0q, 0n, 5m, 0f, 0u
+gpg: depth: 2  valid:   4  signed:   2  trust: 4-, 0q, 0n, 0m, 0f, 0u
+gpg: next trustdb check due at 2023-09-12
+gpg: error retrieving 'alexey.pawlow@gmail.com' via WKD: No data
+gpg: error reading key: No data
+gpg: refreshing 1 key from hkps://keyserver.ubuntu.com
+gpg: key F40D263ECA25678A: "Alexey Pavlov (Alexpux) <alexey.pawlow@gmail.com>" not changed
+gpg: Total number processed: 1
+gpg:              unchanged: 1
+gpg: error retrieving 'david.macek.0@gmail.com' via WKD: No data
+gpg: error reading key: No data
+gpg: refreshing 1 key from hkps://keyserver.ubuntu.com
+gpg: key 790AE56A1D3CFDDC: "David Macek (MSYS2 master key) <david.macek.0@gmail.com>" not changed
+gpg: Total number processed: 1
+gpg:              unchanged: 1
+gpg: error retrieving 'martellmalone@gmail.com' via WKD: No data
+gpg: error reading key: No data
+gpg: refreshing 1 key from hkps://keyserver.ubuntu.com
+gpg: key DA7EF2ABAEEA755C: "Martell Malone (martell) <martellmalone@gmail.com>" not changed
+gpg: Total number processed: 1
+gpg:              unchanged: 1
+gpg: error retrieving 'reiter.christoph@gmail.com' via WKD: No data
+gpg: error reading key: No data
+gpg: refreshing 1 key from hkps://keyserver.ubuntu.com
+gpg: key 755B8182ACD22879: "Christoph Reiter (MSYS2 master key) <reiter.christoph@gmail.com>" not changed
+gpg: Total number processed: 1
+gpg:              unchanged: 1
+gpg: error retrieving 'icquinteiro@gmail.com' via WKD: No data
+gpg: error reading key: No data
+gpg: refreshing 1 key from hkps://keyserver.ubuntu.com
+gpg: key 9F418C233E652008: "Ignacio Casal Quinteiro <icquinteiro@gmail.com>" not changed
+gpg: Total number processed: 1
+gpg:              unchanged: 1
+gpg: error retrieving 'mingw.android@gmail.com' via WKD: No data
+gpg: error reading key: No data
+gpg: refreshing 1 key from hkps://keyserver.ubuntu.com
+gpg: key BBE514E53E0D0813: "Ray Donnelly (MSYS2 Developer - master key) <mingw.android@gmail.com>" not changed
+gpg: Total number processed: 1
+gpg:              unchanged: 1
+gpg: error retrieving 'alexpux@gmail.com' via WKD: No data
+gpg: error reading key: No data
+gpg: refreshing 1 key from hkps://keyserver.ubuntu.com
+gpg: key 5F92EFC1A47D45A1: "Alexey Pavlov (Alexpux) <alexpux@gmail.com>" not changed
+gpg: Total number processed: 1
+gpg:              unchanged: 1
+gpg: error retrieving 'david.macek.0@gmail.com' via WKD: No data
+gpg: error reading key: No data
+gpg: refreshing 1 key from hkps://keyserver.ubuntu.com
+gpg: key 974C8BE49078F532: "David Macek <david.macek.0@gmail.com>" 3 new signatures
+gpg: key 974C8BE49078F532: "David Macek <david.macek.0@gmail.com>" 1 signature cleaned
+gpg: Total number processed: 1
+gpg:         new signatures: 3
+gpg:     signatures cleaned: 1
+gpg: marginals needed: 3  completes needed: 1  trust model: pgp
+gpg: depth: 0  valid:   1  signed:   5  trust: 0-, 0q, 0n, 0m, 0f, 1u
+gpg: depth: 1  valid:   5  signed:   7  trust: 0-, 0q, 0n, 5m, 0f, 0u
+gpg: depth: 2  valid:   4  signed:   2  trust: 4-, 0q, 0n, 0m, 0f, 0u
+gpg: next trustdb check due at 2023-12-30
+gpg: error retrieving 'reiter.christoph@gmail.com' via WKD: No data
+gpg: error reading key: No data
+gpg: refreshing 1 key from hkps://keyserver.ubuntu.com
+gpg: key FA11531AA0AA7F57: "Christoph Reiter (MSYS2 development key) <reiter.christoph@gmail.com>" not changed
+gpg: Total number processed: 1
+gpg:              unchanged: 1
+gpg: error retrieving 'me@martellmalone.com' via WKD: No name
+gpg: error reading key: No name
+gpg: refreshing 1 key from hkps://keyserver.ubuntu.com
+gpg: key 794DCF97F93FC717: "Martell Malone (martell) <me@martellmalone.com>" not changed
+gpg: Total number processed: 1
+gpg:              unchanged: 1
+gpg: error retrieving 'martellmalone@gmail.com' via WKD: No data
+gpg: error reading key: No data
+gpg: refreshing 1 key from hkps://keyserver.ubuntu.com
+gpg: key D595C9AB2C51581E: "Martell Malone (MSYS2 Developer) <martellmalone@gmail.com>" not changed
+gpg: Total number processed: 1
+gpg:              unchanged: 1
+gpg: error retrieving 'mingw.android@gmail.com' via WKD: No data
+gpg: error reading key: No data
+gpg: refreshing 1 key from hkps://keyserver.ubuntu.com
+gpg: key 4DF3B7664CA56930: "Ray Donnelly (MSYS2 Developer) <mingw.android@gmail.com>" not changed
+gpg: Total number processed: 1
+gpg:              unchanged: 1
+MSYS2 seems to be properly installed
+Install MSYS2 and MINGW development toolchain ...
+> pacman -S --needed --noconfirm autoconf autogen automake-wrapper diffutils file gawk grep libtool m4 make patch sed texinfo texinfo-tex wget mingw-w64-ucrt-x86_64-binutils mingw-w64-ucrt-x86_64-crt-git mingw-w64-ucrt-x86_64-gcc mingw-w64-ucrt-x86_64-gcc-libs mingw-w64-ucrt-x86_64-headers-git mingw-w64-ucrt-x86_64-libmangle-git mingw-w64-ucrt-x86_64-libwinpthread-git mingw-w64-ucrt-x86_64-make mingw-w64-ucrt-x86_64-tools-git mingw-w64-ucrt-x86_64-winpthreads-git pkgconf mingw-w64-ucrt-x86_64-pkgconf
+warning: autoconf-wrapper-20221207-1 is up to date -- skipping
+warning: autogen-5.18.16-4 is up to date -- skipping
+warning: automake-wrapper-20221207-1 is up to date -- skipping
+warning: diffutils-3.9-1 is up to date -- skipping
+warning: file-5.44-5 is up to date -- skipping
+warning: gawk-5.2.1-2 is up to date -- skipping
+warning: grep-1~3.0-6 is up to date -- skipping
+warning: libtool-2.4.7-3 is up to date -- skipping
+warning: m4-1.4.19-2 is up to date -- skipping
+warning: make-4.4.1-1 is up to date -- skipping
+warning: patch-2.7.6-2 is up to date -- skipping
+warning: sed-4.9-1 is up to date -- skipping
+warning: texinfo-7.0.3-1 is up to date -- skipping
+warning: texinfo-tex-7.0.3-1 is up to date -- skipping
+warning: wget-1.21.3-2 is up to date -- skipping
+warning: mingw-w64-ucrt-x86_64-binutils-2.40-2 is up to date -- skipping
+warning: mingw-w64-ucrt-x86_64-crt-git-10.0.0.r248.g5f566373f-1 is up to date -- skipping
+warning: mingw-w64-ucrt-x86_64-gcc-12.2.0-10 is up to date -- skipping
+warning: mingw-w64-ucrt-x86_64-gcc-libs-12.2.0-10 is up to date -- skipping
+warning: mingw-w64-ucrt-x86_64-headers-git-10.0.0.r248.g5f566373f-1 is up to date -- skipping
+warning: mingw-w64-ucrt-x86_64-libmangle-git-10.0.0.r248.g5f566373f-1 is up to date -- skipping
+warning: mingw-w64-ucrt-x86_64-libwinpthread-git-10.0.0.r248.g5f566373f-1 is up to date -- skipping
+warning: mingw-w64-ucrt-x86_64-make-4.4-2 is up to date -- skipping
+warning: mingw-w64-ucrt-x86_64-tools-git-10.0.0.r248.g5f566373f-1 is up to date -- skipping
+warning: mingw-w64-ucrt-x86_64-winpthreads-git-10.0.0.r248.g5f566373f-1 is up to date -- skipping
+warning: pkgconf-1.9.4-1 is up to date -- skipping
+warning: mingw-w64-ucrt-x86_64-pkgconf-1~1.8.0-2 is up to date -- skipping
+ there is nothing to do
+Install MSYS2 and MINGW development toolchain succeeded
+
+You can use 'ridk enable' to activate the MSYS2 tools on the command prompt.
+
+   1 - MSYS2 base installation
+   2 - MSYS2 system update (optional)
+   3 - MSYS2 and MINGW development toolchain
+
+Which components shall be installed? If unsure press ENTER []
