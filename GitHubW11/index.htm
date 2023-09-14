@@ -46,7 +46,7 @@
 Differences in Jekyll experiences on different Windows versions<br>
  is mostly about Ruby and Jekyll evolution.<br>
 Ruby installation has become more trouble-free, without hangs and need for retries.<br>
-Meanwhile, Jekyll for Windows functionality
+Meanwhile, Jekyll functionality on Windows
 <a href="https://www.moncefbelyamani.com/making-github-pages-work-with-latest-jekyll/">seems to have regressed</a>:<br>
 <li>&lt;details&gt; seemingly are no longer supported in markdown
 <li><code>jekyll new</code> markdown defaults to blog-specific format
@@ -62,18 +62,16 @@ Meanwhile, Jekyll for Windows functionality
 <br><br>
 
 This last issue differs between Jekyll on Windows and GitHub's Jekyll docker.<br>
-Fortunately, empty front matter suffices to enable markdown processing,<br>
-and default title can be overridden by a markdown <b>### heading</b> immediately below front matter.
-<pre>		---
-		---
-		### Custom Title</pre>
+Fortunately, empty front matter suffices to enable markdown processing;<br>
+default title is overridden by a markdown <b>### heading</b> immediately below front matter.
+<pre>---
+---
+### Custom Title</pre>
 
-<p>My GitHub Pages include over 60 markdown files needing editting for these issues...
-<li>starting over, I would completely avoid markdown for GitHub Pages;
-<li>trivial changes typically require over 5 minutes for GitHub to process.
-<li>Folders with only static content (HTML, PDF, images) were <a href="https://blekenbleu.github.io/static/">moved to a separate project</a>
+<p>My GitHub Pages included over 60 markdown files needing editting for these issues...
+<li>Trivial changes typically require over 5 minutes for GitHub to process.
+<li>Starting over, I would completely avoid markdown for GitHub Pages.
 </p>
-
 <details>
 <summary><b>Installation</b> - click for details</summary>
 <details>
@@ -96,7 +94,7 @@ and default title can be overridden by a markdown <b>### heading</b> immediately
 <summary><b>webrick</b></summary>
 <embed width=800 src=webrick.txt>
 </details>
-</details>
+</details><br>
 
 <h3>Ruby updates</h3>
 While Ruby gems can be updated, Ruby itself as installed by <a href="https://rubyinstaller.org/downloads/">RubyInstaller</a> cannot.<br>
@@ -106,12 +104,33 @@ with several packages added.&nbsp Before replacing Ruby,<br>
 <li><code>pacman -Q > /d/oldMSYS2.txt</code><br>
 .. then compare with new MSYS2 for determining packages to add.<br>
 Of course, any MSYS2 <code>home/user</code> folder customizations should also be ported.<br>
-</section>
+</section><br>
 
-<h3>github-pages issues</h3>
-As noted, Windows Jekyl requires <code>gem 'github-pages', group: :jekyll_plugins</code> in <code>Gemfile</code> to apply themes.<br>
-Beyond that, with <code>JEKYLL_GITHUB_TOKEN</code> set, <code>bundle exec jekyll serve</code> fails with:<br>
-<code>Liquid Exception: The GitHub API credentials you provided aren't valid. in /_layouts/default.html</code><pre>
+<h4>Work-arounds to serve themed pages on Windows</h4><ul compact>
+<li>Moved folders without markdown to <a href="https://blekenbleu.github.io/static/">a separate project</a>:&nbsp <a href="https://github.com/blekenbleu/static"><code>static</code></a>.
+<li>Deleted <code>Gemfile.lock</code>, pushed to GitHub, then added to <code>.gitignore</code>.<br>
+    GitHub Pages builds fine without it, the major source of dependabot issues.
+<li>Likewise for <code>_site</code>
+<li>link <code>static</code> repository:<pre>
+D:\my\GitHub\site\_site>mklink /d static ..\..\static
+symbolic link created for static <<===>> ..\..\static</pre>
+<li><code>unset JEKYLL_GITHUB_TOKEN</code> before <code>bundle exec jekyll serve</code><br>
+    to avoid <a href=#GPI>github-pages issues</a>.
+<li>Serve local Jekyll from folder <code>site</code>, which builds <code>site/_site</code><br>
+   from <code>../blekenbleu.github.io/</code>, using custom <code>_config.yml</code>:
+   <pre>theme: jekyll-theme-tactile
+repository: blekenbleu/blekenbleu.github.io
+source: ../blekenbleu.github.io/</pre>
+<li>Changes in <code>static</code> repository are transparent to Jekyll regeneration, but served.
+<li><code>blekenbleu.github.io</code> (markdown) changes are regenerated and served.
+</ul>
+
+<a name=GPI><h3>github-pages issues</h3></a>
+To apply themes, Windows Jekyl requires in <code>Gemfile</code>:<br>
+<code>gem 'github-pages', group: :jekyll_plugins</code><br>
+Beyond that, with <code>JEKYLL_GITHUB_TOKEN</code> set, <code>bundle exec jekyll serve</code> fails with:
+<pre>Liquid Exception: The GitHub API credentials you provided aren't valid. in /_layouts/default.html
+
 $ bundle exec github-pages health-check
  (LoadError)4/lib/ruby/gems/3.2.0/gems/ffi-1.15.5/lib/ffi/library.rb:145:in `block in ffi_lib': Could not open library 'libcurl': The specified module could not be found.
 .
@@ -121,7 +140,7 @@ Could not open library 'libcurl.so.4': The specified module could not be found.
 .
 Could not open library 'libcurl.so.4.dll': The specified module could not be found.
 </pre>
-<h4>Installed, but did not help:</h4>
+<h4>Installed <code>curl</code>, which did not help:</h4>
 <pre>$ pacman -Sy mingw-w64-x86_64-curl
 $ find /f -name curl.h -print
 /f/Ruby32-x64/msys64/mingw64/include/curl/curl.h
@@ -133,9 +152,10 @@ Successfully installed curb-1.0.5
 Parsing documentation for curb-1.0.5
 Installing ri documentation for curb-1.0.5
 Done installing documentation for curb after 0 seconds
-1 gem installed
-</pre>
-... but <code>bundle exec github-pages health-check</code> still fails the same way.
+1 gem installed </pre>
+... <code>bundle exec github-pages health-check</code> <i>still</i> fails the same way.
+<hr>
+<p align=center>static is maintained by <a href="https://github.com/blekenbleu">blekenbleu</a></p>
 </div>
 </div> 
 </body></html>
