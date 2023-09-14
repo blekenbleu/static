@@ -23,18 +23,18 @@ td {
   <li>also in: .git/objects/pack/</li>
 </ul>
 
-<p>Moving static content to a separate GitHub repository may reduce:</p>
+<p>Moving static content to a separate GitHub repository can reduce:</p>
 <ul>
   <li>storage overhead</li>
   <li>GitHub Pages build time</li>
-  <li>provided that an appropriate GitHub action replaces Jekyll</li>
+  <li>provided that <a href="GitHubW11/#GPI">appropriate work-arounds</a> are employed</li>
 </ul>
 <p>Implementation:<br>
-<img src="static.gif" alt="settings" /><ul>
+<img src="images/static.gif" alt="settings" /><ul>
   <li>This technique is sometimes called a <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages#types-of-github-pages-sites">GitHub Pages <strong>project</strong> site</a>.</li>
   <li>For code repositories, put html in a separate folder, e.g. <code>docs/</code> with <code>.nojekyll</code>,<br>
     and change <b>Branch</b> folder from <code>/ (root)</code>:<br>
-    <img src="docs.gif" alt="folder" /><ul>
+    <img src="images/docs.gif" alt="folder" /><ul>
   <li><pre>
 $ rm _config.yml Gemfile
 $ touch .nojekyll
@@ -66,7 +66,6 @@ drwxr-xr-x 1 bleke None     0 Aug 16 10:26 images
 -rw-r--r-- 1 bleke None  5328 Sep 13 14:47 index.html
 drwxr-xr-x 1 bleke None     0 Sep 12 07:49 microscope
 drwxr-xr-x 1 bleke None     0 Sep  9 07:33 network
--rw-r--r-- 1 bleke None 14447 Sep 12 08:43 static.gif
 -rw-r--r-- 1 bleke None  1444 Sep 13 14:50 static.html
 drwxr-xr-x 1 bleke None     0 Sep 12 15:38 story
 </pre>
