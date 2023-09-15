@@ -44,7 +44,7 @@
 
 <h2>Jekyll on Windows 11 for GitHub Pages preview</h2>
 Differences in Jekyll experiences on different Windows versions<br>
- is mostly about Ruby and Jekyll evolution.<br>
+ are mostly about Ruby and Jekyll evolution and breaking changes.<br>
 Ruby installation has become more trouble-free, without hangs and need for retries.<br>
 Meanwhile, Jekyll functionality on Windows
 <a href="https://www.moncefbelyamani.com/making-github-pages-work-with-latest-jekyll/">seems to have regressed</a>:<br>
@@ -68,12 +68,27 @@ default title is overridden by a markdown <b>### heading</b> immediately below f
 ---
 ### Custom Title</pre>
 
-<p>My GitHub Pages included over 60 markdown files needing editting for these issues...
+<p>Over 60 markdown files in my GitHub Pages needing editting for these issues...
 <li>Trivial changes typically require over 5 minutes for GitHub to process.
-<li>Starting over, I would completely avoid markdown for GitHub Pages.
-</p>
+<li>Starting over, I would completely avoid <a href="https://www.markdownguide.org/tools/github-pages/">markdown for GitHub Pages</a>.
 <details>
-<summary><b>Installation</b> - click for details</summary>
+<summary>Instead, <a href="https://en.wikipedia.org/wiki/Web_Components"><b>Web Components</b></a> enable HTML modularity.
+</summary>
+Template engines help break HTML code into components for reuse across multiple HTML files.<br>
+Template engines also support passing variables into those components.<br>
+Browseable pages from components requires compiling, e.g. by client-side JavaScript.
+<li><a href="https://kinsta.com/blog/web-components/">A Complete Introduction to Web Components in 2023 | Kinsta</a>
+<li><a href="https://www.creativebloq.com/features/web-components">Web components: The ultimate guide | CREATIVE BLOQ</a>
+<li><a href="https://css-tricks.com/an-introduction-to-web-components/">An Introduction to Web Components | CSS-TRICKS</a>
+<li><a href="https://www.webcomponents.org/author/vanillawc">Open Source Web Components implemented in vanilla JavaScript</a>
+<li><a href="https://javascript.info/web-components">JavaScript Web Components</a>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Components">Mozilla Web Components</a>
+<li><a href="https://learn.microsoft.com/en-us/fluent-ui/web-components/">Fluent Web Components | Microsoft</a> using React
+</details>
+</p>
+
+<details>
+<summary><b>Sep 2023 Windows Jekyll Installation</b> - click for details</summary>
 <details>
 <summary><b>Ruby</b></summary>
 <embed width=800 src=RubyInstall.txt>
@@ -107,22 +122,33 @@ Of course, any MSYS2 <code>home/user</code> folder customizations should also be
 </section><br>
 
 <h4>Work-arounds to serve themed pages on Windows</h4><ul compact>
-<li>Moved folders without markdown to <a href="https://blekenbleu.github.io/static/">a separate project</a>:&nbsp <a href="https://github.com/blekenbleu/static"><code>static</code></a>.
+<li>Spun out <a href="https://blekenbleu.github.io/static/">separate GitHub Pages projects</a>:&nbsp
+ <a href="https://github.com/blekenbleu/static"><code>static</code></a> (folders without markdown),
+ <a href="https://github.com/blekenbleu/microscope">microscope</a>,
+ <a href="https://github.com/blekenbleu/Arduino-Blue-Pill">Arduino-Blue-Pill</a>.
+
 <li>Deleted <code>Gemfile.lock</code>, pushed to GitHub, then added to <code>.gitignore</code>.<br>
     GitHub Pages builds fine without it, the major source of dependabot issues.
-<li>Likewise for <code>_site</code>
-<li>link <code>static</code> repository:<pre>
+<li>Likewise for <code>_site/</code>
+
+<li>link <code>static/</code> repository:<pre>
 D:\my\GitHub\site\_site>mklink /d static ..\..\static
 symbolic link created for static <<===>> ..\..\static</pre>
+
+<li>link microscope and Arduino-Blue-Pill Jekyll <code>_site/</code> build folders.<br>
+  As with the <code>static/</code> project, <code>bundle exec jekyll serve --incremental</code> running in <code>site/</code><br>
+ detects changes in neither <code>microscope</code> nor <code>Arduino-Blue-Pill</code>;<br>
+ each requires <code>bundle exec jekyll build</code> to update their <code>_site/</code> folder.
+
 <li><code>unset JEKYLL_GITHUB_TOKEN</code> before <code>bundle exec jekyll serve</code><br>
     to avoid <a href=#GPI>github-pages issues</a>.
-<li>Serve local Jekyll from folder <code>site</code>, which builds <code>site/_site</code><br>
+<li>Serve local Jekyll from folder <code>site/</code>, which builds <code>site/_site/</code><br>
    from <code>../blekenbleu.github.io/</code>, using custom <code>_config.yml</code>:
    <pre>theme: jekyll-theme-tactile
 repository: blekenbleu/blekenbleu.github.io
 source: ../blekenbleu.github.io/</pre>
-<li>Changes in <code>static</code> repository are transparent to Jekyll regeneration, but served.
-<li><code>blekenbleu.github.io</code> (markdown) changes are regenerated and served.
+<li><code>blekenbleu.github.io/</code> (markdown) changes are regenerated and served from <code>site/</code>,<br>
+while changes to content linked in <code>site/_site/</code> are transparent to its Jekyll regeneration, but served.
 </ul>
 
 <a name=GPI><h3>github-pages issues</h3></a>
