@@ -111,34 +111,15 @@ Browseable pages from components requires compiling, e.g. by client-side JavaScr
 </details>
 </details><br>
 
-<h3>Ruby updates</h3>
-While Ruby gems can be updated, Ruby itself as installed by <a href="https://rubyinstaller.org/downloads/">RubyInstaller</a> cannot.<br>
-Ruby is used here <i>only</i> for Jekyll, but its bundled <a href="https://www.msys2.org/">MSYS2</a> gets used extensively,<br>
-with several packages added.&nbsp Before replacing Ruby,<br>
- run MSYS2 package manager to document its current package list:<br>
-<li><code>pacman -Q > /d/oldMSYS2.txt</code><br>
-.. then compare with new MSYS2 for determining packages to add.<br>
-Of course, any MSYS2 <code>home/user</code> folder customizations should also be ported.<br>
-</section><br>
-
 <h4>Work-arounds to serve themed pages on Windows</h4><ul compact>
-<li>Spun out <a href="https://blekenbleu.github.io/static/">separate GitHub Pages projects</a>:&nbsp
+<li>Spun out <a href="https://blekenbleu.github.io/static/">separate GitHub Pages projects</a>:<br>
  <a href="https://github.com/blekenbleu/static"><code>static</code></a> (folders without markdown),
  <a href="https://github.com/blekenbleu/microscope">microscope</a>,
  <a href="https://github.com/blekenbleu/Arduino-Blue-Pill">Arduino-Blue-Pill</a>.
 
 <li>Deleted <code>Gemfile.lock</code>, pushed to GitHub, then added to <code>.gitignore</code>.<br>
     GitHub Pages builds fine without it, the major source of dependabot issues.
-<li>Likewise for <code>_site/</code>
-
-<li>link <code>static/</code> repository:<pre>
-D:\my\GitHub\site\_site>mklink /d static ..\..\static
-symbolic link created for static <<===>> ..\..\static</pre>
-
-<li>link microscope and Arduino-Blue-Pill Jekyll <code>_site/</code> build folders.<br>
-  As with the <code>static/</code> project, <code>bundle exec jekyll serve --incremental</code> running in <code>site/</code><br>
- detects changes in neither <code>microscope</code> nor <code>Arduino-Blue-Pill</code>;<br>
- each requires <code>bundle exec jekyll build</code> to update their <code>_site/</code> folder.
+<li>Likewise, added <code>_site/</code> to <code>.gitignore</code>.
 
 <li><code>unset JEKYLL_GITHUB_TOKEN</code> before <code>bundle exec jekyll serve</code><br>
     to avoid <a href=#GPI>github-pages issues</a>.
@@ -148,7 +129,19 @@ symbolic link created for static <<===>> ..\..\static</pre>
 repository: blekenbleu/blekenbleu.github.io
 source: ../blekenbleu.github.io/</pre>
 <li><code>blekenbleu.github.io/</code> (markdown) changes are regenerated and served from <code>site/</code>,<br>
-while changes to content linked in <code>site/_site/</code> are transparent to its Jekyll regeneration, but served.
+while changes to content linked in <code>site/_site/</code> will be transparent to its Jekyll regeneration, but served.
+
+<li>In <code>site/_site/</code>, link:<br>
+ microscope <code>_site/</code> build folder, <code>static/</code> and <code>Arduino-Blue-Pill/docs/</code> folders.<br>
+ <code>bundle exec jekyll serve --incremental</code> running in <code>site/</code><br>
+ detects changes in neither <code>microscope</code> nor <code>Arduino-Blue-Pill</code>;<br>
+ each requires <code>bundle exec jekyll build</code> to update their <code>_site/</code> folder.<br><br>
+
+ Linking needs repeating whenever  <code>site/_site/</code> gets regenerated;<br> <code>links.bat</code> does that:
+<pre>cd _site
+mklink /d Arduino-Blue-Pill ..\..\..\Arduino\Blue-Pill\docs
+mklink /d microscope ..\..\microscope\_site
+mklink /d static ..\..\static</pre>
 </ul>
 
 <a name=GPI><h3>github-pages issues</h3></a>
@@ -179,7 +172,18 @@ Parsing documentation for curb-1.0.5
 Installing ri documentation for curb-1.0.5
 Done installing documentation for curb after 0 seconds
 1 gem installed </pre>
-... <code>bundle exec github-pages health-check</code> <i>still</i> fails the same way.
+... <code>bundle exec github-pages health-check</code> <i>still</i> fails the same way.<br>
+
+<h3>Ruby updates</h3>
+While Ruby gems can be updated, Ruby itself as installed by <a href="https://rubyinstaller.org/downloads/">RubyInstaller</a> cannot.<br>
+Ruby is used here <i>only</i> for Jekyll, but its bundled <a href="https://www.msys2.org/">MSYS2</a> gets used extensively,<br>
+with several packages added.&nbsp Before replacing Ruby,<br>
+ run MSYS2 package manager to document its current package list:<br>
+<li><code>pacman -Q > /d/oldMSYS2.txt</code><br>
+.. then compare with new MSYS2 for determining packages to add.<br>
+Of course, any MSYS2 <code>home/user</code> folder customizations should also be ported.<br>
+</section><br>
+
 <hr>
 <p align=center>static is maintained by <a href="https://github.com/blekenbleu">blekenbleu</a></p>
 </div>
