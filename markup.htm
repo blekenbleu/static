@@ -10,6 +10,12 @@ td {
 h2 {
   color: #0000CC;
 }
+h3 {
+  margin-bottom: 0;
+}
+ul {
+  margin-top: 0;
+}
 </style>
 </head>
 <body>
@@ -28,20 +34,29 @@ A <a href="https://en.wikipedia.org/wiki/SCRIPT_%28markup%29#EasyScript">long ti
 While no fan of CSS syntax, clear separation of theme design from document elements facilitates maintainability.
 </ul>
 
-<h3>Employ <a href="https://en.wikipedia.org/wiki/Web_Components"><b>Web Components</b></a> enable HTML modularity.</h3>
+<h3>Employ <a href="https://en.wikipedia.org/wiki/Web_Components"><b>Web Components</b></a> for HTML modularity.</h3>
 Template engines help break HTML code into components for reuse across multiple HTML files.<br>
-Template engines also support passing variables into those components.<br>
-Browseable pages from template engines require compiling, e.g. by client-side JavaScript.
+Template engines also support passing variables into those components.<ul compact>
+<li>Browseable pages from template engines require compiling, e.g. by client-side JavaScript.
+<li>GitHub Pages are static;&nbsp template engine must run client-side.
+<li>Since HTML Imports (e.g. <code>&lt;link rel="import" href="/path/to/imports/stuff.html"&gt;)</code> is 
+<a href="https://chromestatus.com/feature/5144752345317376">deprecated</a>,<br>
+<a href="https://html.spec.whatwg.org/multipage/scripting.html#the-template-element"><code>&lt;template&gt;</code></a>
+ HTML gets loaded by using <code>&lt;script&gt;</code> to load Javascript, which loads HTML using <code>fetch()</code>.
+</ul>
+<h3>Web Componenent references</h3>
 <li><a href="https://kinsta.com/blog/web-components/">A Complete Introduction to Web Components in 2023 | Kinsta</a>
 <li><a href="https://www.creativebloq.com/features/web-components">Web components: The ultimate guide | CREATIVE BLOQ</a>
 <li><a href="https://css-tricks.com/an-introduction-to-web-components/">An Introduction to Web Components | CSS-TRICKS</a>
 <li><a href="https://www.webcomponents.org/author/vanillawc">Open Source Web Components implemented in vanilla JavaScript</a>
 <li><a href="https://javascript.info/web-components">JavaScript Web Components</a>
 <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Components">Mozilla Web Components</a>
+<li><a href="https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Understanding_client-side_tools/Overview">Client-side tools</a>
+<li><a href="https://stackoverflow.com/questions/55080103/how-to-separate-web-components-to-individual-files-and-load-them/55081177#55081177">web components in separate files</a>
 <li><a href="https://learn.microsoft.com/en-us/fluent-ui/web-components/">Fluent Web Components | Microsoft</a> using React
 
 </td></tr><tr><td align=center>
-static is maintained by <a href="https://github.com/blekenbleu">blekenbleu</a><br>
+maintained by <a href="https://github.com/blekenbleu">blekenbleu</a><br>
 </td></tr></table>
 </div>
 </body></html> 
