@@ -69,50 +69,12 @@ default title is overridden by a markdown <b>### heading</b> immediately below f
 ### Custom Title</pre>
 
 <p>Over 60 markdown files in my GitHub Pages needing editting for these issues...
-<li>Trivial changes typically require over 5 minutes for GitHub to process.
-<li>Starting over, I would completely avoid <a href="https://www.markdownguide.org/tools/github-pages/">markdown for GitHub Pages</a>.
-<details>
-<summary>Instead, <a href="https://en.wikipedia.org/wiki/Web_Components"><b>Web Components</b></a> enable HTML modularity.
-</summary>
-Template engines help break HTML code into components for reuse across multiple HTML files.<br>
-Template engines also support passing variables into those components.<br>
-Browseable pages from components requires compiling, e.g. by client-side JavaScript.
-<li><a href="https://kinsta.com/blog/web-components/">A Complete Introduction to Web Components in 2023 | Kinsta</a>
-<li><a href="https://www.creativebloq.com/features/web-components">Web components: The ultimate guide | CREATIVE BLOQ</a>
-<li><a href="https://css-tricks.com/an-introduction-to-web-components/">An Introduction to Web Components | CSS-TRICKS</a>
-<li><a href="https://www.webcomponents.org/author/vanillawc">Open Source Web Components implemented in vanilla JavaScript</a>
-<li><a href="https://javascript.info/web-components">JavaScript Web Components</a>
-<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Components">Mozilla Web Components</a>
-<li><a href="https://learn.microsoft.com/en-us/fluent-ui/web-components/">Fluent Web Components | Microsoft</a> using React
-</details>
+<li>Trivial changes typically required over 5 minutes for GitHub to process.
+<li>Starting over, I would completely <a href=../markup.htm>stick to HTML</a> for <a href="https://www.markdownguide.org/tools/github-pages/">GitHub Pages</a>.
 </p>
 
-<details>
-<summary><b>Sep 2023 Windows Jekyll Installation</b> - click for details</summary>
-<details>
-<summary><b>Ruby</b></summary>
-<embed width=800 src=RubyInstall.txt>
-</details>
-<details>
-<summary><b>Bundler</b></summary>
-<embed width=600 src=BundlerInstall.txt>
-</details>
-<details>
-<summary><b>Jekyll</b></summary>
-<embed width=600 src=Jekyllinstall.txt>
-</details>
-<details>
-<summary><b>bundle install</b></summary>
-<embed width=800 src=bundle_install.txt>
-</details>
-<details>
-<summary><b>webrick</b></summary>
-<embed width=800 src=webrick.txt>
-</details>
-</details><br>
-
-<h4>Work-arounds to serve themed pages on Windows</h4><ul compact>
-<li>Spun out <a href="https://blekenbleu.github.io/static/">separate GitHub Pages projects</a>:<br>
+<h4>Work-arounds to match themed pages served on Windows vs GitHub Pages</h4><ul compact>
+<li>Spun out <a href="https://blekenbleu.github.io/static/">separate projects</a> to reduce GitHub Pages commit times:<br>
  <a href="https://github.com/blekenbleu/static"><code>static</code></a> (folders without markdown),
  <a href="https://github.com/blekenbleu/microscope">microscope</a>,
  <a href="https://github.com/blekenbleu/Arduino-Blue-Pill">Arduino-Blue-Pill</a>.
@@ -121,21 +83,22 @@ Browseable pages from components requires compiling, e.g. by client-side JavaScr
     GitHub Pages builds fine without it, the major source of dependabot issues.
 <li>Likewise, added <code>_site/</code> to <code>.gitignore</code>.
 
-<li><code>unset JEKYLL_GITHUB_TOKEN</code> before <code>bundle exec jekyll serve</code><br>
+<li>On Windows, <code>unset JEKYLL_GITHUB_TOKEN</code> before <code>bundle exec jekyll serve</code><br>
     to avoid <a href=#GPI>github-pages issues</a>.
 <li>Serve local Jekyll from folder <code>site/</code>, which builds <code>site/_site/</code><br>
    from <code>../blekenbleu.github.io/</code>, using custom <code>_config.yml</code>:
    <pre>theme: jekyll-theme-tactile
 repository: blekenbleu/blekenbleu.github.io
 source: ../blekenbleu.github.io/</pre>
-<li><code>blekenbleu.github.io/</code> (markdown) changes are regenerated and served from <code>site/</code>,<br>
-while changes to content linked in <code>site/_site/</code> will be transparent to its Jekyll regeneration, but served.
 
 <li>In <code>site/_site/</code>, link:<br>
  microscope <code>_site/</code> build folder, <code>static/</code> and <code>Arduino-Blue-Pill/docs/</code> folders.<br>
  <code>bundle exec jekyll serve --incremental</code> running in <code>site/</code><br>
  detects changes in neither <code>microscope</code> nor <code>Arduino-Blue-Pill</code>;<br>
  each requires <code>bundle exec jekyll build</code> to update their <code>_site/</code> folder.<br><br>
+
+<li>Regenerate and serve <code>blekenbleu.github.io/</code> (markdown) changes from <code>site/</code> folder,<br>
+while changes to content linked in <code>site/_site/</code> are served, but transparent to its Jekyll regeneration.<br><br>
 
  Linking needs repeating whenever  <code>site/_site/</code> gets regenerated;<br> <code>links.bat</code> does that:
 <pre>cd _site
@@ -159,6 +122,8 @@ Could not open library 'libcurl.so.4': The specified module could not be found.
 .
 Could not open library 'libcurl.so.4.dll': The specified module could not be found.
 </pre>
+...FWIW, there <i>is</i> no <code>/_layouts/default.html</code>.
+
 <h4>Installed <code>curl</code>, which did not help:</h4>
 <pre>$ pacman -Sy mingw-w64-x86_64-curl
 $ find /f -name curl.h -print
