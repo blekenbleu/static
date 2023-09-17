@@ -1,0 +1,24 @@
+<style>
+/* must declare <table class="my_table"> to affect <td> */
+table.my_table {
+    margin:0px;
+    padding:0px
+}
+table.my_table td {
+  padding: 15px;
+  background-color: #DDDDDD;
+}
+h2 {
+  color: #0000C4;
+
+}
+h3 {
+  color: #006600;
+}
+h3, h4, h5, h6 {
+  margin-bottom: 0;
+}
+ul {
+  margin-top: 0;
+} 
+</style> 
