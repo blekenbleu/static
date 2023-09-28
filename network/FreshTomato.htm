@@ -1,13 +1,16 @@
 <html><head>
-<style>
-body {
-   width:960px;
-   margin-left:60px;
-}
-</style>
+
+<link rel='stylesheet' type='text/css' href='../my.css'>
+
 <title>
 FreshTomato, Linksys EA6500v2 and the Internet
-</title></head><body>
+</title></head>
+
+<body>
+
+<div align=center>
+<table class="my_table"><tr><td>
+
 <font size=-1><i><a href="../">back</a></i></font>
 <a href="https://www.gixen.com/index.php" name="9e092736783d0da1dfd8413d57d10faf" target="_blank" >
 <img align=right src="https://www.gixen.com/images/gixenlink.gif" border="0" alt="Auction Sniper" title="Auction Sniper">
@@ -199,13 +202,13 @@ For current Linksys firmware newer than 166281, restore the previous version:<br
 
 That worked for me... <br>
 
-If the router *still* reports firmware newer than 166281, then get 166281<br>
+If the router *still* reports firmware newer than 166281, then get 166281
 <a href="http://cache-www.belkin.com/support/dl/FW_EA6500v2_1.1.40.166281_prod.img">here</a>
 and<br>
 <a href="https://www.linksys.com/us/support-article?articleNum=138220">
-perform a manual firmware update</a><br>
+perform a manual firmware update</a>
  to <code>FW_EA6500v2_1.1.40.166281_prod.img</code>:<br>
-<img width=95% src="https://s23429.pcdn.co/wp-content/uploads/2017/02/click-start-1024x676-1024x676.jpg"><br clear=all>
+<img width=720 src="https://s23429.pcdn.co/wp-content/uploads/2017/02/click-start-1024x676-1024x676.jpg"><br clear=all>
 
 EA6500 eventually reboots itself<br>
 
@@ -234,7 +237,6 @@ that CFE's HTTP bootloader will be used to install FreshTomato 2018.4<br>
 <h4>On the router,</h4>
 - goto <code>Troubleshooting>Diagnostics</code><br>
 - <code>Factory Reset</code><br>
-<img src="http://screenshots.portforward.com/routers/Linksys/EA6350/Diagnostics.jpg "Reset"><br clear=all>
 <h3>Step 4</h3>
 <h4>The <a href="https://my.pcloud.com/publink/show?code=kZUbB87Zm3YFpS5jm17pxlLl49R2b5lXvYQV">EA6500v2 CFE Flash</a> kit contains</h4>
 - Tools<br>
@@ -292,7 +294,7 @@ that CFE's HTTP bootloader will be used to install FreshTomato 2018.4<br>
   and Open<br>
   login as: root<br>
   password: admin<br>
-  3 commands: (<code>#<code> is prompt)<br>
+  3 commands: (<code>#</code> is prompt)<br>
 <pre>
 # mtd unlock /dev/mtd0
 # mtd write -f /tmp/root/new-cfe.bin /dev/mtd0
@@ -415,3 +417,9 @@ Ethernet Bridge on AdvancedTomato</a></h4>
 <h4>Probably NOT current for FreshTomato:</h4>
 <a href="https://learntomato.com/blog/">LearnTomato</a> 16 Nov 2014<br>
 <a href="http://tomatousb.org/tutorials">TomatoUSB Tutorials</a> 8 Jun 2011<br>
+
+</td></tr><tr><td align=center>
+maintained by <a href="https://github.com/blekenbleu">blekenbleu</a><br>
+</td></tr></table></div>
+
+</body></html>
