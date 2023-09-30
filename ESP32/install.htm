@@ -1,7 +1,12 @@
 <html><head>
-<style> body {margin-left: 80px;} ul {margin-top:0; } dl {margin-top:0; } dt { margin-left:15; } h4 {margin-bottom:0; } </style>
+<link rel='stylesheet' type='text/css' href='../my.css'>
+
 <title>ESP32-S2-Saola-1 Arduino installation</title></head>
+
 <body>
+<div align=center>
+<table class="my_table"><tr><td>
+
 <font size=-1>
 <a href="index.htm"><i>back to Arduino and ESP32-S2-Saola-1</i></a><br>
 </font>
@@ -34,9 +39,12 @@ It is incompatible with Arduino for other boards.
    and select <b>ESP32TinyUSB</b>
    
 <li>Eliminate Arduino build warnings for <code>"CFG_TUSB_*" redefined</code> in sketches using <code>midiusb.h</code> :<ul>
-<li>In <code>my\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1\tools\sdk\esp32s2\include\arduino_tinyusb\include\tusb_config.h</code>:
-<li>move <b>all</b> unconditional #define's (<code>COMMON CONFIGURATION</code> and <code>DRIVER CONFIGURATION</code>) from near the file end<br>
-to <b>before</b> <code>#include "tusb_option.h"</code> <a href="libraries/tusb_config.h"><b>like this</b></a>.
+<li>
+<div style="width:800px;overflow:auto">
+In <code>my\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1\tools\sdk\esp32s2\include\arduino_tinyusb\include\tusb_config.h</code>:</div>
+<li>move <b>all</b> unconditional #define's (<code>COMMON CONFIGURATION</code> and <code>DRIVER CONFIGURATION</code>)<br>
+<i>from</i> near the file end
+<i>to</i> <b>before</b> <code>#include "tusb_option.h"</code> <a href="libraries/tusb_config.h"><b>like this</b></a>.
 </ul>
 <li>Enable USB MIDI traffic:<br>
 In <code>my\Documents\libraries\ESP32TinyUSB\src\device\midi\<a href="https://github.com/chegewara/EspTinyUSB/blob/master/src/device/midi/midiusb.cpp">midiusb.cpp</a></code>,<br>
@@ -176,8 +184,7 @@ one with a thick cable was sacrificed:<br>
 <img src="harmonica.jpg">
 <img src="crochet.jpg"><br clear=all>
 It was double-shielded. &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
-&nbsp &nbsp
+&nbsp &nbsp &nbsp &nbsp
  I don't crochet, but a small hook helps sort fine wires.<br><br>
 
 A pair of pins are wanted:<br>
@@ -191,7 +198,9 @@ A broken DIP socket helps serve up pins for tack soldering:<br>
 <img src="iphone.jpg"><br clear=all>
 Hot glue comes next, for insulation and mechanical support.
 
+</font>
 
-
-
-</font></body></html>
+</td></tr><tr><td align=center>
+maintained by <a href="https://github.com/blekenbleu">blekenbleu</a><br>
+</td></tr></table></div>
+</body></html>
