@@ -1,15 +1,12 @@
-<html>
-<head>
-<style>
-body {
-   width:740px;
-   margin-left:60px;
-} 
-h4 {margin-bottom:0} ul {margin-top:0}
-</style>
+<html><head>
+<link rel='stylesheet' type='text/css' href='../my.css'>
+
 <title>SimHub plugins</title>
 </head>
+
 <body>
+<div align=center>
+<table class="my_table"><tr><td style="padding-left:50">
 
 <dl>
 <h3>SimHub Plugins</h3>
@@ -45,7 +42,8 @@ that are either <i>static</i> or <i>instance</i> methods with matching return ty
 but I have yet to recognize a delegate <i>instance</i> method... making <i>static</i>s crucial.<br>
 Unlike C++ function pointers, C# delegates encapsulate method <i>and object instance</i>.<br>
 Sadly, delegates are often coded in <a href="https://learn.microsoft.com/en-US/dotnet/csharp/language-reference/operators/lambda-expressions">lambda expressions</a>,<br>
- which syntax are IMO impossible to read.&nbsp Also IMO, many absurdly complex C# examples can be blamed on programmers' being confounded by syntax,<br>
+ which syntax are IMO impossible to read.&nbsp Also IMO, many absurdly complex C# examples<br>
+ can be blamed on programmers' being confounded by syntax,<br>
 resulting in more-or-less blind copy/pasting code from <i>other</i> working fragments.
 
 <a name=CCEx><dt><br><b>SimHub C# Custom Expressions</b></a>
@@ -76,5 +74,9 @@ static void init(global::SimHub.Plugins.PluginManager pluginManager){
 <dd>Properties set or referenced only in a plugin
  <code>Init{}</code> section are minimal overhead.
 </dl>
-</body>
-</html>
+
+</td></tr><tr><td align=center>
+maintained by <a href="https://github.com/blekenbleu">blekenbleu</a><br>
+</td></tr></table></div>
+
+</body></html>

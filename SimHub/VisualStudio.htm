@@ -1,17 +1,13 @@
-<html>
-<head>
-<style>
-h1, h2, h3, h4, h5 {
-  margin-bottom:0.5px;
-}
-body {
-   width:960px;
-   margin-left:60px;
-}
-</style>
+<html><head>
+<link rel='stylesheet' type='text/css' href='../my.css'>
+
 <title>How-To for Visual Studio for SimHub plugin</title>
 </head>
+
 <body>
+<div align=center>
+<table class="my_table"><tr><td style="padding-left:50">
+
 <a href="HowTo.htm#HowTo"><i>back</i></a><br>
 <h3>Visual Studio for SimHub plugin: How-To</h3>
 SimHub and its plugin SDK are in C#;&nbsp  <a href="https://www.w3schools.com/cs/">W3 C# Tutorial</a> describes C# elements well;<br>
@@ -62,12 +58,13 @@ changed Target framework to .NET Framework 4.8<br>
 .. which modified Viper.PluginCalcLngWheelSlip.csproj<br>
 <br>
 Forked in GitHub Desktop, which pushed it to<br>
-https://github.com/blekenbleu/SimHub-Plugin-CalcLngWheelSlip
-which I renamed on GitHub website under settings<br>
+https://github.com/blekenbleu/SimHub-Plugin-CalcLngWheelSlip<br>
+... which I renamed on GitHub website under settings<br>
 https://github.com/blekenbleu/CalcLngWheelSlip<br>
 <br>
 Project then built with warning:<br><code>
->E:\my\Sim\SimHub\SimHub\PluginSdk\CalcLngWheelSlip\PluginCalcLngWheelSlip.cs(13,6,13,22): warning CS0612: 'PluginDescritionAttribute' is obsolete</code><br>
+>E:\my\Sim\SimHub\SimHub\PluginSdk\CalcLngWheelSlip\PluginCalcLngWheelSlip.cs(13,6,13,22):<br>
+ &nbsp  warning CS0612: 'PluginDescritionAttribute' is obsolete</code><br>
 <br>
 Wotever deprecated <code>PluginDescritionAttribute</code>, so I deleted it...<br>
 <br>
@@ -138,5 +135,9 @@ Vertical green bars in left margin: recently saved changes (yellow before saving
 
 <h4>Avoid upsetting VS by copying one object <code>.cs</code> to a <code>.txt</code>.</h4>
 <li>Edit the <code>.txt</code> into a new class, <i>then</i> rename to <code>.cs</code>.
-</body>
-</html>
+
+</td></tr><tr><td align=center>
+maintained by <a href="https://github.com/blekenbleu">blekenbleu</a><br>
+</td></tr></table></div>
+
+</body></html>

@@ -1,12 +1,12 @@
-<head>
-<style>
-body {
-   width:960px;
-   margin-left:60px;
-}
-</style>
+<html><head>
+<link rel='stylesheet' type='text/css' href='../my.css'>
+
 <title>dimg - visual image difference utility</title></head>
-<body bgcolor=#CCCCCC>
+
+<body>
+<div align=center>
+<table class="my_table"><tr><td style="padding-left:50">
+
 <a href="../"><i>back</i></a><br>
 <font size=+1>
 <h2>dimg: visual image difference utility</h2>
@@ -18,46 +18,51 @@ body {
 <i>Usefully</i> display differences between similar image pairs:
 <table><tr><td>
 <img src="ball.png" width=446 height=438>
+<br><i>ball.png</i>
 </td><td>
 <img src="ballsp4a.png" width=446 height=438>
-</td></tr><tr>
-<font size=-1><td>
-<i>ball.png</i><br> &nbsp</td><td><i>ballsp4a.png</i><br> &nbsp
-</td></tr><tr><td>
-magick composite <i>ball.png ballsp4a.png</i><br>
- -compose difference <i>diff.png</i>
-</td><td>
-magick <i>ball.png ballsp4a.png</i> -compose Mathematics<br>
- -define compose:args='0,1,-1,.5' -composite <i>dimg.png</a>
-</td></font></tr><tr><td>
+<br><i>ballsp4a.png</i>
+</td></tr>
+<tr><td>
+<font size=+1>
+<code>magick composite <i>ball.png ballsp4a.png</i><br>
+ -compose difference <i>diff.png</i></code><br></font>
 <img src="diff.png" width=446 height=438>
+<br><i>diff.png</i>
 </td><td>
+<font size=+1>
+<code>magick <i>ball.png ballsp4a.png</i> -compose Mathematics<br>
+ -define compose:args='0,1,-1,.5' -composite <i>dimg.png</i></code><br></font>
 <img src="dimg.png" width=446 height=438>
-</td></tr><tr><td>
-<i>diff.png</i> </td><td> <i>dimg.png</i></td></tr></table>
+<br><i>dimg.png</i>
+</td></tr></table>
 </p><p>
 Several image utilities, including
 <a href="https://imagemagick.org">ImageMagick</a>,
 offer an <a href="https://imagemagick.org/Usage/compare/#difference">image difference</a> generation option,<br>
-with smaller difference nearer black (e.g. <font size=-1><i>diff.png</i></font>)<br>
+with smaller difference nearer black (e.g. <i>diff.png</i>)<br>
  and all differences absolute, e.g.: <i>red-green == green-red</i>.<br>
-However, displayed differences are more visible near middle gray (e.g. <font size=-1><i>dimg.png</i></font>).<br>
+However, displayed differences are more visible near middle gray (e.g. <i>dimg.png</i>).<br>
 ImageMagick's <a href="https://imagemagick.org/Usage/compose/#special">
 User Defined Mathematical Compose Method</a> supports this more useful alternative.
 <br>
 Differences would ideally be calculated in a more nearly perceptual color space,
 e.g. <a href="https://en.wikipedia.org/wiki/CIELAB_color_space">CIELab</a>.
 </p>
-</font>
 <i>dimg.bat:</i>
-<pre>
-@echo off
+<pre><code>@echo off
 : generate a difference image (third argument) from (first 2 argument) images
 echo magick %1 %2 -compose Mathematics -define compose:args="0,-1,1,.5" -composite %3
 magick %1 %2 -compose Mathematics -define compose:args="0,-1,1,.5" -composite %3
-</pre>
+</code></pre>
+</font>
 <p>
 <br>
 - &nbsp 15 Apr 2023
 </p>
+
+</td></tr><tr><td align=center>
+maintained by <a href="https://github.com/blekenbleu">blekenbleu</a><br>
+</td></tr></table></div>
+
 </body></html>

@@ -78,7 +78,11 @@ Conventions for plugin C# may differ appreciably from generic .NET C# apps:<ul>
 <li>Not an App;&nbsp a DLL launched by SimHub
 <li>Best created in a <code>SimHub/PluginSdk/</code> folder;&nbsp relative path to SimHub classes and <code>.dll</code> build destination
 <li>Sadly, Visual Studio 2019 rejects <i>relative</i> path to <code>SimHubWPF.exe</code> for Debug <code>&lt;StartProgram&gt;</code>;&nbsp path must be absolute.<br>
-This is corrected in Visual Studio 2022.
+This is corrected in Visual Studio 2022:<pre>
+  &lt;PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'"&gt;
+    &lt;StartAction&gt;Program&lt;/StartAction&gt;
+    &lt;StartProgram&gt;.\SimHubWPF.exe&lt;/StartProgram&gt;
+  &lt;/PropertyGroup&gt;</pre>
 <li>Obvious starting place:&nbsp <code>SimHub/PluginSdk/User.PluginSdkDemo/</code>
 <li>Also simple, already a GitHub project:&nbsp
  <a href="https://github.com/viper4gh/SimHub-Plugin-CalcLngWheelSlip"><code>SimHub/PluginSdk/CalcLngWheelSlip</code></a></ul>

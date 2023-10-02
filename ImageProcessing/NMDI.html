@@ -1,14 +1,13 @@
-<HTML>
-<HEAD>
-<style>
-body {
-   width:960px;
-   margin-left:60px;
-}
-</style>
+<HTML><HEAD>
+<link rel='stylesheet' type='text/css' href='../my.css'>
+
 <TITLE>Multibit Neighborhood Mask Dithered Interpolation</TITLE>
 </HEAD>
-<body bgcolor=#FFFFFF text=#000000>
+
+<body>
+<div align=center>
+<table class="my_table"><tr><td style="padding-left:50; width:1190">
+
 <font size=+2>
 <H3>Data Conversion by Multi-Bit Neighborhood Mask Dithered Interpolation</H3>
 <pre><b>
@@ -19,24 +18,23 @@ body {
 
 <P ALIGN="JUSTIFY">&nbsp;
 Single-bit mask dither requires <b>2**k</b> samples
-to converge for <b>k</b> truncated bits.
-Multi-bit mask dither reduces sample neighborhood size required for
-dithered interpolation convergence to weighted averages.
-A k-bit mask dither generates weighted averages for each sample with <b>k</b> truncated bits.
-In general, <b>2**(k-m)</b>
-samples are required for <b>m</b>-bit mask dither convergence with
-<b>k</b> truncated bits.
+to converge for <b>k</b> truncated bits.<br>
+Multi-bit mask dither reduces sample neighborhood size<br> required for
+dithered interpolation convergence to weighted averages.<br>
+A k-bit mask dither yields a weighted average for each sample with <b>k</b> truncated bits.<br>
+In general,
+<b>m</b>-bit mask dither convergence with <b>k</b> truncated bits requires <b>2**(k-m)</b> samples.<br>
 More table entries must be accessed, on average, for sampling
-with multi-bit mask dither.
+with multi-bit mask dither.&nbsp
 <p>For example, consider the case of a 17x17x17
-table <b>T[][][]</b> and sets of three 8-bit inputs,
-each with 4 truncated bits and using 4-bit mask dither.
-Up to 5 different table entries are accessed for each input tuple.
+table <code>T[][][]</code> and sets of three 8-bit inputs,<br>
+each with 4 truncated bits and using 4-bit mask dither.<br>
+Up to 5 different table entries are accessed for each input tuple.<br>
 Truncated index values are R,G,B 
-and corresponding dither bits are r,g,b: <pre>
-  R = red >> 4   ; G = green >> 4   ; B = blue >> 4   
+and corresponding dither bits are r,g,b:
+<pre><code>  R = red >> 4   ; G = green >> 4   ; B = blue >> 4   
   r = red & 0x0F ; g = green & 0x0F ; b = blue & 0x0F
-</pre>
+</code></pre>
 ...then 5 table entries and their weights would be:<pre>
   ( T[R + (r & 0x08)>>3][G + (g & 0x08)>>3][B + (b & 0x08)>>3]<<3
   + T[R + (r & 0x04)>>2][G + (g & 0x04)>>2][B + (b & 0x04)>>2]<<2
@@ -44,7 +42,7 @@ and corresponding dither bits are r,g,b: <pre>
   + T[R + (r & 0x01)][G + (g & 0x01)][B + (b & 0x01)] + T[R][G][B] ) >> 4 
 </pre>
 This implementation generates a weighted average for each sample.
-<p>Alternatively, here is code for a 2-bit mask dither of 4 truncated bits
+<p>Alternatively, here is code for a 2-bit mask dither of 4 truncated bits<br>
 that converges to weighted average over neighborhoods of 8 samples:
 <pre> shift[] = {3,2,3,1,3,2,3,0};
 
@@ -65,21 +63,22 @@ for(i=0; i &lt end; i++) {		/* for all samples */
 }</pre>
 <p>
 For <b>n</b>-dimensional interpolation, up to <b>2**n</b> table entries are accessed.<br>
-Considering 3-dimensional interpolations, trilinear accesses all 8 nearest entries,
- while tetrahedral accesses 4 of the 8.
-However, tetrahedral requires some additional calculation to determine
-which 4 of 8 entries should be selected.  Mask dither accesses up to one
-more table entry than the number of truncated bits.
+Considering 3-dimensional interpolations, trilinear accesses all 8 nearest entries,<br>
+ while tetrahedral accesses 4 of the 8 but requires calculating <i>which</i> 4 entries to select.<br>
+Mask dither accesses up to one more table entry than the number of truncated bits.<br>
 Four-bit dither of 4 truncated bits accesses
-up to 5 different table entries for interpolation of each sample.
-This is up to one more table access than tetrahedral, but with less computational
-complexity.  On the other hand, geometric interpolation over more than
-three dimensions will require more than 4 table accesses,
-while table accesses for mask dither is no more than 1 + truncated bit count,
-independent of table dimensions.
-Multi-bit dither with less than truncated bit count allows a
-tradeoff of average table access per sample vs convergence to average
-over sample neighborhoods than for single-bit mask dither.
-This is a classic instance of oversampling frequency vs signal precision.
+up to 5 table entries to interpolate each sample.<br>
+This is up to one more table access than tetrahedral, but with less computational complexity.<br>
+Geometric interpolation <i>over more than 3 dimensions</i> requires more than 4 table accesses,<br>
+but mask dither accesses <= 1 + truncated bit count, independent of table dimensions.<br>
+For some truncated bit count, dither using more bits
+trades average table accesses per sample<br> for convergence to average
+over smaller neighborhoods than dithering with fewer bits.<br>
+This is a classic instance of oversampling frequency vs signal precision.&nbsp
 </font>
+
+</td></tr><tr><td align=center>
+maintained by <a href="https://github.com/blekenbleu">blekenbleu</a><br>
+</td></tr></table></div>
+
 </body></HTML>
