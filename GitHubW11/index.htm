@@ -1,14 +1,10 @@
 <!DOCTYPE html>
-<html lang="en-US">
-  <head>
+<html lang="en-US"><head>
+<link rel='stylesheet' type='text/css' href='../my.css'>
+
     <meta charset='utf-8'>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="/assets/css/style.css?v=">
-    <link rel="stylesheet" type="text/css" href="/assets/css/print.css" media="print">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
 
 <!-- Begin Jekyll SEO tag v2.8.0 --> 
 <title>GitHub Desktop and Jekyll 2023</title>
@@ -26,21 +22,24 @@
 <!-- End Jekyll SEO tag -->
    
 </head>
+
 <body>
+<div align=center>
+<table class="my_table"><tr><td>
+
 <div id="container">
 <div class="inner">
 
 <header>
-<h2>GitHub Desktop and Jekyll 2023</h2>
-</header>
-
-<section id="main_content">
-
 <font size=-1><a href="../"><i>back</i></a></font>
 <a href="https://www.gixen.com/index.php" name="9e092736783d0da1dfd8413d57d10faf" target="_blank" >
 <img align=right src="https://www.gixen.com/images/gixenlink.gif" border="0" alt="Auction Sniper" title="Auction Sniper">
 </a>
-<br>
+
+<h3>GitHub Desktop and Jekyll 2023</h3>
+</header>
+
+<section id="main_content">
 
 <h2>Jekyll on Windows 11 for GitHub Pages preview</h2>
 Differences in Jekyll experiences on different Windows versions<br>
@@ -98,7 +97,8 @@ source: ../blekenbleu.github.io/</pre>
  each requires <code>bundle exec jekyll build</code> to update their <code>_site/</code> folder.<br><br>
 
 <li>Regenerate and serve <code>blekenbleu.github.io/</code> (markdown) changes from <code>site/</code> folder,<br>
-while changes to content linked in <code>site/_site/</code> are served, but transparent to its Jekyll regeneration.<br><br>
+while changes to content linked in <code>site/_site/</code> are served,<br>
+ but transparent to its Jekyll regeneration.<br><br>
 
  Linking needs repeating whenever  <code>site/_site/</code> gets regenerated;<br> <code>links.bat</code> does that:
 <pre>cd _site
@@ -114,7 +114,8 @@ Beyond that, with <code>JEKYLL_GITHUB_TOKEN</code> set, <code>bundle exec jekyll
 <pre>Liquid Exception: The GitHub API credentials you provided aren't valid. in /_layouts/default.html
 
 $ bundle exec github-pages health-check
- (LoadError)4/lib/ruby/gems/3.2.0/gems/ffi-1.15.5/lib/ffi/library.rb:145:in `block in ffi_lib': Could not open library 'libcurl': The specified module could not be found.
+ (LoadError)4/lib/ruby/gems/3.2.0/gems/ffi-1.15.5/lib/ffi/library.rb:145:in `block in ffi_lib':
+ Could not open library 'libcurl': The specified module could not be found.
 .
 Could not open library 'libcurl.dll': The specified module could not be found.
 .
@@ -128,9 +129,11 @@ Could not open library 'libcurl.so.4.dll': The specified module could not be fou
 <pre>$ pacman -Sy mingw-w64-x86_64-curl
 $ find /f -name curl.h -print
 /f/Ruby32-x64/msys64/mingw64/include/curl/curl.h
-$ gem install curb --platform=ruby -- --with-curl-lib="F:/Ruby32-x64/msys64/mingw64/lib" --with-curl-include="F:/Ruby32-x64/msys64/mingw64/include"
+$ gem install curb --platform=ruby -- --with-curl-lib="F:/Ruby32-x64/msys64/mingw64/lib"
+     --with-curl-include="F:/Ruby32-x64/msys64/mingw64/include"
 Temporarily enhancing PATH for MSYS/MINGW...
-Building native extensions with: '--with-curl-lib=F:/Ruby32-x64/msys64/mingw64/lib --with-curl-include=F:/Ruby32-x64/msys64/mingw64/include'
+Building native extensions with: '--with-curl-lib=F:/Ruby32-x64/msys64/mingw64/lib
+     --with-curl-include=F:/Ruby32-x64/msys64/mingw64/include'
 This could take a while...
 Successfully installed curb-1.0.5
 Parsing documentation for curb-1.0.5
@@ -149,8 +152,11 @@ with several packages added.&nbsp Before replacing Ruby,<br>
 Of course, any MSYS2 <code>home/user</code> folder customizations should also be ported.<br>
 </section><br>
 
-<hr>
-<p align=center>static is maintained by <a href="https://github.com/blekenbleu">blekenbleu</a></p>
 </div>
-</div> 
+</div>
+
+</td></tr><tr><td align=center>
+maintained by <a href="https://github.com/blekenbleu">blekenbleu</a><br>
+</td></tr></table></div>
+
 </body></html>

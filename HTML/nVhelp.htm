@@ -1,19 +1,18 @@
-<html>
-<head>
-<style>
-body {
-   width:960px;
-   margin-left:60px;
-}
-</style>
+<html><head>
+<link rel='stylesheet' type='text/css' href='../my.css'>
+
 <title>nanoVNA Description</title>
 </head>
-<body bgcolor=#cccccc>
+
+<body>
+<div align=center>
+<table class="my_table"><tr><td style="background-color:#cccccc">
+
 <font size=+1>
 <p id="U0">
 <font size=+2><b>VNA</b> = <b>V</b>ector <b>N</b>etwork <b>A</b>nalyzer,</font></br>
 distinguished from antenna analyzer by having two ports instead of one,<br>
-and from scaler analyzer e.g. SWR (Standing Wave Ratio) bridge by sorting resistance vs reactance instead of impedance magnitude.</p>
+and from scaler analyzer e.g. SWR (Standing Wave Ratio) bridge<br> by sorting resistance vs reactance instead of impedance magnitude.</p>
 <p>nanoVNA principles of operation are largely as described in this YouTube video by Michael Knitter DG5MK:<br>
 <a href="https://www.youtube.com/watch?v=X8Z7veGV57o">Hamradio 2018 FA-VA5 presentation-UK</a>
 <br>Instead of SA612 mixer
@@ -162,7 +161,7 @@ Lacking access to the famous July, 2015 QEX magazine article by DG5MK..
 <li><a href="https://www.youtube.com/watch?v=X8Z7veGV57o">Hamradio 2018 FA-VA5 presentation-UK</a> video
 <li>DG5MK's <a href="https://www.dg5mk.de/media/Labview%20SDR/FFT_SSB_MOD/English%20Version/FFT%20SSB%20mod%20demod%20DG5MK%20English%20V03.pdf">FFB SSB Modulation</a> PDF avoids digging into mathematics.
 <li>DG5MK's <a href="https://www.dg5mk.de/media/Labview%20SDR/SDR%20Kurzbeitrag/Labview_SDR_DG5MK_English_08_2012.pdf">Labview-based SDR</a> offers relevant DSP software organization insights.
-<li>DD4WH's <a href="https://github.com/df8oe/UHSDR/wiki/How-does-your-UHSDR-software-DSP-work">https://github.com/df8oe/UHSDR/wiki/How-does-your-UHSDR-software-DSP-work</a> offers detailed description for this DSP, based on Teensy SDR
+<li>DD4WH's <a href="https://github.com/df8oe/UHSDR/wiki/How-does-your-UHSDR-software-DSP-work">https://github.com/df8oe/UHSDR/wiki/How-does-your-UHSDR-software-DSP-work</a><br> offers detailed description for this DSP, based on Teensy SDR
 <li>UHSDR <a href="https://github.com/df8oe/UHSDR/wiki/IQ---correction-and-mirror-frequencies">IQ correction and mirror frequencies</a>
 <li><a href="https://github.com/DD4WH/Teensy-ConvolutionSDR">Teensy-ConvolutionSDR</a> provides relevant (Si5351, ARM) <a href="https://github.com/DD4WH/Teensy-ConvolutionSDR/blob/master/Teensy_Convolution_SDR.ino">Arduino source code</a>
 
@@ -212,7 +211,7 @@ Tapping on a digit makes it adjustable; step it up or down using the multi-direc
  The multi-directional switch can be used to shift highlighting to another digit.<br>
  Press in again, highlighting disappears and the digit becomes adjustable.<br>
  Once set, briefly pressing the multi-directional switch in stores that numerical setting.<br>
- <b>NB</b> It appears that you need to wait a few seconds between presses on the rocker switch or it ignores the input.
+ <b>NB</b> Wait a few seconds between presses on the rocker switch, or input is ignored.
 
 <dt>Touchscreen input
 <dd>
@@ -306,5 +305,9 @@ Once PAUSE is cancelled or the nanoVNA is power cycled, data is flushed and repl
 <p> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> </p>
 <p> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> </p>
 </font>
-</body>
-</html>
+
+</td></tr><tr><td align=center>
+maintained by <a href="https://github.com/blekenbleu">blekenbleu</a><br>
+</td></tr></table></div>
+
+</body></html>

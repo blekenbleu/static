@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="en"><head>
+<link rel='stylesheet' type='text/css' href='../my.css'>
+
 <meta charset="UTF-8">
 <title>Hnano</title>
 <style>
@@ -15,7 +16,6 @@ body {
   padding: 0px;
   color: #ffffff;
   font: 12px Verdana, sans-serif;
-  background: #000000;
 }
 
 .tree {
@@ -64,7 +64,7 @@ body {
 }
 
 a {
-  color:yellow;
+  color:#6666FF;
 }
 
 a:visited {
@@ -317,6 +317,9 @@ a:visited {
   z-index: 200;	/* does not help */
 }
 
+/* why?? juggle with my_table td height */
+h3 { margin-top:-120px; padding:0; }
+
 </style>
 </head>
 <!--
@@ -324,6 +327,9 @@ a:visited {
  -->
 
 <body translate="no">
+<div align=center>
+<table class="my_table"><tr><td style="height:1150px; background-color:#000000">
+
 <base href="nVhelp.htm">
 <h3 align=center><a href="#U0">nanoVNA</a> Menu</h3>
 
@@ -480,6 +486,8 @@ a:visited {
   </ul>
   </li>
 </ul>
+</td></tr><tr><td align=center style="background-color:#000000">
+maintained by <a href="https://github.com/blekenbleu">blekenbleu</a><br>
+</td></tr></table></div>
 
-</body>
-</html>
+</body></html>

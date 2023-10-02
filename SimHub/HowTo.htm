@@ -1,13 +1,13 @@
-<html>
-<head>
-<style>
-h1, h2, h3, h4, h5 {
-  margin-bottom:0.5px;
-}
-</style>
+<html><head>
+<link rel='stylesheet' type='text/css' href='../my.css'>
+
 <title>SimHub plugin How-To and Discord discussions</title>
 </head>
+
 <body>
+<div align=center>
+<table class="my_table"><tr><td style="padding-left:50;">
+
 <h2>SimHub plugin How-To and Discord discussions</h2>
 <pre>Wotever 12/28/2017
 To share a plugin, you must first rename it in project settings,
@@ -74,13 +74,14 @@ My struggles with C# and Visual Studion are addressed in <a href="VisualStudio.h
  &nbsp &nbsp <b>-</b> SimHub wants .NET framework 4.8, per Wotever 8.2.0 release 12/16/2022<br>
 <br>
 <h4>First tip: start with a working example plugin</h4>
-Conventions for plugin C# may differ appreciably from generic .NET C# apps:
+Conventions for plugin C# may differ appreciably from generic .NET C# apps:<ul>
 <li>Not an App;&nbsp a DLL launched by SimHub
 <li>Best created in a <code>SimHub/PluginSdk/</code> folder;&nbsp relative path to SimHub classes and <code>.dll</code> build destination
-<li>Sadly, Visual Studio 2019 rejects <i>relative</i> path to <code>SimHubWPF.exe</code> for Debug <code>&lt;StartProgram&gt;</code>;&nbsp path must be absolute.
+<li>Sadly, Visual Studio 2019 rejects <i>relative</i> path to <code>SimHubWPF.exe</code> for Debug <code>&lt;StartProgram&gt;</code>;&nbsp path must be absolute.<br>
+This is corrected in Visual Studio 2022.
 <li>Obvious starting place:&nbsp <code>SimHub/PluginSdk/User.PluginSdkDemo/</code>
 <li>Also simple, already a GitHub project:&nbsp
- <a href="https://github.com/viper4gh/SimHub-Plugin-CalcLngWheelSlip"><code>SimHub/PluginSdk/CalcLngWheelSlip</code></a><br>
+ <a href="https://github.com/viper4gh/SimHub-Plugin-CalcLngWheelSlip"><code>SimHub/PluginSdk/CalcLngWheelSlip</code></a></ul>
 <br>
 
 Properties are listed inside <b>Available Properties</b>.<br> &nbsp
@@ -115,10 +116,10 @@ namespace DahlDesign.Plugin.iRacing
     public override void DataUpdate(PluginManager pluginManager, ref GameData data)
     {
 ...
-      double slipLF = Convert.ToDouble(pluginManager.GetPropertyValue("ShakeITMotorsV3Plugin.Export.WheelSlip.FrontLeft"));  //Wheel slip
-      double slipRF = Convert.ToDouble(pluginManager.GetPropertyValue("ShakeITMotorsV3Plugin.Export.WheelSlip.FrontRight"));  //Wheel slip
-      double slipLR = Convert.ToDouble(pluginManager.GetPropertyValue("ShakeITMotorsV3Plugin.Export.WheelSlip.RearLeft"));  //Wheel slip
-      double slipRR = Convert.ToDouble(pluginManager.GetPropertyValue("ShakeITMotorsV3Plugin.Export.WheelSlip.RearRight"));  //Wheel slip
+      double slipLF = Convert.ToDouble(pluginManager.GetPropertyValue("ShakeITMotorsV3Plugin.Export.WheelSlip.FrontLeft"));
+      double slipRF = Convert.ToDouble(pluginManager.GetPropertyValue("ShakeITMotorsV3Plugin.Export.WheelSlip.FrontRight"));
+      double slipLR = Convert.ToDouble(pluginManager.GetPropertyValue("ShakeITMotorsV3Plugin.Export.WheelSlip.RearLeft"));
+      double slipRR = Convert.ToDouble(pluginManager.GetPropertyValue("ShakeITMotorsV3Plugin.Export.WheelSlip.RearRight"));
 ...
 
       Base.SetProp("SlipLF", slipLF);
@@ -150,14 +151,14 @@ Regardless, I find it easier to make some plugin source code changes while SimHu
 Running SimHub standalone, rather than launched via Visual Studio <code>Debug</code> avoids that.
 
 <dt><br><b>Tip #4:&nbsp <code>grep</code> is your friend</b>
-<dd>Searching for the Visual Studio way to e.g. convert code from WPF to console mostly yields recommendations to <i>start over</i>.<br>
-Instead, grepping for names used in WPF content will show where/how they are referenced e.g. in the <code>.csproj</code> file.<br>
+<dd>Searching for the Visual Studio way to e.g. convert code from WPF to console<br> mostly yields recommendations to <i>start over</i>.<br>
+Instead, grepping for names used in WPF content<br> will show where/how they are referenced e.g. in the <code>.csproj</code> file.<br>
 Rather than sort where in the Visual Studio user interface such stuff is controlled,<br>
 I mostly directly edit project files using my editor of choice <i>while Visual Studio is not running</i>.
 
 <dt><br><b>Tip #5:&nbsp remove unused stuff</b>
 <dd>Visual Studio noted that <code>using System.Windows.Media;</code> was no longer used and prompted its removal<br>
-Visual Studio can also remove unused Solution Explorer <code>Dependencies > Assemblies</code> entries,
+Visual Studio can also remove unused Solution Explorer <code>Dependencies > Assemblies</code> entries,<br>
  but only in <a href="VisualStudio.htm#SDK"><b>SDK projects</b></a>,<br>
 which SimHub plugins by default are not.
 
@@ -252,13 +253,15 @@ and VS user interface no longer offers changing Debug program in <b>Properties</
 although setting in <code>.csproj</code> file is still honored.
 
 <h5>22 Jan: renaming MIDIioSettings class to MIDIdrywet</h5>
-Using VS to rename then <code>MIDIioSettings</code> class also provoked it to rename the containing <code>MIDIioSettings.cs</code> to <code>MIDIdrywet.cs</code>.<br>
+Using VS to rename then <code>MIDIioSettings</code> class<br>
+ also provoked it to rename the containing <code>MIDIioSettings.cs</code> to <code>MIDIdrywet.cs</code>.<br>
 However, <code>MIDIioSettings.cs</code> was under git version control, but VS did not execute a git renaming.<br>
 Perhaps because I had not previously fiddled with VS Git settings...?<br>
 Consequently, <code>git mv</code> was done manually from a shell.<br>
-After selecting the local repository from its drop-down, committing the class change from within VS was recognized by GitHub Desktop.<br>
+After selecting the local repository from its drop-down,<br>
+ committing the class change from within VS was recognized by GitHub Desktop.<br>
 <br>
-<b>Hacked <a href="https://github.com/blekenbleu/blekenbleu.MIDIio/blob/main/MIDIdrywet.cs">the MIDI equivalent of "Hello World"</a></b> from
+<b>Hacked <a href="https://github.com/blekenbleu/blekenbleu.MIDIio/blob/main/MIDIdrywet.cs">the MIDI equivalent of "Hello World"</a></b><br> from
 <a href="https://www.codeproject.com/Articles/melanchall#Article">Melanchall</a>'s
 example C# source for <a href="https://melanchall.github.io/drywetmidi/articles/devices/Input-device.html">Input</a>
 and (eventually) <a href="https://melanchall.github.io/drywetmidi/articles/devices/Output-device.html">Output</a> devices.<br>
@@ -278,7 +281,7 @@ Need to save and restore Sliders and Knobs in Settings.
 
 <h5>23 Jan: Sliders and Knobs saved/restored in Settings</h5>
 Sadly, SimHub crashes if/when MIDIio and SimHub Midi Controller plugins are both enabled.<br>
-Pretending to be surprised, but adding MIDI key events and properties to MIDio is probably easier than coexistence,<br>
+Pretending to be surprised, but adding MIDI key events and properties to MIDio<br> is probably easier than coexistence,<br>
 which might require reentrance changes in <code>Melanchall.DryWetMidi</code> and sharing a MIDI device.<br>
 <br>
 Finding available Events was unobvious to me.
@@ -291,7 +294,8 @@ Finding available Events was unobvious to me.
 Plugin properties seemingly <i>must</i> be set without indexing variables.<br>
 
 <h5>24 Jan: <a href="https://melanchall.github.io/drywetmidi/articles/devices/Output-device.html">DryWetMIDI output MIDI device</a></h5>
-Basically the same tactic as reading:&nbsp <code>try</code> opening the property name, then <code>catch</code> exception by logging known devices.<br>
+Basically the same tactic as reading:&nbsp <code>try</code> opening the property name,<br>
+ then <code>catch</code> exception by logging known devices.<br>
 <b><i>Trick</i></b>:&nbsp to avoid upsetting VS, copy e.g. <code>MIDIdrywet.cs</code> to a <code>.txt</code> file, edit to change class name, etc. then rename.<br>
 <li><code>OUTdrywet.cs</code> was created this way...
 
@@ -358,7 +362,12 @@ private PortChat PC() { return this; }      // callback for current PortChat cla
 <code>PortChatreceiver()</code> fails for asynchronous threads, unless e.g.
 <a href="https://www.albahari.com/threading/part5.aspx#_Concurrent_Collections">queues are implemented</a>,<br>
 but for plugin applications, SimHub coordinates property value updates among plugins,<br>
-and serial messages received can always be only in response to messages sent, with fixed known unique terminating bytes.
+and serial messages received can always be only in response to messages sent,<br>
+ with fixed known unique terminating bytes.
 </ul>
-</body>
-</html>
+
+</td></tr><tr><td align=center>
+maintained by <a href="https://github.com/blekenbleu">blekenbleu</a><br>
+</td></tr></table></div>
+
+</body></html>
