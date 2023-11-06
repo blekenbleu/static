@@ -1,5 +1,6 @@
 `static`
 ## Static content for GitHub Pages
+Part of [blekenbleu.github.io](https://blekenbleu.github.io/)  
 Content (e.g. images, PDFs, HTML) in GitHub Pages repositories consume 3x storage
 - original
 - copied into: ./_site/
