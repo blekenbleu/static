@@ -1,0 +1,51 @@
+<html><head>
+<link rel='stylesheet' type='text/css' href='../my.css'>
+
+<title>Menu Description</title>
+</head>
+
+<body>
+<div align=center>
+<table class="my_table"><tr><td>
+
+<h3>CSShtmlMenus</h3><br>
+
+Contents of interest:&nbsp <a href="MenuTree.html">MenuTree.html</a>, which has links to <a href=help.htm>help.htm</a><br><br>
+
+See <a href=http://thecodeplayer.com/walkthrough/css3-family-tree>CSS3 Family Tree</a> for vertical tree using CSS and html (mostly unordered list) without Javascript<br><br>
+
+See more complex <a href=https://codepen.io/P233/pen/Kzbsi>CSS Horizontal Family Tree</a> for horizontal tree (more appropriate for menus) but with some JavaScript.<br><br>
+
+Not understanding CSS and disliking JavaScript, started with css3-familty-tree source..<br><br>
+
+Menu text without href is not boxed.<br>
+Paired boxes in one list item should be immediately adjacent, no white space.<br>
+If first text of href pair is shorter, path from parent does not split them.<br>
+Changing <code>&lt;a href="#"&gt;..&lt;/a&gt;</code> to <code>&lt;p&gt;..&lt;/p&gt;</code> did not break anything..<br><br>
+
+Siblings appear the same, whether one list item is embedded in another or concatenated after in the same unordered list.<br>
+
+Hover partly fails if not all entries inside one <code>&lt;ul&gt;</code>.<br><br>
+
+Copied and git-ignored css3tree.html, HorizontalTree.htm; created HtreeUL.html;<br>
+removed tabs in css3tree.html for easier comparison to HorizontalTree.htm.<ul>
+<li>CSS tree diagram learning experiments<ul>
+<li>HorizontalTree.htm generates nearly desired results,<br>
+   but CSS requires complex html.
+<li>css3tree.html CSS generates vertical tree using simpler html<br>
+<li>HtreeUL.html attempted to apply css3tree.html CSS to HorizontalTree.htm<br>
+<li>MenuTree.html borrows HtreeUL.html CSS and learning<br>
+ to convert css3tree.html from vertical to horizontal.</ul>
+<li>commented out style entries to detect effects
+<li>added comments to describe those effects</ul><br>
+
+Associating vertical branches with <code>&lt;ul&gt;</code> fails:
+<ul><li>vertical branch line extends the full height of all embedded content,<br>
+  while branch only among first generation <code>&lt;li&gt;</code> children is wanted.</ul><br>
+
+Hardest for me was sorting out parent pairings.<br>
+Simplified CSS by settling for square joins between all branches and leaf stems.<br>
+Added optional <code>&lt;dl&gt;, &lt;dd&gt;</code> instead of <code>&lt;ul&gt;, &lt;li&gt;</code> for horizontal last generation to save vertical space<br><br>
+
+Tool tips:
+<li> Use <a href=https://www.w3schools.com/tags/att_global_title.asp>HTML title Attribute</a> in menu element <code>&lt;p&gt;</code> tags, e.g. <code>&lt;p title="your tool tip here"&gt;Menu element&lt;/p&gt;</code><br><br>
