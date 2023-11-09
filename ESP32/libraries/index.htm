@@ -1,0 +1,87 @@
+<html><head>
+<link rel='stylesheet' type='text/css' href='../my.css'>
+<title>Composite USB, web server and Servo control using Arduino and ESP32-S2-Saola-1</title></head>
+<body>
+<div align=center>
+<table class="my_table"><tr><td>
+
+<font size=+1>
+<h3>Libraries to support <a href=https://github.com/blekenbleu/midi_examples>ESP32-S2-Saola-1 Arduino sketches</a></h3>
+<ul>
+<li><a href=https://github.com/blekenbleu/esp32s2LED><b>esp32s2LED</b></a><br>
+   wrappers for <a href=Freenove_WS2812_Lib_for_ESP32>Freenove_WS2812_Lib_for_ESP32</a> and <a href=https://github.com/khoih-prog/ESP32_S2_ISR_Servo>ESP32_S2_ISR_Servo</a><br>
+   for use with sketches expecting traditional library support
+
+<li><a href=file:///C:/Users/bleke/Documents/Arduino/libraries/Freenove_WS2812_Lib_for_ESP32>Freenove_WS2812_Lib_for_ESP32</a>
+  from <a href=https://www.arduino.cc/reference/en/libraries/freenove-ws2812-lib-for-esp32/>Arduino</a> <br>
+    Controls ws2812b RGB LED on ESP32<br>
+    Arduino install by:  <code>Sketch > Include Library > Manage Libraries</code><br>
+  Sample <code>midi.ino</code> reported many redefined's: <code>CFG_TUSB_RHPORT0_MODE, CFG_TUSB_OS,<br>
+ CFG_TUD_CDC, CFG_TUD_MSC, CFG_TUD_HID, CFG_TUD_MIDI,<br> CFG_TUD_VIDEO, CFG_TUD_DFU_RUNTIME, CFG_TUD_VENDOR</code>
+
+<li><a href=https://github.com/khoih-prog/ESP32_S2_ISR_Servo>ESP32_S2_ISR_Servo</a><br>
+  Support for up to 16 PWM hobby servos using one hardware timer interrupt
+
+<li><a href=https://github.com/blekenbleu/TinyMIDIUSB>ESP32TinyUSB</a> from <a href=https://github.com/chegewara/EspTinyUSB>GitHub</a><br>
+  originally from <a href=https://www.arduino.cc/reference//en/libraries/esp32tinyusb>Arduino</a>, but wanted change[s]<br>
+  <code>msc/flashdisk.cpp</code> and <code>flashdisk.h</code> were hacked to stifle warnings<br>
+  <code>arduino-1.8.16/portable/packages/esp32</code> is built with different compiler flags than<br> <code>Documents\Arduino\hardware\espressif</code>;&nbsp problematic for <code>libfatfs</code><br>
+   TinyUSB device enabling is configured in<br>
+ <a href=tusb_config.h><code>hardware/espressif/esp32/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h</code></a><br>
+  <code>libfatfs</code> warning may be affected by <code>CFG_TUSB_MEM_ALIGN</code> e.g in the same file.
+
+<li><a href=https://github.com/blekenbleu/TinyMIDIUSB><b>TinyMIDIUSB</b></a><br>
+  wrapper for <a href=https://github.com/blekenbleu/TinyMIDIUSB>ESP32TinyUSB</a>,
+  replacing Arduino's <a href=https://www.arduino.cc/reference/en/libraries/midiusb/>MIDIUSB</a><br>
+  to enable using generic Arduino MIDI sketches with ESP32-S2<br>
+  <code>MIDIUSB.h</code> includes <code>"esptinyusb.h"</code> as well as <code>"Tmidiusb.h"</code><br>
+  copied from <code>ESP32TinyUSB/src/midiusb.h</code> to work around a seeming Arduino bug.
+
+<li><code>Arduino/libraries/MIDI_LibraryMIDI_Library</code> from <a href=https://www.arduino.cc/reference/en/libraries/midi-library/>Arduino</a><br>
+  provides <code>MIDI.h</code>;&nbsp   includes <code>midiusb.h</code>, <code>serialMIDI.h</code>
+
+<li><code>Arduino/libraries/USB-MIDI>USB-MIDI</code> from <a href=https://www.arduino.cc/reference/en/libraries/usbmidi/>Arduino</a><br>
+  provides <code>midiusb.h</code>;&nbsp  depends on <code>MIDIUSB.h</code>, using <code>MidiUSB.read()</code>,<br>
+ <code>MidiUSB.sendMIDI(packet)</code> and <code>MidiUSB.flush()</code>, while not declaring <code>MidiUSB</code><br>
+  Provides transport layer for the Arduino MIDI Library and Arduino's MIDIUSB;<br>
+  compatibly with AppleMIDI, ipMIDI and BLE-MIDI transports.
+
+<li><code>AsyncTCP</code> from <a href=https://github.com/me-no-dev/AsyncTCP>GitHub</a>
+<li><code>ESPAsyncWebServer</code> from <a href=https://github.com/me-no-dev/ESPAsyncWebServer>GitHub</a>
+  will be used to serve sliders for a MIDI control surface</ul>
+
+<h4> Libraries with possibly interesting examples:</h4>
+<li><a href=https://github.com/tttapa/Control-Surface>Control Surface</a> provides support and extensive documentation for MIDI control surface sketches.
+
+<h4> How to install <a href=https://www.arduino.cc/en/Guide/Libraries?setlang=en>libraries from Arduino<a>  </h4>
+<h4> Disabling libraries bundled with Arduino:  </h4>
+<code>bleke@ALIENWARE-R7 MSYS /d/packages/Arduino/arduino-1.8.16/libraries&gt;</code><br>
+<code>$ mv Adafruit_Circuit_Playground Esplora Firmata Keyboard Mouse Robot_Motor ../not_libraries/</code>
+
+<h4> Where Arduino builds and caches objects</h4>
+<code>/c/Users/bleke/AppData/Local/Temp/arduino_build_857189/core</code><br>
+<code>/c/Users/bleke/AppData/Local/Temp/arduino_build_857189/libraries</code>
+
+<h4> Changing the <code>Tools > Board selection</code> causes Arduino's cache to be cleared <a href=https://forum.arduino.cc/t/how-to-rebuild-3rd-party-library/527157> e.g. for library rebuilds</a></h4>
+
+<h3>ESP32TinyUSB Known issue</h3>
+Library currently is not working with vanila arduino-esp32,<br>
+ due to some tinyusb callbacks cannot be overriden and are used by arduino-esp32.<br>
+Adding <code>__attribute__ ((weak)) </code> in 3 lines in local arduino file made it work:<br>
+<a href=https://github.com/espressif/arduino-esp32/blob/master/cores/esp32/esp32-hal-tinyusb.c#L266>
+https://github.com/espressif/arduino-esp32/blob/master/cores/esp32/esp32-hal-tinyusb.c#L266</a><br>
+<a href=https://github.com/espressif/arduino-esp32/blob/master/cores/esp32/esp32-hal-tinyusb.c#L275>
+https://github.com/espressif/arduino-esp32/blob/master/cores/esp32/esp32-hal-tinyusb.c#L275</a><br>
+<a href=https://github.com/espressif/arduino-esp32/blob/master/cores/esp32/esp32-hal-tinyusb.c#L284>
+https://github.com/espressif/arduino-esp32/blob/master/cores/esp32/esp32-hal-tinyusb.c#L284</a>
+
+<h4> disabling ESP32TinyUSB devices not of interest</h4>
+ <a href=tusb_config.h><code>hardware/espressif/esp32/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h</code></a><br>
+<code>hardware/espressif/esp32/tools/sdk/esp32s2/include/config/sdkconfig.h</code><br>
+
+</font>
+
+</td></tr><tr><td align=center>
+maintained by <a href="https://github.com/blekenbleu">blekenbleu</a><br>
+</td></tr></table></div>
+</body></html>
