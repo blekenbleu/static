@@ -8,7 +8,9 @@
 <div align=center>
 <table class="my_table"><tr><td style="padding-left:50;">
 
-<h2>SimHub plugin How-To and Discord discussions</h2>
+<h2>SimHub plugins</h2>
+
+<details><summary><b>Click for discord discussions</b></summary>
 <pre>Wotever 12/28/2017
 To share a plugin, you must first rename it in project settings,
 and also rename the plugin class
@@ -52,39 +54,41 @@ AttachDelegate is 100% on demand:
 this.AttachDelegate("CurrentDateTime", () => DateTime.Now);
 
 Andreas Dahl 02/22/2022 9:58 AM
-AddProperty() in the Init scope, and do all data collection, computation and SetPropertyValue() in the DataUpdate scope
+AddProperty() in the Init scope, and do all data collection,
+computation and SetPropertyValue() in the DataUpdate scope</pre></details>
 
-GarySwallow 09/16/2019 3:38 PM
-Advanced Custom Plugin Demo</pre>
-Open the <a href="https://cdn.discordapp.com/attachments/306850703299575809/623241262493073410/AdvancedCustom.PluginSdkDemo.zip"><code>AdvancedCustomUser.PluginSdkDemo.sln</code> project file</a>.<br>
-<br>
 <a name=HowTo><h3>SimHub SDK How-To</h3></a>
-Plugins can interact via Properties, Actions and Events, where Events (e.g. button presses) may launch Actions.<br>
+Plugins can interact via Properties, Actions and Events,<br>
+where Events (e.g. button presses) may launch Actions.<br>
 Properties can contain numeric or string variables.<br>
 Instead of requiring code to check for changing values e.g. 60 times per second,<br>
-one could presumably provoke an Event to launch code in an Action to evaluate or change Properties.<br>
+one presumably provokes an Event to launch Action code that e.g. changes Properties.<br><br>
+
 Packaged as <code>.dll</code> files, SimHub plugins are installed by dragging into<br>
-the SimHub folder containing SimHubWPF.exe and numerous other <code>.dll</code> files.<br>
-SimHub presumably identifies plugins from other <code>.dll</code> files by including this line in their source:<br>
+the folder containing SimHubWPF.exe and numerous other <code>.dll</code> files.<br>
+SimHub presumably sorts plugins from other <code>.dll</code> files by this line in their source:<br>
 &nbsp <code>using SimHub.Plugins;</code><br>
 <br>
 
 SimHub and its plugin SDK are written in C#.<br>
-My struggles with C# and Visual Studion are addressed in <a href="VisualStudio.htm"><b>this C# Visual Studio How-To</b></a>.<br>
+C# and Visual Studio struggles are addressed in <a href="VisualStudio.htm"><b>this C# Visual Studio How-To</b></a>.<br>
  &nbsp &nbsp <b>-</b> SimHub wants .NET framework 4.8, per Wotever 8.2.0 release 12/16/2022<br>
 <br>
-<h4>First tip: start with a working example plugin</h4>
+<details><summary><b>Click for tips</b></summary>
+<h4>First tip: starting with a <i>working</i> example plugin</h4>
 Conventions for plugin C# may differ appreciably from generic .NET C# apps:<ul>
 <li>Not an App;&nbsp a DLL launched by SimHub
 <li>Best created in a <code>SimHub/PluginSdk/</code> folder;&nbsp relative path to SimHub classes and <code>.dll</code> build destination
-<li>Sadly, Visual Studio 2019 rejects <i>relative</i> path to <code>SimHubWPF.exe</code> for Debug <code>&lt;StartProgram&gt;</code>;&nbsp path must be absolute.<br>
-This is corrected in Visual Studio 2022:<pre>
+<li>Sadly, Visual Studio 2019 rejects <i>relative</i> path to <code>SimHubWPF.exe</code> for Debug <code>&lt;StartProgram&gt;</code>;<br>
+Visual Studio 2022 fixed that:<pre>
   &lt;PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'"&gt;
     &lt;StartAction&gt;Program&lt;/StartAction&gt;
     &lt;StartProgram&gt;.\SimHubWPF.exe&lt;/StartProgram&gt;
   &lt;/PropertyGroup&gt;</pre>
-<li>Obvious starting place:&nbsp <code>SimHub/PluginSdk/User.PluginSdkDemo/</code>
-<li>Also simple, already a GitHub project:&nbsp
+<li>Obvious starting example:&nbsp
+<font size=+1><code>SimHub/PluginSdk/<a href="https://github.com/blekenbleu/User.PluginSdkDemo"><b>User.PluginSdkDemo</b>/</a></code></font>,
+     which has an XAML user interface
+<li>Also simple, another separate GitHub project:&nbsp
  <a href="https://github.com/viper4gh/SimHub-Plugin-CalcLngWheelSlip"><code>SimHub/PluginSdk/CalcLngWheelSlip</code></a></ul>
 <br>
 
@@ -138,35 +142,39 @@ By appropriately gluing something like this to MIDI code,<br>
 MIDI sliders can be used to set SimHub property values,<br>
 while SimHub property values can be used to set MIDI values for e.g. VST level trimmers
 
-<dt><br><b>Second tip:&nbsp Initializing properties</b>
+<dt><br><b>Tip #1.5:&nbsp Avoiding user interface</b>
+<dd> @Romainrob <i>20 Jan 2023</i>:&nbsp "remove <code>IWPFSettingsV2</code> from the class declaration"<br>
+	<code>public class DataPluginDemo : IPlugin, IDataPlugin//, IWPFSettingsV2</code>  
+
+<dt><br><b>Tip #2:&nbsp Initializing properties</b>
 <br>Global properties are easily created using <a href="https://github.com/SHWotever/SimHub/wiki/NCalc-scripting"><b>NCalc</b></a>;
 <dd>
-<i><b>Hating</b></i> user interface code, I configure my plugins by editing a matching NCalc script.<br>
+<i><b>Avoiding</b></i> user interface code, several of my plugins are configured by editing an NCalc script.<br>
 NCalc examples are available in <code>\SimHub\NCalcScripts\examples.ini</code>;<br>
 edit a copy of <a href="https://github.com/blekenbleu/blekenbleu.MIDIio/blob/main/MIDIio.ini"><code>MIDIio.ini</code></a> in that folder.<br>
 
 <dt><br>Plugins can also access <a href="./#CCEx">Custom Expression</a> properties during Init {}.
 <dd>SimHub evaluates those custom expressions before [re]launching plugins e.g. after game changes.
 
-<dt><br><b>Third tip:&nbsp Editing source while debugging</b>
+<dt><br><b>Tip #3:&nbsp Editing source while debugging</b>
 <dd>Visual Studio will throw up all sorts of confusing warnings and error messages<br>
 which are <i>not actual problems</i>, other than source changes' impacts on that current debugging session.<br>
-Regardless, I find it easier to make some plugin source code changes while SimHub runs.<br>
+Regardless, some plugin source code changes are better made while SimHub runs.<br>
 Running SimHub standalone, rather than launched via Visual Studio <code>Debug</code> avoids that.
 
 <dt><br><b>Tip #4:&nbsp <code>grep</code> is your friend</b>
 <dd>Searching for the Visual Studio way to e.g. convert code from WPF to console<br> mostly yields recommendations to <i>start over</i>.<br>
 Instead, grepping for names used in WPF content<br> will show where/how they are referenced e.g. in the <code>.csproj</code> file.<br>
 Rather than sort where in the Visual Studio user interface such stuff is controlled,<br>
-I mostly directly edit project files using my editor of choice <i>while Visual Studio is not running</i>.
+employ editor of choice to directly alter project files <i>while Visual Studio is not running</i>.
 
-<dt><br><b>Tip #5:&nbsp remove unused stuff</b>
+<dt><br><b>Tip #5:&nbsp removing unused stuff</b>
 <dd>Visual Studio noted that <code>using System.Windows.Media;</code> was no longer used and prompted its removal<br>
 Visual Studio can also remove unused Solution Explorer <code>Dependencies > Assemblies</code> entries,<br>
- but only in <a href="VisualStudio.htm#SDK"><b>SDK projects</b></a>,<br>
+ but only in <a href="VisualStudio.htm#SDK"><b>SDK projects</b></a>,
 which SimHub plugins by default are not.
 
-<dt><br><b>Tip #6:&nbsp debug strings as properties</b>
+<dt><br><b>Tip #6:&nbsp debugging strings as properties</b>
 <dd>writing to SimHub's log works, but messages can be missed in the deluge.<br>
 Instead, repurpose a delegate property, e.g. <code>string PluginMsg;</code>:<pre>
 PluginMsg = $"CustomSerial.Write({Traffic[1]})";
@@ -177,10 +185,13 @@ If "sent" is not seen in the PluginMsg property, then the plugin hung or failed 
 <dt><br>C# plugin source and discussions
 <dd>Here is <a href="PluginDemo.cs">an older and smaller PluginDemo.cs</a>.<br>
 It appears to include a trick for Initializing a list of properties that differ only by a number.
-</dl>
+</dl></details>
+
 <hr>
-<a name=ChatGPT><h3>OpenAI ChatGPT code for SImHub plugin using DryWetMIDI</h3></a>
-<pre>
+
+<details><summary>OpenAI ChatGPT code for SImHub plugin using DryWetMIDI</summary>
+<a name=ChatGPT>
+<pre></a>
 // Here is an example of how you might use the DryWetMIDI library
 // in a SimHub plugin to send MIDI messages:
 
@@ -212,8 +223,9 @@ namespace MySimHubPlugin
  ; The message will turn on a note with a pitch of 60 (middle C)
  ; and a velocity of 100 on channel 1.
  */
-</pre>
+</pre></details>
 <hr>
+<details><summary><b>MIDIio</b></summary>
 <h5>15 Jan 2023 plugin experiment</h5>
 <pre>
 - rename User.PluginSdkDemo to blekenbleu.PluginSdkDemo
@@ -257,10 +269,10 @@ and VS user interface no longer offers changing Debug program in <b>Properties</
 although setting in <code>.csproj</code> file is still honored.
 
 <h5>22 Jan: renaming MIDIioSettings class to MIDIdrywet</h5>
-Using VS to rename then <code>MIDIioSettings</code> class<br>
+Using VS to rename the <code>MIDIioSettings</code> class<br>
  also provoked it to rename the containing <code>MIDIioSettings.cs</code> to <code>MIDIdrywet.cs</code>.<br>
-However, <code>MIDIioSettings.cs</code> was under git version control, but VS did not execute a git renaming.<br>
-Perhaps because I had not previously fiddled with VS Git settings...?<br>
+However, <code>MIDIioSettings.cs</code> was under git version control, but VS did not execute a git renaming...<br>
+... perhaps because having not previously fiddled with VS Git settings?<br>
 Consequently, <code>git mv</code> was done manually from a shell.<br>
 After selecting the local repository from its drop-down,<br>
  committing the class change from within VS was recognized by GitHub Desktop.<br>
@@ -301,8 +313,11 @@ Plugin properties seemingly <i>must</i> be set without indexing variables.<br>
 Basically the same tactic as reading:&nbsp <code>try</code> opening the property name,<br>
  then <code>catch</code> exception by logging known devices.<br>
 <b><i>Trick</i></b>:&nbsp to avoid upsetting VS, copy e.g. <code>MIDIdrywet.cs</code> to a <code>.txt</code> file, edit to change class name, etc. then rename.<br>
-<li><code>OUTdrywet.cs</code> was created this way...
+<li><code>OUTdrywet.cs</code> was created this way...</details>
 
+<hr>
+
+<details><summary><b>Serial Ports</b>, for use in <a href="https://github.com/blekenbleu/Fake8">Fake8</a></summary>
 <h5>11 Mar 2023: <a href="https://github.com/blekenbleu/Fake8">Serial Ports</a></h5>
 Any number of issues, largely thanks to:<ul compact>
 <li>terrible examples;&nbsp <a href="https://learn.microsoft.com/en-us/dotnet/api/system.io.ports.serialport">best of a poor lot</a>:<pre>
@@ -368,7 +383,7 @@ private PortChat PC() { return this; }      // callback for current PortChat cla
 but for plugin applications, SimHub coordinates property value updates among plugins,<br>
 and serial messages received can always be only in response to messages sent,<br>
  with fixed known unique terminating bytes.
-</ul>
+</ul></details>
 
 </td></tr><tr><td align=center>
 maintained by <a href="https://github.com/blekenbleu">blekenbleu</a><br>
