@@ -29,10 +29,10 @@ Clicking on a .csproj file launched Visual Studio<br>
  &nbsp &nbsp <b>-</b> SimHub wants at least 4.8, per Wotever 8.2.0 release 12/16/2022<br>
  &nbsp &nbsp &nbsp Change framework setting in Visual Studio<br><br>
 
-<a name=SDK><h4></a><a href="https://learn.microsoft.com/en-us/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/upgrade-assistant">Migrate from UWP to Windows App SDK</a></h4></a>
-SDK-style projects enable removing unused resources.<br>
-<code>.NET</code> uses SDK-style project files, unlike
-legacy Visual Studio <code>.NET Framework</code> projects.<br>
+<a name=SDK>SDK-style projects enable removing unused resources.<br></a>
+Unlike legacy Visual Studio <code>.NET Framework</code> projects,<br>
+<code>.NET</code> uses SDK-style project files,<br>
+<i>but does <b>NOT</b> support <code>WPF</code> applications, only console</i>.<br>
 Migrating <code>.NET Framework</code> WPF to <code>.NET</code> involves converting projects;<br>
  see <a href="https://learn.microsoft.com/en-us/dotnet/core/porting/">porting overview</a> and
 <a href="https://learn.microsoft.com/en-us/dotnet/desktop/wpf/migration/?view=netdesktop-8.0">upgrading HowTo</a>.<br>
@@ -45,8 +45,8 @@ Migrating <code>.NET Framework</code> WPF to <code>.NET</code> involves converti
  after setting <code>.Net 7</code>, but it hung...
 <li>Exitted VS and updated it to 17.8.1; uninstalled Porting Assitant
 <li>Ran <a href="https://learn.microsoft.com/en-us/dotnet/desktop/wpf/migration/?view=netdesktop-8.0">In-place project upgrade</a> to <code>.NET 8.0</code>;<br>
-many errors in SettingsControlDemo.xaml for <code>&lt;styles;..</code>
-<li>The plugin involves reflection; .NET 8 conversion removed it?
+many VS errors in SettingsControlDemo.xaml for <code>&lt;styles;..</code>
+<li>The plugin uses XAML; .NET 8 conversion broke it.
 <li>Reverted "update" using GitHub Desktop<br>
 VS complained about TargetFrameworkVersion presumably based on cached information.<br>
 Solved by moving the project, then VS offered to forget about it.
@@ -54,7 +54,7 @@ Solved by moving the project, then VS offered to forget about it.
 </details>
 <details><summary> for VS 2019</summary>
 <h3><a href="https://www.partech.nl/en/publications/2020/11/converting-c-sharp-projects-to-the-new-sdk-format#">Converting old csproj to SDK</a></h3>
-<i>Perhaps those succeeded only because no XAML user interface code..?</i><br>
+<i>This succeeded only because no XAML user interface code.</i><br>
 SDK projects are wanted for unused reference removal support.<br>
 <code>&gt;dotnet tool install --global Project2015To2017.Migrate2019.Tool</code><br>
 You can invoke the tool using the following command:&nbsp <code>dotnet-migrate-2019</code><br>
@@ -64,13 +64,16 @@ Tool 'project2015to2017.migrate2019.tool' (version '4.1.3') was successfully ins
 (<a href="sdk.txt.htm">transcript</a>)<br>
 <br>
 Since the <code>dotnet migrate-2019 wizard</code> was run on the <code>.csproj</code> file but not the <code>.sln</code>,<br>
-Visual Studio was launched by clicking the  <code>.csproj</code> file, and unused references were removed, but <code>.sln</code> <i>was not updated</i>.<br>
-As a test, that <code>.sln</code> was disappeared by moving to another directory, and Visual Studio seemed fine with no <code>.sln</code> file.<br>
-However, moving the <code>.sln</code> file back while it was running excited Visual Studio enough to update it.<br>
+Clicking the  <code>.csproj</code> file launched VS, and unused references were removed,<br>
+ but <code>.sln</code> <i>was not updated</i>.<br>
+As a test, that <code>.sln</code> was disappeared by moving to another directory,<br>
+and Visual Studio seemed fine with no <code>.sln</code> file.<br>
+However, moving the <code>.sln</code> file back <i>while it was running</i><br>
+excited Visual Studio enough to update it.<br>
 <br>
 Because SDK version defaults to <code>OutDir ..\..\net48\</code>,<br>
 added to <code>.csproj</code> file:&nbsp <code>&lt;OutDir&gt;..\..\&lt;/OutDir&gt;</code>
-</details><br><br>
+</details><br>
 
 <details><summary>A <i>simple</i> SimHub plugin</summary>
 <pre>
