@@ -8,25 +8,29 @@
 <div align=center>
 <table class="my_table"><tr><td style="padding-left:50">
 
+<a href="../../SimHub/"><i>back</i></a><br>
+
 <dl>
 <h3>SimHub Plugins</h3>
 SimHub is largely a collection of so-called plugins (.dll files), e.g. for supported <b>Games</b>,<br>
-then other SimHub and user-provided <b>Plugins</b> enabled in <img align=middle src="../../MIDI/plugin/setting.jpg"> <b>Settings</b>.<br>
+then other SimHub and user-provided <b>Plugins</b> enabled in <img align=middle src="Settings.png">.<br>
 <br>
 <ul compact>
 <li><a href="HowTo.htm#HowTo"><b>SimHub SDK How-To</b></a> &nbsp <a href="VisualStudio.htm"><b>C# Visual Studio How-To</b></a>
     &nbsp <a href="https://github.com/blekenbleu/vJoySDK/tree/main/FeederDemoCS/docs"><b>vJoy C# SDK README</b></a><br> &nbsp <br>
 <li><a href="https://github.com/kmcnaught/vigem-example-dotnet">vigem-example-dotnet</a> implements simple programmatic control of <a href="https://github.com/ViGEm/ViGEm.NET">ViGem.NET</a>,<br>
     which implements a <a href="../../Windows/HID">virtual XBox controller</a>.<br>
-</ul>
+</ul><br>
+
 After <code>Init()</code> initialization, each plugin appears to run in its own <a href="https://learn.microsoft.com/en-us/dotnet/standard/threading/using-threads-and-threading">thread</a>.<br>
 A hang in one plugin minimally impacts function in others.&nbsp
-On launch, plugin method<br>
-(<code>public void DataUpdate(PluginManager pluginManager, ref GameData data)</code>)<br> should run in well under 1/60 second,
-making any updated properties available to others<br> and the plugin method available for its <i>next</i> dispatch.<br>
+On launch,<br> plugin method
+<code>public void DataUpdate(PluginManager pluginManager, ref GameData data)</code><br> should run in well under 1/60 second,
+updating any properties available to others<br> and preparing the plugin method for its <i>next</i> invocation.<br>
 SimHub appears robust against relaunching a still-busy plugin's <code>DataUpdate()</code> thread.<br>
-Frequent launching preempts plugins needing to implement dynamic <a href="https://medium.com/@trapdoorlabs/dynamically-invoking-c-methods-a4cd1e846676"><code>Invoking methods</code></a><br>
-and simplifies synchronization.
+60Hz launch rate preempts plugins needing to implement dynamic
+<a href="https://medium.com/@trapdoorlabs/dynamically-invoking-c-methods-a4cd1e846676"><code>invoking methods</code></a><br>
+and simplifies synchronization.<br><br>
 
 <dl>
 <dt><b>static</b>
@@ -69,10 +73,10 @@ static void init(global::SimHub.Plugins.PluginManager pluginManager){
             KKDash = (KKDash + 1) % 3;
         });
 </pre>    
-<dt><br><i><b>Question</b></i>:&nbsp are these expressions evaluated
+<dt><br><i><b>Question</b></i>:&nbsp are Custom Expressions evaluated
  at 60Hz or (more likely) only when referenced?<br>
-<dd>Properties set or referenced only in a plugin
- <code>Init{}</code> section are minimal overhead.
+<dd>Properties set or referenced <i>only</i> in a plugin's
+ <code>Init{}</code> section impose minimal overhead.
 </dl>
 
 </td></tr><tr><td align=center>
