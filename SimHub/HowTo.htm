@@ -27,7 +27,8 @@ Attach property is a third property declaration way :D, there are three ways :
 - SetPropertyValue : The simplest but the slowest, set the value at each update loop
 - Attachproperty : it allows to add a "wrapper" for a property,
   which can be set at each game loop (it was an convoluted variation of the previous one,
-  skipping SetPropertyValue costs, but keeping the disavantages of requiring computations for each loop.
+  skipping SetPropertyValue costs,
+  but keeping the disavantages of requiring computations for each loop.
   I keep this one in use internally for stuffs I need to compute for each loop anyway
   (about 40 properties in grand total I would say)
 - AttachDelegate : zero costs if it's not in use
@@ -71,14 +72,16 @@ SimHub presumably sorts plugins from other <code>.dll</code> files by this line 
 <br>
 
 SimHub and its plugin SDK are written in C#.<br>
-C# and Visual Studio struggles are addressed in <a href="VisualStudio.htm"><b>this C# Visual Studio How-To</b></a>.<br>
+C# and Visual Studio struggles are addressed in <a href="VisualStudio.htm"><b>this
+ C# Visual Studio How-To</b></a>.<br>
  &nbsp &nbsp <b>-</b> SimHub wants .NET framework 4.8, per Wotever 8.2.0 release 12/16/2022<br>
 <br>
 <details><summary><b>Click for tips</b></summary>
 <h4>First tip: starting with a <i>working</i> example plugin</h4>
 Conventions for plugin C# may differ appreciably from generic .NET C# apps:<ul>
 <li>Not an App;&nbsp a DLL launched by SimHub
-<li>Best created in a <code>SimHub/PluginSdk/</code> folder;&nbsp relative path to SimHub classes and <code>.dll</code> build destination
+<li>Best created in a <code>SimHub/PluginSdk/</code> folder;&nbsp
+ relative path to SimHub classes and <code>.dll</code> build destination
 <li>Sadly, Visual Studio 2019 rejects <i>relative</i> path to <code>SimHubWPF.exe</code> for Debug <code>&lt;StartProgram&gt;</code>;<br>
 Visual Studio 2022 fixed that:<pre>
   &lt;PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'"&gt;
