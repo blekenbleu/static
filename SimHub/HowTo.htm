@@ -97,8 +97,8 @@ Visual Studio 2022 fixed that:<pre>
 
 Properties are listed inside <b>Available Properties</b>.<br> &nbsp
 <img width=640 src="https://media.discordapp.net/attachments/306850703299575809/1038925004865273927/image.png"><br clear=all>
-<dl>
-<dt><br>SimHub plugins can add more <i>properties</i>, which can be read in other plugins e.g. ShakeIt.<br>
+<a name=ShakeIt><dl></a>
+<dt><br>SimHub plugins can add more <i>properties</i>, which can be read in other plugins e.g. <b>ShakeIt</b>.<br>
 <dd>Similarly, plugins can read properties that are e.g. set in the ShakeIt plugin.<br>
 e.g. (<a href="https://github.com/andreasdahl1987/DahlDesignProperties">Dahl Design Properties</a>
 <a href="https://dahl-design.gitbook.io/properties/introduction/install#additional-setup">reads and sets properties</a> in
@@ -143,7 +143,8 @@ namespace DahlDesign.Plugin.iRacing
 </pre>
 By appropriately gluing something like this to MIDI code,<br>
 MIDI sliders can be used to set SimHub property values,<br>
-while SimHub property values can be used to set MIDI values for e.g. VST level trimmers
+while SimHub ShakeIt property values can set MIDI values<br>
+ for e.g. <a href=../../blekenbleu.github.io/Windows/WinAudio.htm#SH>modifying ShakeIt signals <i>outside</i> SimHub</a>.
 
 <dt><br><b>Tip #1.5:&nbsp Avoiding user interface</b>
 <dd> @Romainrob <i>20 Jan 2023</i>:&nbsp "remove <code>IWPFSettingsV2</code> from the class declaration"<br>
