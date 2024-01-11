@@ -1,0 +1,67 @@
+<html><head>
+<link rel='stylesheet' type='text/css' href='../my.css'>
+<style>
+code { font-family: Arial, Helvetica, sans-serif; font-size: 25px}
+</style>
+
+<title>Aliasing and oversampling</title></head>
+
+<body>
+<div align=center>
+<table class="my_table"><tr><td style="padding-left:50">
+
+<a href="./"><i>back</i></a><br>
+<font size=+1>
+<h2>Aliasing and oversampling</h2>
+<h4>What</h4>
+<em>Simplest sampling of one signal <code>b</code> at rate <code>a</code> is equivalent to</em>:<br>
+<img src='cos(a)cos(b).png'><br>
+.. in other words, <a href="https://en.wikipedia.org/wiki/Heterodyne">sum and difference frequencies are generated</a>,<br>
+called <a href="https://en.wikipedia.org/wiki/Aliasing"><i>aliasing</i></a>
+ when any (usually difference terms) are in a frequency range of interest.<br>
+Minimizing aliasing artifacts wants a sampling rate over twice any frequency of interest,<br>
+then a <a href="https://en.wikipedia.org/wiki/Low-pass_filter">low pass filter</a> to attenunate aliasing.<br>
+To preserve details in content of varying frequencies and amplitudes,<br>
+ sampling should actually be over 3x highest frequency of interest.<br>
+This generates lots of samples, which may be (too)  expensive to process.<br>
+When aliasing is insufficiently attenuated and the signal being sampled is imagery,<br>
+then <a href="https://en.wikipedia.org/wiki/Moir%C3%A9_pattern">Moir&eacute;</a> artifacts appear.&nbsp
+Moving Moir&eacute is more obvious than is still:<br>
+<img src="https://upload.wikimedia.org/wikipedia/commons/c/cc/Moire.gif"><br><br>
+
+<i>blekenbleu's rule</i>:&nbsp antialiasing issues imply stingy oversampling.<br><br>
+
+<ul>
+<li>image display (and sensor) pixels sample images and are consequentially liable to aliasing
+<li>many displays implement optical filtering to mitigate <a href="https://en.wikipedia.org/wiki/Screen-door_effect">screen door effect</a>
+<li>many image sensors incorporation <a href="https://en.wikipedia.org/wiki/Anti-aliasing_filter#Optical_applications">optical anti-aliasing</a>
+<li>these filters degrade sharpness.
+<li>Headsets include optics;&nbsp <a href="https://en.wikipedia.org/wiki/Optical_transfer_function">optics are not ideal</a>, losing contrast in finer details.
+</ul><br>
+
+For a 35ppd headset, images with spatial information above 16ppd are liable to aliasing.<br>
+If antialiasing improves VR, then original render to binocular 2D was incorrectly filtered.<br>
+Here are examples of filtering with nominally the same bandwidth (-3dB point),<br>
+but some keep more information nearer that -3dB point<br> and better reject (mis)information beyond that point:<br>
+<img src=3dB.gif><br><br>
+
+In digital signal  processing, filters are implemented by IIR or FIR.<br>  IIR is more tolerated for audio;  FIR is much preferred for imaging,<br> since it borrows information from all nearby samples.<br>  More samples enable more coefficients for e.g. sharper cutoff, so less blur without aliasing.<br>  More samples can be obtained either by rendering from original 3D space at higher resolution,<br> which is relatively expensive but includes more information near the 3dB spatial frequency,<br> or by (cheaper) upscaling binocular video ("supersampling") after rendering.<br>  Oversampling is now common for digital audio and built into many DACs;<br>  it adds no information but helps reduce misinformation.<br><br>
+
+I am no Nvidia VR processing expert;&nbsp filtering is reportedly relatively crude.<br>
+  My rule of thumb for static imaging filtering wants at least 5x5 convolution.<br>
+That means e.g. 7200x7200 to optimally render at 1440x1440 for 2880x2880 pixel displays.<br>
+Some of that can be traded between spatial and temporal filtering for video.<br><br>
+
+Because optics blur, optimal filtering wants sharpening AKA
+ <a href="https://www.eeweb.com/introduction-to-preemphasis-and-equalization-in-maxim-gmsl-serdes-devices/">preemphasis</a>:<br>
+<img src="https://www.eeweb.com/wp-content/uploads/articles-articles-introduction-to-preemphasis-and-equalization-in-maxim-gmsl-serdes-devices-1-1422321342.png"><br>
+Preemphasis pulses too wide provoke artifacts, e.g. visible oversharpening;<br>
+higher frequency oversampling enables finer preemphasis control.<br>
+
+
+
+</td></tr><tr><td align=center>
+maintained by <a href="https://github.com/blekenbleu">blekenbleu</a><br>
+</td></tr></table></div>
+
+</body></html>
