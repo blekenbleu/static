@@ -13,7 +13,7 @@ Moving static content to a separate GitHub repository reduces:
 ### Status
 - Deployed as [`/static/` folder](https://blekenbleu.github.io/static/)
  to [GitHub Pages](https://blekenbleu.github.io/):  
-    ![settings](static.gif)  
+    ![settings](images/static.gif)  
 - This technique is sometimes called a [GitHub Pages **project** site](https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages#types-of-github-pages-sites).  
 - `.nojekyll` stops *default* GitHub Action  
 
