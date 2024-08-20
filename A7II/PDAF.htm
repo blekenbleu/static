@@ -1,0 +1,71 @@
+<html>
+<head>
+<link rel='stylesheet' type='text/css' href='../my.css'>
+<style>table.my_table td { width:960px; }
+</style>
+
+<title>Autofocus</title>
+</head>
+
+<body>
+
+<div align=center><table class="my_table"><tr><td>
+
+<i><a href="index.html">back</a></i><br>
+<h2>Autofocus</h2>
+
+Contrast detect autofocus works by maximizing differences among adjacent pixels.<br>
+<a href=https://en.wikipedia.org/wiki/Autofocus#Phase_detection>Phase detect autofocus</a> works similarly to split prism,<br>
+comparing image slice pairs from different angles,<br>
+and calculating how much refocus is wanted to bring slice features <i>in phase</i>.<br>
+In theory, perfect phase detect autofocus can correct focus in one step.<br>
+Practically, mirrorless in-sensor phase detection is less precise,<br>
+wanting contrast detect autofocus for final correction.<br><br>
+
+While mirrorless AF is imprecise, direction for correction is known, minimizing hunting.<br>
+The camera must estimate how far the image-side focal plane<br>
+is going to move for a given command to the lens. If it has that information<br>
+ -- and there are several possible ways of making that happen,<br>
+<a href=https://www.dpreview.com/forums/thread/4351372>but I don't know which are actually used</a> -- then PDAF can work.<br>
+<a href=https://www.freepatentsonline.com/20110063484.pdf>Sony patent</a><br>
+<a href=https://www.dpreview.com/forums/post/66111298>Mirrorless vs. DSLR - PDAF</a><br>
+<a href=https://www.youtube.com/watch?v=BhuKuCEjAvM><b>Tony's PDAF video</b></a><br><br>
+
+&alpha;7RII PDAF cannot be turned off for native lenses, only its display.<br>
+<a href=https://blog.kasson.com/the-last-word/another-medium-tele-test-batis-af/>Autofocus optimizes red channel, not green.<br><br>
+
+<a href=https://www.dpreview.com/forums/thread/3993887#forum-post-57635449>SONY updated &alpha;7II and &alpha;7RII firmware after release to allow fast PDAF on adopted lenses.<br><br>
+
+<a href=https://briansmith.com/sony-a7rii-canon-ef-smart-adapter-tests/>
+Brian Smith's a7RII Canon EF Smart Adapter Tests (2017)</a><br>
+Metabones, Fotodiox, Viltrox<br>
+<a href=https://briansmith.com/sony-a7-a7r-lens-mount-adapters/><b>Update</b> includes Sigma MC-11</a><br>
+<a href=https://briansmith.com/setting-back-button-af-on-sony-a7-series-cameras/>Back Button AF on Sony a7</a><br>
+Activating Back-Button Focus:<br>
+1. Menu > Custom Settings > Pre-AF > Off<br>
+2. Menu > Custom Settings > Custom Key Settings > AEL Button > AF On.<br>
+3. Menu > Custom Settings > Custom Key Settings > AF/MF Button > AF/MF Ctrl Toggle.<br>
+4. Menu > Custom Settings > AF w/shutter > Off.<br><br>
+
+<a href=https://photographylife.com/reviews/sony-a7r-ii/4>&alpha;7R II Focus Performance and Metering</a><br><br>
+
+<a href=https://blog.kasson.com/the-last-word/sony-a7ii-cdaf-anisotropy/>Mechanisms for focus peaking differ from CDAF</a><br><br>
+
+Sony &alpha;7 PDAF sensors are in what would be the blue channel.<br><br>
+
+Sony &alpha;7RIII tweaks focus by contrast detection (CDAF)<br>
+after initial phase detection autofocusing (PDAF).<br>
+Conventional wisdom has that CDAF tweak at the taking aperture<br>
+so that focus shift in Sony lenses is not a problem.<br>
+The &alpha;7RIII does not support manual AF Adjustments for native lenses.<br>
+Conventional wisdom has that unnecessary, because CDAF tweaking.<br>
+<a href=https://blog.kasson.com/a7riii/a7riii-af-accuracy-with-the-70-200-4-and-100-400-lenses/>
+In fact, &alpha;7RIII corrects for focus shift <i>only in AF-S</i>, not AF-C.</a><br><br>
+
+Shot-to-shot focus variation is worse in continuous than single focus mode.<br>
+
+</td></tr><tr><td align=center> <hr>
+maintained by <a href="https://github.com/blekenbleu">blekenbleu</a><br>
+</td></tr></table></div>
+
+</body></html>
