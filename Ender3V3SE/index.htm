@@ -21,17 +21,24 @@ table.my_table td { width:600px; }
 <h2><a href="https://www.creality.com/products/creality-ender-3-v3-se">Ender 3 V3 SE</a></h2>
 <img src=ebay.jpg>
 <pre>
-Leveling is the basis of print quality.
+Leveling (tramming) is the essential first step in filament printing.
 Ender-3 V3 SE features a CR Touch sensor for auto leveling
 and a strain sensor for auto Z offset.
-No need to turn screws or pull a paper.</pre>
-"Sprite" extruder works well with PLA, PETG, and flexible TPU.<br>
+No need to turn screws or pull a paper.
+
+Because build surface may be both tilted and warped,
+a bed leveling mesh is generated.
+Bed should be preheated to operating temperature before mesh generation.
+</pre>
+"Sprite" direct drive extruder works well with PLA, PETG, and flexible TPU.<br>
+<i>SE (and KE) extruder differs from other Creality Sprite direct drives</i>,<br>
+although seemingly using <a href=https://www.crealityexperts.com/sprite-extruder-upgrade-buying-guide>Sprite Pro ribbon cable connection</a>.<br>
 Dual Z-axis drive;&nbsp Y-axis uses paired 8mm steel shafts.<br>
 <img src=specs.jpg><br>
 
 <h5>Other Ender-3 V3 SE links</h5><ul>
 <li><a href=https://pblvsky.gitbook.io/ender3v3se>Awesome Resources for Ender 3 V3 SE</a> with <a href=>PrusaSlicer Profile</a>
-<li><a href=https://github.com/ethylowy/Ender-3_v3_SE-KE_Mod/>Ender-3_v3_SE-KE_Mod</a>
+<li><a href=https://github.com/ethylowy/Ender-3_v3_SE-KE_Mod/>Ender-3_v3_SE-KE_Mod</a> with Klipper
 <li><a href=https://github.com/vser/The-Ender-3-V3-SE-Cookbook>The Ender 3 V3 SE Cookbook</a>
 </ul>
 
@@ -46,7 +53,10 @@ includes checks for square, calibration print:<br><img src=LevelTest.jpg><br>
 <div align=center><a href=100x100.htm><font color=red><i>a single 100x100x0.2mm z offset calibration pad</i></font></a></div>
 <li><a href=https://www.crealityexperts.com/ender-3-v3se-assembly-guide>assembly instructions better than Creality's</a>
 <li><a href=https://www.creality.com/pages/download-ender-3-v3-se?spm=..page_1934481.products_display_1.1>Creality Downloads</a>
-<li><a href=https://www.youtube.com/watch?v=t0yQjWxEaIM>Hot End jam - extruder and hot end disassembly video</a> | Kaki DIY
+<li><a href=Hotend.htm><b>Print Head</b></a><ul>
+	<li><a href=https://www.youtube.com/watch?v=t0yQjWxEaIM>Jam - extruder and hot end disassembly video</a> | Kaki DIY<br>
+	not shown: <a href=Hotend.htm#HB>short ptfe in heat break</a>..
+	<li><a href=https://www.youtube.com/watch?v=EjY6VUdX3_8>extruder disassembly and reassembly</a></ul>
 <li><a href="https://discord.com/channels/1120889480258269256/1120889481747251303">discord:&nbsp; #official_links</a>
 <li><a href=https://forum.creality.com/t/is-it-worth-installing-sonic-pad-on-ender-3-v3-se/5173>Creality community</a>
 <li>included memory card contains (printable?) .gcode files,<br> manual, video and Creality Print 4.3<ul>
@@ -70,11 +80,16 @@ includes checks for square, calibration print:<br><img src=LevelTest.jpg><br>
 <li><a href=https://www.amazon.com/gp/product/B0D3FD43W7>Clog Poke</a>
 <li><a href=https://www.aliexpress.us/item/3256806798813824.html>X-axis linear rail</a>
 <li><a href=https://www.aliexpress.us/item/3256806799328502.html>Dual Y-axis linear rail</a>
-<li><a href=https://all3dp.com/2/best-ender-3-v3-se-upgrade/>All-Metal Hot End with Ceramic Heating Kit</a>
+<li><a href=https://all3dp.com/2/best-ender-3-v3-se-upgrade/>All-Metal Hot End with Ceramic Heating Kit</a><br>
+	All-metal is not great for PLA, which wants PTFE lubrication and sticks to metal, provoking jams.<br>
+	Meanwhile, all-metal is liable to <a href=https://3dinsider.com/pros-and-cons-metal-hot-end/>heat creep</a>
+	SE hot end is PTFE-lined;&nbsp KE and K1 use <a href=https://www.youtube.com/watch?v=wNlRpjs4Mvg>all-metal hot end</a> with 60-W ceramic heating with dual part cooling fans.
 <li><a href=https://www.amazon.com/gp/product/B081DN6RM2>Metal Extruder Feeder</a>
 <li><a href=https://www.aliexpress.us/item/3256806662499826.html>Nebula Camera</a> &nbsp
 	<a href=https://www.youtube.com/watch?v=DDjUEX4mTYg>video review</a> &nbsp
     <a href=https://www.youtube.com/watch?v=36TO65rvWDQ>AI detection video</a>
+<li><a href=https://3dprintmentor.com/ender-3-v3-se-upgrades/>15 Best Ender 3 V3 SE Upgrades</a>
+<li><a href=https://store.creality.com/blog/ender-3-v3-se-upgrades>Ender-3 V3 SE Upgrades</a> | Creality Store blog
 </ul></details><br>
 
 <li><a href=Sonic.htm><b>Sonic Pad - Klipper</b></a> &nbsp <a href=https://blog.octoeverywhere.com/remote-access-for-the-creality-sonic-pad/>remote access</a><br>
