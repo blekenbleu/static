@@ -43,6 +43,10 @@ Dual Z-axis drive;&nbsp Y-axis uses paired 8mm steel shafts.<br>
 </ul>
 
 <h4><a href=Menu.htm>Control Panel, User Manual</a></h4>
+<h4><a href=#runout>Filament runout sensor</a></h4>
+<h4><a href=#Nebula><b>Nebula Camera</b></a></h4>
+<h4><a href=Sonic.htm><b>Sonic Pad - Klipper</b></a> &nbsp <a href=https://blog.octoeverywhere.com/remote-access-for-the-creality-sonic-pad/>remote access</a>
+	&nbsp <a href=https://www.creality.com/pages/download-creality-sonic-pad>downloads, documents</a></h4>
 <h4>Filament Loading and Unloading</h4>
 Tap "Extrude", and filament will flow out of the nozzle smoothly.<br>
 Tap "Retract", and the filament will exit quickly.<br><br>
@@ -75,6 +79,11 @@ includes checks for square, calibration print:<br><img src=LevelTest.jpg><br>
 <li></a><a href=https://www.amazon.com/gp/product/B0CP5TL417>Filament runout sensor</a><ul>
 	<li><a href=https://www.printables.com/model/932164-filament-runout-bracket-for-ender3-v3-se-ke>runout teflon tube bracket</a>
 	<br><img src=runoutBracket.jpg></ul>
+	<li><a href=https://www.reddit.com/r/klippers/comments/z1cr8t/ender_3v2_run_out_sensor_config/>Sonic Pad code</a> for filament runout sensor
+	<br>add to printer.cfg:<pre>
+[filament_switch_sensor filament_sensor]
+pause_on_runout: true
+switch_pin: !PA4</pre>
 <li><a href=https://www.amazon.com/gp/product/B0BYDVVM4L>PEI build plate</a>
 <li>glue stick? <a href=https://www.3dsourced.com/rankings/best-glue-sticks-for-3d-printing/>Bed Weld or Elmer's purple</a>
 <li><a href=https://www.amazon.com/gp/product/B0D3FD43W7>Clog Poke</a>
@@ -85,20 +94,10 @@ includes checks for square, calibration print:<br><img src=LevelTest.jpg><br>
 	Meanwhile, all-metal is liable to <a href=https://3dinsider.com/pros-and-cons-metal-hot-end/>heat creep</a>
 	SE hot end is PTFE-lined;&nbsp KE and K1 use <a href=https://www.youtube.com/watch?v=wNlRpjs4Mvg>all-metal hot end</a> with 60-W ceramic heating with dual part cooling fans.
 <li><a href=https://www.amazon.com/gp/product/B081DN6RM2>Metal Extruder Feeder</a>
-<li><a href=https://www.aliexpress.us/item/3256806662499826.html>Nebula Camera</a> &nbsp
-	<a href=https://www.youtube.com/watch?v=DDjUEX4mTYg>video review</a> &nbsp
-    <a href=https://www.youtube.com/watch?v=36TO65rvWDQ>AI detection video</a>
 <li><a href=https://3dprintmentor.com/ender-3-v3-se-upgrades/>15 Best Ender 3 V3 SE Upgrades</a>
 <li><a href=https://store.creality.com/blog/ender-3-v3-se-upgrades>Ender-3 V3 SE Upgrades</a> | Creality Store blog
 </ul></details><br>
 
-<li><a href=Sonic.htm><b>Sonic Pad - Klipper</b></a> &nbsp <a href=https://blog.octoeverywhere.com/remote-access-for-the-creality-sonic-pad/>remote access</a>
-	&nbsp <a href=https://www.creality.com/pages/download-creality-sonic-pad>downloads, documents</a><br>
-<li><a href=https://www.reddit.com/r/klippers/comments/z1cr8t/ender_3v2_run_out_sensor_config/>Sonic Pad code</a> for <a href=#runout>filament runout sensor</a>
-<br>add to printer.cfg:<pre>
-[filament_switch_sensor filament_sensor]
-pause_on_runout: true
-switch_pin: !PA4</pre>
 </ul><br>
 
 <a name=tune><h3></a><a href=calibrate.htm>Tuning and calibration</a></h3>
@@ -150,12 +149,16 @@ making this a completely reversable upgrade.
 A cupboard above the printer simplifies off-loading filament supply:<br>
 <img src=overhead.jpg></details><br>
 
-<details><summary><b>Nebula camera</b></summary>
-Printer must be on for Sonic pad to allow <configure>configure</code> for camera.<br>
+<details><summary><a href=https://www.aliexpress.us/item/3256806662499826.html><b>Nebula Camera</b></a> &nbsp
+	<a href=https://www.youtube.com/watch?v=DDjUEX4mTYg>runout detection video review</a> &nbsp
+    <a href=https://www.youtube.com/watch?v=36TO65rvWDQ>AI detection video</a></summary>
+<a name=Nebula>
+Printer must be on for Sonic pad to allow <configure>configure</code> for camera.<br></a>
 <img src=Nebula.jpg><br>
 <li>poor 1/4 thread in camera
 <li>bundled mini tripod not ideal
-<li><a href=https://www.amazon.com/dp/B0BSXPHGLY>Ultrapod Mini</a> conveniently velcroed to angle brace
+<li><a href=https://www.amazon.com/dp/B0BSXPHGLY>Ultrapod Mini</a> conveniently velcroed to angle brace<br>
+Spaghetti detection reportedly does not involve G-Code...<br>
 </details><br>
 
 <h4><a href=https://www.youtube.com/@crealityafter-sale5706/search?query="v3%20se"><b>Service tutorial videos</b></a>
