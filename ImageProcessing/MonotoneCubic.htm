@@ -1,0 +1,44 @@
+<html><head>
+<link rel='stylesheet' type='text/css' href='../my.css'>
+
+<title>Math.Net Monotone Cubic Fits over an interval</title>
+</head>
+
+<body>
+<div align=center>
+<table class="my_table"><tr><td style="padding-left:50">
+
+<font size=-1><i><a href="../">back</a></i></font>
+
+<a href="https://www.gixen.com/index.php" name="9e092736783d0da1dfd8413d57d10faf" target="_blank" >
+<img align=right src="https://www.gixen.com/images/gixenlink.gif" border="0" alt="Auction Sniper" title="Auction Sniper">
+</a>
+<h3>Math.Net Monotone Cubic Fits over an interval</h3><dl compact>
+<dt><b>Background</b>
+<dd><a href="https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir6453.pdf">NIST:&nbsp Algebraic constraints implying
+monotonicity for cubics</a><br>
+    <a href="https://rdrr.io/cran/MonoPoly/man/monpol.html">monpol: Monotone Polynomials</a> (in R)
+<dd><b>By observation, Cubic is monotonic over an interval if</b><ul>
+<li>end slopes are 0 or of the same sign
+<li>inflection point <i>in that interval</i> is 0 or of the same sign</ul>
+<dt><b>cubic:</b>&nbsp <code>y = a + b*x +c*x*x + d*x*x*x</code>; &nbsp <i>0 <= x <=1</i>
+<dd><i>cubic slope</i>: &nbsp <code>b + 2*c*x + 3*d*x*x</code>
+<dd><i>slope @0</i>: &nbsp <code>b</code>
+<dd><i>slope @1</i>: &nbsp <code>b + 2*c + 3*d</code>
+<dt><b>non-negative monotone end slopes product</b>
+<dd><code>b*(b + 2*c + 3*d) >= 0</code><br>
+<dt><b>inflection point</b>: &nbsp <code>2*c + 6*d*x = 0</code>
+<dd><code>x = - c/3*d</code>
+<dd>slope must must be checked for <code>0 > c/3*d > -1</code>
+<dt><a href=https://numerics.mathdotnet.com/api/MathNet.Numerics/Fit.htm><b>Fit.Curve()</b></a>
+<dd>based on <a href=https://github.com/mathnet/mathnet-numerics/issues/597#issuecomment-429628127>FindMinimum.OfScalarFunction</a>
+<dd>Implement a cubic function with coefficients constrained
+<dd>by returning full scale wrong sign values for wrong slopes.
+</dl>
+
+
+</td></tr><tr><td align=center>
+maintained by <a href="https://github.com/blekenbleu">blekenbleu</a><br>
+</td></tr></table></div>
+
+</body></html>
