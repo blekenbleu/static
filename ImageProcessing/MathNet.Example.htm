@@ -1,0 +1,196 @@
+<html><head>
+<link rel='stylesheet' type='text/css' href='../my.css'>
+
+<title>Math.Net NelderMeadSimplex Example</title>
+</head>
+
+<body>
+<div align=center>
+<table class="my_table"><tr><td style="padding-left:50">
+
+<font size=-1><i><a href="../">back</a></i></font>
+
+<a href="https://www.gixen.com/index.php" name="9e092736783d0da1dfd8413d57d10faf" target="_blank" >
+<img align=right src="https://www.gixen.com/images/gixenlink.gif" border="0" alt="Auction Sniper" title="Auction Sniper">
+</a>
+<h3>Math.Net NelderMeadSimplex <a href=https://github.com/davidjgall/NelderMeadSimplex/tree/master>Example</a></h3><dl compact>
+<dt><a href=https://stackoverflow.com/a/77144000><b>Background</b></a>
+<dd><pre>
+First: The initialGuess and initialPerturbation parameters work together to create an "initial simplex,"
+wherein the initialGuess localizes the search for the minimum to a set of values of the variables
+or "location on the function" where you, the researcher, think the minimum might be nearby;
+and the initialPerturbation sets a conceptual "size" for the "initial simplex."
+The Math.NET implementation will set the initialPerturbation for you if you omit it,
+but for functions containing multiple local minima it might be advantageous to specify this parameter
+so as to confine the search to a localized region.
+For example, if the function is a 3D description of a bathtub where z = f(x) + g(y),
+the initialGuess [x, y] should be chosen such that the search is
+within the bounds of the perimeter of the bathtub
+and the algorithm will most likely find a suitable initialPerturbation;
+however, if the function describes a kitchen sink
+having two 'tubs' (local minima) conjoined by a ridge,
+failing to set a small enough initialPerturbation
+might result in the "wrong" local minimum being found instead of the desired local minimum.
+
+Second: For the IObjectiveFunction EvaluateAt method,
+you need not involve yourself at that level of detail.
+Your task in implementing the NelderMeadSimplex.Minimum function
+is to write an equation function that takes in the parameters
+that control the equation of the curve
+over which you wish the NelderMeadSimplex.Minimum function to search
+in its quest for a set of values that fit your data. In other words,
+you have a preconceived idea of the form of the equation that "should" fit your data
+and you wish to find the parameters of that equation that best fit your data:
+
+    private double TheEquation(double a, double b, double c, double x)
+    {
+        // The desired form of the equation of the curve to fit to the data
+        // is chosen by the researcher and entered here. In this example we use
+        // y = a + b * e^(c * x) where e is Euler's number.
+
+        double y;
+        y = a + b * Math.Exp(c * x);
+        return y;
+    }
+The NelderMeadSimplex.Minimum function will then
+repetitively feed into this function values of the "point parameter"
+where the word "point" is used conceptually as a multi-dimensional construct
+consisting of the input parameters for the function you wrote above. In other words,
+the NelderMeadSimplex.Minimum function feeds your equation function
+trial values of its input parameters, then evaluates the function you wrote over and over,
+feeding in different trial values of the input parameters each time,
+until the output from your function settles down to "a minimum" (which will be explained below).
+The "point parameter" is just the list of input parameters to your function, the a, b, and c in my example:
+
+    private double TheEquation(double a, double b, double c, double x)
+
+Note, specifically, that the input parameter list excludes the variable x .
+Here, x is the domain variable over which your function will draw it's predictive curve
+and against which you'll need to test your research data.
+The equation is a continuous curve from which you need to extract point values at specific locations
+(in this case, values of x) for comparison with experimental data at those same values of x. In other words,
+the NelderMeadSimplex.Minimum function supplies the input parameters
+but not all of the input variables to your equation function
+and it's up to you to write a function to supply the remaining input variable(s).
+This new function is sometimes known as the "error function"
+which supplies the feedback into the NelderMeadSimplex.Minimum function
+so it can find it's way to a set of parameters that minimize the error
+between the predicted values from your equation and the actual research data values. To wit:
+
+Third: You cannot just feed this TheEquation function to the NelderMeadSimplex.Minimum function and expect results,
+because you also need to somehow feed in your research data
+and compare the value given by the equation nearby to the individual research data points
+to see how closely the equation values match the values of the research data.
+The NelderMeadSimplex.Minimum function will then feed particular trial values of
+the parameters controlling the TheEquation function
+until it finds a set of parameter values that give a "best fit" of the equation to the research data.
+One common method of evaluating the "closeness" of the equation to the research data points
+is the method of least squares. By summing the "nearness" (deviation, or error)
+of each research data point from the value of the equation "near" that point,
+an aggregate error--a single value--can be accumulated
+that serves as a measure of the overall "goodness of fit" of your equation,
+using a particular set of parameters, to the research data.
+
+So your task is to write a function that evaluates your equation
+at a series of points "near" to your research data points
+and aggregates the errors from testing your equation
+against each point in your research data set.
+The NelderMeadSimplex.Minimum function's job is to repetitively
+put in trial parameters to your equation in search of a minimization of this "goodness of fit"
+aggregate error value so as to yield a "best fit" set of parameters to your equation.
+So your equation function as written above needs to be called
+from within the error-reporting function which, in turn,
+is actually the function that your code supplies to the NelderMeadSimplex.Minimum function.
+
+The following code implements the sum of squares
+with the presumption that the experimental research data consists of 100 data points
+whose (x, y) values are stored in the two global arrays x[i] and y[i].
+The vector v is the "point parameter" discussed above which consists of three values
+for the trial parameter values of a, b, and c from the TheEquation function
+--these are the parameters whose values the NelderMeadSimplex.Minimum function
+will eventually report back to you when it finds values
+that minimize the output from this SumOfSquaresOfErrors function.
+Note that the TheEquation function is evaluated at the same x[i] values as the data points
+--this is just one way (of many ways) to define the "nearness" of the function to the data.
+In some applications, a more sophisticated method of establishing "nearness"
+may be required other than just the vertical offset of the data point
+from the function evaluated at the same ordinate. Also,
+be aware that there are libraries that implement these error functions much more robustly;
+I've simply written this one for illustrative purposes, but a working implementation
+should use one of the available library "norm" functions:
+
+private double SumOfSquaresOfErrors(Vector<double> v)
+{
+    double err = 0;
+    for (int i = 0; i < 100; i++)
+    {
+        double y_val = TheEquation(v[0], v[1], v[2], x[i]);
+        err += Math.Pow(y_val - y[i], 2);
+    }
+    return err;
+}
+Finally, the implementation of the NelderMeadSimplex.Minimum function seems almost trivial after all the foregoing.
+First, declare that your error function (in this case, SumOfSquaresOfErrors)
+is the "value" of a new variable of type IObjectiveFunction;
+I like to think of this as nothing more than a pointer to the function,
+a way of telling the NelderMeadSimplex.Minimum function
+where it can find the objective function in order to call it,
+and from which to obtain the value of the error which NelderMeadSimplex.Minimum is charged with trying to minimize.
+This becomes the first argument to the NelderMeadSimplex.Minimum function.
+While it is possible to construct an object of type NelderMeadSimplex and work with that,
+I prefer the available static function invocation--the usage is the same.
+
+Second, construct a vector that contains the initialGuess values
+of the (three, in this example) parameters that determine
+the specific shape of the curve given by your equation.
+In my RunSolver function below, these (three) parameters are passed in
+as the vector called Coefficients and are generated elsewhere (or hard-coded as in this example).
+This is the second parameter to the NelderMeadSimplex.Minimum function.
+If an initialPertubation is used, it would become the third parameter.
+I leave construction of such a vector to you,
+but it should have the same number of elements as the initialGuess vector
+since it is merely a declaration of how much (or how little) the NelderMeadSimplex.Minimum function
+should offset the next set of guess values from the initialGuess values on subsequent invocations of the error function.
+
+The remaining two parameters to the NelderMeadSimplex.Minimum function are self-explanatory.
+
+The output from the NelderMeadSimplex.Minimum function is of type MinimizationResult
+and should be captured into a variable of that type from which
+the outputs are properties that can be extracted in the usual way.
+The fitted parameters for your equation--the results for which you undertook all this--
+are stored in the vector called MinimizationResult.MinimizingPoint
+and the final or "minimized" "goodness of fit" value returned from your error function
+(SumOfSquaresOfErrors) is stored as the MinimizationResult.FunctionInfoAtMinimum.Value.
+Extract these properties from your MinimizationResult variable and use or display them as needed.
+In the example code, I store these results in individual global variables for use elsewhere,
+as well as using them to construct a data set of y_out[i] values
+for graphic display of the fitted curve (as a series of connected line segments)
+on the same field on which the research data points are plotted.
+
+private void RunSolver(Vector<double> Coefficients)
+{
+    //NelderMeadSimplex implementation begins here
+    IObjectiveFunction objFunc = ObjectiveFunction.Value(SumOfSquaresOfErrors);
+    MinimizationResult minResult = NelderMeadSimplex.Minimum(objectiveFunction: objFunc,
+			initialGuess: Coefficients, convergenceTolerance: 1e-5, maximumIterations: 10000);
+    //NelderMeadSimplex implementation ends here
+
+    // Outputs
+    FitCfs = minResult.MinimizingPoint;    // Fitted Coefficients
+    ErrorValue = minResult.FunctionInfoAtMinimum.Value;
+    for (int i = 0; i < 100; i++) y_out[i] = TheEquation(FitCfs[0], FitCfs[1], FitCfs[2], x[i]);
+
+    DisplayResults(minResult.MinimizingPoint.ToString());
+    graphicsForm.UpdateData(x, y, y_out, minResult, a, b, c);
+}
+Feel free to download, use, fork, and/or modify the linked code for your own purposes without restriction.
+
+</pre>
+</dl>
+
+
+</td></tr><tr><td align=center>
+maintained by <a href="https://github.com/blekenbleu">blekenbleu</a><br>
+</td></tr></table></div>
+
+</body></html>

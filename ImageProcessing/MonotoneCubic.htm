@@ -30,10 +30,13 @@ monotonicity for cubics</a><br>
 <dt><b>inflection point</b>: &nbsp <code>2*c + 6*d*x = 0</code>
 <dd><code>x = - c/3*d</code>
 <dd>slope must must be checked for <code>0 > c/3*d > -1</code>
-<dt><a href=https://numerics.mathdotnet.com/api/MathNet.Numerics/Fit.htm><b>Fit.Curve()</b></a>
+<dt><a href=https://numerics.mathdotnet.com/api/MathNet.Numerics/Fit.htm><b>Math.Net.Fit.Curve()</b></a>
 <dd>based on <a href=https://github.com/mathnet/mathnet-numerics/issues/597#issuecomment-429628127>FindMinimum.OfScalarFunction</a>
 <dd>Implement a cubic function with coefficients constrained
 <dd>by returning full scale wrong sign values for wrong slopes.
+<dt><ul>
+<li><a href=MathNet.Fit.Curve.htm>Math.Net.Fit.Curve uses NelderMeadSimplex</a>
+<li><a href=MathNet.Example.htm>Math.Net NelderMeadSimplex Example</a>
 </dl>
 
 

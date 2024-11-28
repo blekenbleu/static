@@ -1,0 +1,59 @@
+<html><head>
+<link rel='stylesheet' type='text/css' href='../my.css'>
+
+<title>Math.Net.Fix.Curve uses NelderMeadSimplex</title>
+</head>
+
+<body>
+<div align=center>
+<table class="my_table"><tr><td style="padding-left:50">
+
+<font size=-1><i><a href="../">back</a></i></font>
+
+<a href="https://www.gixen.com/index.php" name="9e092736783d0da1dfd8413d57d10faf" target="_blank" >
+<img align=right src="https://www.gixen.com/images/gixenlink.gif" border="0" alt="Auction Sniper" title="Auction Sniper">
+</a>
+<h3>Math.Net.Fix.Curve uses NelderMeadSimplex</h3><dl compact>
+<dt><b>Background</b>
+<dd>For my application, <a href=https://github.com/mathnet/mathnet-numerics/blob/f19641843048df073b80f6ecfcbb229d3258049b/src/Numerics/Fit.cs#L344><code>Fit.Curve()</code></a>
+ threw exceptions,<br>
+because <a href=https://en.wikipedia.org/wiki/Nelder%E2%80%93Mead_method#Termination><code>tolerance</code></a> was not satified for <code>maxIterations - 20</code>.<br>
+Setting <code>tolerance = 0.00005</code> produces reasonable matches to cubic fit within 300 iterations...<br>
+Straight line fits solution is used for <code>initialGuess0, initialGuess1</code>, with others = 0;
+<font size = +1><pre>
+public static (double P0, double P1, double P2, double P3) Curve(double[] x, double[] y, Func<double, double, double, double, double, double> f,
+		double initialGuess0, double initialGuess1, double initialGuess2, double initialGuess3,
+		double tolerance = 1e-8, int maxIterations = 1000)
+        {
+            return FindMinimum.OfFunction((p0, p1, p2, p3) => Distance.Euclidean(Generate.Map(x, t => f(p0, p1, p2, p3, t)), y),
+					 		initialGuess0, initialGuess1, double initialGuess2, double initialGuess3,
+							tolerance, maxIterations);
+        }
+
+public static (double P0, double P1, double P2, double P3) OfFunction(Func<double, double, double, double, double> function,
+					double initialGuess0, double initialGuess1, double initialGuess2, double initialGuess3,
+	 				double tolerance = 1e-8, int maxIterations = 1000)
+{
+            var objective = ObjectiveFunction.Value(v => function(v[0], v[1], v[2], v[3]));
+            var result = NelderMeadSimplex.Minimum(objective,
+					CreateVector.Dense(new[] { initialGuess0, initialGuess1, initialGuess2, initialGuess3 }),
+					tolerance, maxIterations);
+            return (result.MinimizingPoint[0], result.MinimizingPoint[1], result.MinimizingPoint[2], result.MinimizingPoint[3]);
+}
+
+public static MinimizationResult Minimum(IObjectiveFunction objectiveFunction, Vector<double> initialGuess,
+								 double convergenceTolerance=1e-8, int maximumIterations=1000)
+{
+    var initalPertubation = new LinearAlgebra.Double.DenseVector(initialGuess.Count);
+    for (int i = 0; i < initialGuess.Count; i++)
+    {
+        initalPertubation[i] = initialGuess[i] == 0.0 ? 0.00025 : initialGuess[i] * 0.05;
+    }
+    return Minimum(objectiveFunction, initialGuess, initalPertubation, convergenceTolerance, maximumIterations);
+}</pre></font>
+
+</td></tr><tr><td align=center>
+maintained by <a href="https://github.com/blekenbleu">blekenbleu</a><br>
+</td></tr></table></div>
+
+</body></html>
