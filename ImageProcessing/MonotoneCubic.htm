@@ -13,14 +13,16 @@
 <a href="https://www.gixen.com/index.php" name="9e092736783d0da1dfd8413d57d10faf" target="_blank" >
 <img align=right src="https://www.gixen.com/images/gixenlink.gif" border="0" alt="Auction Sniper" title="Auction Sniper">
 </a>
+
+<font size=+1>
 <h3>Math.Net Monotone Cubic Fits over an interval</h3><dl compact>
 <dt><b>Background</b>
-<dd><a href="https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir6453.pdf">NIST:&nbsp Algebraic constraints implying
-monotonicity for cubics</a><br>
+<dd><a href="https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir6453.pdf">NIST:&nbsp constraints for
+cubic monotonicity</a><br>
     <a href="https://rdrr.io/cran/MonoPoly/man/monpol.html">monpol: Monotone Polynomials</a> (in R)
-<dd><b>By observation, Cubic is monotonic over an interval if</b><ul>
+<dd><b>By observation, Cubic is monotonic if</b><ul>
 <li>end slopes are 0 or of the same sign
-<li>inflection point <i>in that interval</i> is 0 or of the same sign</ul>
+<li>inflection point <i>in interval</i> is 0 or of the same sign</ul>
 <dt><b>cubic:</b>&nbsp <code>y = a + b*x +c*x*x + d*x*x*x</code>; &nbsp <i>0 <= x <=1</i>
 <dd><i>cubic slope</i>: &nbsp <code>b + 2*c*x + 3*d*x*x</code>
 <dd><i>slope @0</i>: &nbsp <code>b</code>
@@ -31,14 +33,15 @@ monotonicity for cubics</a><br>
 <dd><code>x = - c/3*d</code>
 <dd>slope must must be checked for <code>0 > c/3*d > -1</code>
 <dt><a href=https://numerics.mathdotnet.com/api/MathNet.Numerics/Fit.htm><b>Math.Net.Fit.Curve()</b></a>
+	<i>interative optimization</i>
 <dd>based on <a href=https://github.com/mathnet/mathnet-numerics/issues/597#issuecomment-429628127>FindMinimum.OfScalarFunction</a>
-<dd>Implement a cubic function with coefficients constrained
-<dd>by returning full scale wrong sign values for wrong slopes.
+<dd>Implement a cubic function, constraining optimized coefficients
+<dd>by returning full scale values for non-monotonic slopes.
 <dt><ul>
 <li><a href=MathNet.Fit.Curve.htm>Math.Net.Fit.Curve uses NelderMeadSimplex</a>
 <li><a href=MathNet.Example.htm>Math.Net NelderMeadSimplex Example</a>
 </dl>
-
+</font>
 
 </td></tr><tr><td align=center>
 maintained by <a href="https://github.com/blekenbleu">blekenbleu</a><br>
