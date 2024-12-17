@@ -52,13 +52,12 @@ Sadly, delegates are often coded in <a href="https://learn.microsoft.com/en-US/d
 resulting in more-or-less blind copy/pasting code from <i>other</i> working fragments.
 
 <a name=CCEx><dt><br><b>SimHub C# Custom Expressions</b></a>
-<dd>SimHub property values can also be set using C# custom expressions.<br>
-  Enable <b>C# expressions</b> via <img align=middle src="../../MIDI/plugin/plugins.jpg"><b>Additional plugins</b> &nbsp <b>More...</b>.<br>
+<dd>SimHub property values can also be set using C#, which by default are hidden in the UI.<br>
   SimHub support for these C# expressions preceded NCalc, JavaScript, plugin SDK, etc<br> and is kept for backward compatibility.<br>
   SimHub stores them in <code>PluginsData/*/DataCorePlugin/CustomExpressions</code><br>
   Those to be used in <i>all</i> games are stored in <code>PluginsData/Common/DataCorePlugin/CustomExpressions</code><br>
   As of 7.04.8b4, these are evaluated when games are loaded,<br> before other plugins are loaded.
-<dt><br>SimHub C# Custom Expressions <a href="https://discord.com/channels/299259397060689920/306850703299575809/703991353683476500">special trick for a static</a>:
+<dd><br><b>SimHub C# Custom Expressions <a href="https://discord.com/channels/299259397060689920/306850703299575809/703991353683476500">special trick for a static</a></b>:
 <dd><pre>
 init(value);    
 return KKDash;
@@ -74,7 +73,7 @@ static void init(global::SimHub.Plugins.PluginManager pluginManager){
             KKDash = (KKDash + 1) % 3;
         });
 </pre>    
-<dt><br><i><b>Question</b></i>:&nbsp are Custom Expressions evaluated
+<dd><br><i><b>Question</b></i>:&nbsp are Custom Expressions evaluated
  at 60Hz or (more likely) only when referenced?<br>
 <dd>Properties set or referenced <i>only</i> in a plugin's
  <code>Init{}</code> section impose minimal overhead.
