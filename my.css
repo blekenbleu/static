@@ -10,7 +10,6 @@ table.my_table td {
 }
 h2 {
   color: #0000C4;
-
 }
 h3 {
   color: #006600;
@@ -18,7 +17,7 @@ h3 {
 ul, h3, h4, h5, h6 {
   margin-bottom: 0;
 }
-ul, dl {
+ul, dl, ol {
   margin-top: 0;
 }
 body {
