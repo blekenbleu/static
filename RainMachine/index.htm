@@ -43,7 +43,7 @@ table.my_table td { width:670px; }
 <li>bedroom side rear
 </ol>
 Zones can be renamed in web browser without going into EDIT
-<img width=640 src=8FerebeePictometry.jpg>
+<br><img width=640 src=8FerebeePictometry.jpg>
 
 <dt><br><a href=https://support.rainmachine.com/hc/en-us/sections/206170128-Programs->program</a>
 <a href=RainMachineProgram.jpg>screen</a>
@@ -64,6 +64,170 @@ Zones can be renamed in web browser without going into EDIT
 <i>not</i> <a href=https://www.wunderground.com/dashboard/pws/KSCOKATI12>Wunderground</a>,
 <br>requiring an Ambient Weather station instead of AcuRite.
 </dl>
+
+<details><summary><b>Rain Bird sprinkler maintenance</b></summary>
+<h4>Three common failure modes</h4>
+<dl>
+<dt>leakage - riser seal failure
+<dd>sand - maintain a small moat around heads to reduce wear
+<br>can replace riser without fully digging up
+<dt>mower damage
+<dd>bury deeper
+<dt>nozzle failure
+<dd>they are replaceable
+</dl>
+<h4>Two flavors</h4><dl>
+<dt><a href=https://www.sprinklerwarehouse.com/rain-bird-sam-rotor-4-in-5004-pc-sam>5004 with check valve</a>
+<dd>3/4" pipe thread, nozzle inserts in head
+<br>head is integrated with riser
+<dt><a href=https://www.sprinklerwarehouse.com/amfile/file/download/file/17596/>1804</a>
+<dd>1/2" pipe thread, <a href=https://www.sprinklerwarehouse.com/amfile/file/download/file/27853/>head with nozzle</a> screws into riser
+</details>
+
+<details><summary><b>History</b></summary>
+<a name=history>
+<pre>
+2019 RainMachine Mini-8</a>
+Powered from golf cart outlet..Supplied 24V 750mA transformer measures 31.2V open circuit
+(ESP-6 transformer measures 30.3V, rated 26.5V 40VA)
+Mini-8 runs OpenWRT on AR9331
+http://linuxgizmos.com/tiny-wifi-loaded-openwrt-com-starts-at-12/
+https://wiki.openwrt.org/toh/tp-link/tl-wr703n/ar9331_pinout
+https://www.openhacks.com/uploadsproductos/ar9331_datasheet.pdf
+Atheros AR1311 seems to be a newer revision of AR9331 
+
+At power on, wifi symbol flashes, then dark while pausing,
+then 7 segment display circulates for awhile
+then buttons light
+then all goes dark
+
+Needed a reset (press 5 seconds, wait for beep) to display "A".
+Initial Wi-Fi setup here:
+RainMachine Mini-8 Setup - YouTube
+https://www.youtube.com/watch?v=XVfDnEg0hLk
+
+Unit was previously configured by/for some Texas location..
+Setup is not sequential, must be navigated
+First set iOS WiFi to rainmachine
+then devices in app - password setting requires enter key to register
+then settings in app for real wifi setup 192.168.1.23
+then app hangs when trying to access device - firmware updating?
+(button lights cycle)
+Mistake to allow auto detect location - 2 Ferebee instead of 8 Ferebee..
+Access from chrome browser works - cmR18722!
+Enabled Beta updates and selected 4.0.945
+Setup restrictions to not water Sunday or 00:01-10:01 Monday
+
+Direct access from web browser seems nicer than iOS app..
+
+Sprinkler controller is mounted on wall facing West, a no-no..
+
+Transferred (except start time) from RainBird ESP-6
+Prog A: On Wed+Fri+Sun start (60 minutes before sunrise)
+Zone minutes
+1 01  drip
+2 10 garage front
+3 10 bedroom front
+4 10 garage rear
+5 0   same as 4
+6 10 bedroom rear
+
+Irrigation controller transformer gets power from golf cart circuit breaker.
+As hoped, Mini-8 decided no sprinkling needed this week..
+ESP ground connected to common; spliced into Mini-8 rain sensor common.
+Rain sensor configured normally closed (opens when rain is detected)
+
+Aug 13, 2019
+------------------
+ Changed program from Wed+Fri+Sun to every 2 days,
+so perhaps 7/14 instead of 6/14 potential watering every 2 weeks.
+Consequently, reduce times by 1/7 (multiply RainBird values by 6/7)
+
+zone sq ft  min:seconds
+1        200 0:51  drip
+2      1700 8:34  garage front
+3      1000 8:34  bedroom front
+4      4350 8:34  garage rear
+5      (0)    same as 4
+6      6000 8:34  bedroom rear
+
+Configured custom zone flow rates to force suggested program times
+17032 sq ft, according to plat,
+front yard approx 40x25  ~ 1000
+garage side approx 15x90 + 25x15 ~ 1350+375 ~ 1700
+rear gar side 30x112 + 43 x 23 ~ 3360 + 989 ~ 4350
+rear br side   68.5 x 88 ~ 6028
+approx 13000 grass
+
+Aug 14
+---------
+Program soaked, but still front runoff.
+Increased zone 2 & 3 slope
+Moved zone 6 before 4 for more consistent sequence.
+Much more yard watered on bedroom side...
+
+Property ID (PIN) R600 020 000 0655 0000
+
+Aug 15--------- - no watering today, because every 2 days
+no water scheduled tomorrow because adaptive frequency skip
+changed program from every 2 days to daily
+then no water scheduled tomorrow because expected 1/2 inch rain
+home graph shows 62% watering today (but too late for it to run)
+Zone 1 shows much greater field capacities than others for the same soil type,
+presumably to compensate for difference between grass and trees/shrubs,
+which want more water but less often... 
+
+"Better results on saving water can be obtained
+ if your program frequency is less than 3 days."
+
+Per <a href=https://support.rainmachine.com/hc/en-us/articles/228001248-Soil-Types>bottle test</a>, about 1/4 silt, 3/4 sand -> "Sandy Loam"
+-  but that was mostly from sod root layer
+In Zones, changing soil types from silty clay to sandy loam
+ did NOT change recommended daily times...
+Increased all Minimum Rollover Threshold (from 0),
+ more in rear to avoid e.g. 2 second cycles
+and allow rear lawn sprinklers time to rotate..
+
+Aug 16
+---------
+83% today, because neither rain nor watering yesterday.
+No soak, presumably because soil type changed from silty clay with 0.15
+to sandy loam with 0.4 intake rate.  In reality,
+ despite bottle test, soil is mostly silt on top with sand under,
+ so should probably set custom type but instead increased slopes to high..
+
+Sep 4
+--------
+Switched zone 6 to alternate days, increased time
+(some grass patched browned last week)
+
+Sep 24
+---------
+Zone 4 wraps around behind living room, bumped to program 3 (alt days)
+  and zone 6 Precip rate (2 in/hr)
+Programs ran @ 11 AM (Monday after mowing)
+
+9 May 2022
+----------
+ordered Rain Bird
+ <a href=https://www.sprinklerwarehouse.com/rain-bird-5000-rotor-4-in-5004-fc>5004-FC</a> (x2),
+ <a href=https://www.sprinklerwarehouse.com/rain-bird-sam-rotor-4-in-5004-pc-sam>5004-PC-SAM</a> (x3),
+ <a href=https://www.sprinklerwarehouse.com/rain-bird-r-van14-rotary-and-body-bundle-1804sprs-rvan14>1804SPRS-RVAN14</a> (x4)
+
+20 May 2022
+-----------------
+Zone 4 replaced full circle head, reduced nozzle from 5.0 to 4.0,
+with much less screw protrusion, deflecting less water near the head.
+Leaking Zone sprinklers at curb west of driveway
+had been replaced June 2019.. but NOT SAM; replaced now by 1804SPRS-RVAN14s
+RVAN adjust: left is fixed (see line) push down and rotate rotor for right side.
+<a href=https://www.youtube.com/watch?v=xJbCmR1-T9g>Collar below adjusts pressure/distance</a>.
+
+Spread lime on front yard bare spots, tweaked RVANs for more coverage.
+Sprinkler by front bedroom window is too strong...
+Changed zone 2 front slope from high to very high for longer soaks
+and hopefully less  runoff...
+</pre></details>
 
 </td></tr><tr><td align=center>
 maintained by <a href="http://github.com/blekenbleu">blekenbleu</a><br>
