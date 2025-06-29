@@ -45,8 +45,13 @@ Dual Z-axis drive;&nbsp Y-axis uses paired 8mm steel shafts.<br>
 <h4><a href=Menu.htm>Control Panel, User Manual</a></h4>
 <h4><a href=#runout>Filament runout sensor</a></h4>
 <h4><a href=#Nebula><b>Nebula Camera</b></a></h4>
-<h4><a href=Sonic.htm><b>Sonic Pad - Klipper</b></a> &nbsp <a href=https://blog.octoeverywhere.com/remote-access-for-the-creality-sonic-pad/>remote access</a>
-	&nbsp <a href=https://www.creality.com/pages/download-creality-sonic-pad>downloads, documents</a></h4>
+<h3><a href=Sonic.htm><b>Sonic Pad - Klipper</b></a> &nbsp <a href=https://blog.octoeverywhere.com/remote-access-for-the-creality-sonic-pad/>remote access</a>
+	&nbsp <a href=https://www.creality.com/pages/download-creality-sonic-pad>downloads, documents</a></h3><ul>
+<li><a href=https://www.youtube.com/playlist?list=PLC4bOo0vesmLWWEeBWwv6oR4QzhP-0ctf><b>Ricky Impey Sonic Pad Basics - YouTube</b></a>
+<li><a href=https://www.youtube.com/playlist?list=PLC4bOo0vesmLKXC2iWGTRBbbjXiHDj3Xz><b>Ricky Impey Sonic Pad Intermediate - <i>2024</i></b></a>
+<li><a href=https://www.youtube.com/watch?v=Ji3Biv8v24o><b>Tech by Hesselbech:&nbsp; Orca with Sonic Pad</b> - <i>Nov 2023 YouTube</i></a>
+</ul>
+
 <h4>Filament Loading and Unloading</h4>
 Tap "Extrude", and filament will flow out of the nozzle smoothly.<br>
 Tap "Retract", and the filament will exit quickly.<br><br>
@@ -105,9 +110,17 @@ switch_pin: !PA4</pre>
 <h3><a href=../CAD/index.htm>Onshape CAD</a></h3>
 <h3><a href=orca.htm>OrcaSlicer</a> &nbsp <a href=https://github.com/galadriann/e3v3se-orca-profile>Ender 3 V3 SE profile</a></h3>
 <a href=https://the3dprinterbee.com/creality-ender-3-v3-orca-slicer-settings/>Creality Ender-3 V3 - Orca Slicer Settings &amp; Profile</a><br>
-"You do not connect Klipper to OrcaSlicer,<br> &nbsp you connect OrcaSlicer to Klipper."<br> 
+"You do not connect Klipper to OrcaSlicer,<br> &nbsp you connect OrcaSlicer to Klipper."<ul>
+<li><a href=https://www.youtube.com/watch?v=Casciq9ehTk><b>Rickey Impey Orca Slicer for Beginners - YouTube</b></a>
+<li><a href=https://www.youtube.com/watch?v=cquTCpz1V74><b>Orca Slicer getting started guide - Teaching Tech YouTube</b></a>
+</ul><pre>Changes in Orca for Sonic Pad:
+ change the output code to Klipper, and link the printer's Sonic Pad IP address and port number.
+Accelerations should not need to be touched.
+You should be set to NOT output that data to the gcode
+ so it just uses Sonic Pad defaults for the printer.</pre>
+<a href=https://forum.creality.com/t/new-sonic-pad-on-v3-se/23593>Orca with Sonic Pad on V3 SE - Creality forum</a>
 
-<br><details><summary><a href=https://help.prusa3d.com/category/prusaslicer_204><b>PrusaSlicer</b></a></summary>
+<p><details><summary><a href=https://help.prusa3d.com/category/prusaslicer_204><b>PrusaSlicer</b></a></summary>
 	"<i>easiest to learn, and very feature rich if you need it</i>"<br>
 <img width=640 src=PrusaSlicer.png><br>
 <a href="https://github.com/suchmememanyskill/PrusaSlicer-Ender3-v3-SE-Config">A
@@ -119,9 +132,9 @@ switch_pin: !PA4</pre>
 	<br>compare to <a href=https://www.printables.com/model/699208-creality-ender-3-v3-ke-slicer-profiles-for-prusasl/files>his KE profile</a>
     <br>compare to <a href=https://github.com/eb2292/enderv3ke-prusaslicer>EnderV3 KE PrusaSlicer <b>Klipper</b> Profile</a>
 	<br><a href=https://all3dp.com/2/prusaslicer-klipper-simply-explained/>configure PrusaSlicer for Klipper</a> | All3DP
-</ul></details>
+</ul></details></p>
 
-<br><details><summary><font size=+1 color = #AC0000><b>MAD gantry braces</b></font></summary>
+<details><summary><font size=+1 color = #AC0000><b>MAD gantry braces</b></font></summary>
 <a name=MAD>MAD</a> is for Man-aided design, not to be confused with CAD.<br>
 Modifying 3D printers with 3D-printed parts is seemingly traditional;<br>
 slinky rods are likely heavier and less rigid than 20mm aluminum angle.<br><br>
