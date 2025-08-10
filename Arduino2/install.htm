@@ -1,0 +1,51 @@
+<html>
+<head>
+<link rel='stylesheet' type='text/css' href='../my.css'>
+
+<title>Arduino 2 Installation</title>
+</head>
+
+<body>
+<div align=center>
+<table class="my_table"><tr><td> 
+<font size=-1><i><a href="../">back</a></i></font>
+
+<h3><a href=https://www.arduino.cc/en/software/#ide>Arduino 2</a> Installation</h3>
+<i><a href=https://forum.seeedstudio.com/t/portable-arduino-ide/274046>@cgwaltney</a>'s Arduino IDE 2 NOT in <code>Appdata</code> failed for me.</i>
+<dl compact>
+<dt>download <a href=https://downloads.arduino.cc/arduino-ide/arduino-ide_2.3.6_Windows_64bit.zip>Windows ZIP file</a>
+<dd>extract <code>arduino-ide_2.3.6_Windows_64bit.zip</code> in new folder of choice.
+<br>After reboot, launch <code>Arduino IDE.exe</code>,<br>&emsp;
+	 which sprinkles content at least in <code>C:\Users%username%\</code>:<ul>
+<li><code>.arduinoIDE (262KB)</code>
+<li><pre>AppData/Local/Arduino15: (400MB)
+cache               library_index.json.sig    package_index.json.sig  staging
+inventory.yaml      package_esp32_index.json  packages                tmp
+library_index.json  package_index.json        preferences.txt
+
+'AppData/Roaming/Arduino IDE': (68KB)
+2025-08-10_log.log
+
+AppData/Roaming/arduino-ide: (7.2MB)
+'Code Cache'         IndexedDB        Preferences          blob_storage
+ DawnGraphiteCache  'Local State'    'Session Storage'     config.json
+ DawnWebGPUCache    'Local Storage'  'Shared Dictionary'   databases
+ GPUCache            Network          WebStorage
+</pre></ul>
+<dt><code>Arduino IDE.exe</code> oopsie
+<dd>refused to run:<pre>Failed to start the electron application
+Error: EISDIR: illegal operation on a directory, realpath 'R:\Temp'</pre>
+<br>.. where <Code>R:</code> is a RAM drive.
+<br>However, <code>Arduino IDE.exe</code> runs from a bash shell.
+
+<dt><br>Fight losing battles with Arduino 2 UI
+<br>- it keeps not doing anything responsive
+<br>- quitting and restarting eventually got Serial Monitor running;
+<br> &emsp; insists on having board defined..??
+
+</dl>
+
+</td></tr><tr><td align=center>
+maintained by <a href="https://github.com/blekenbleu">blekenbleu</a><br>
+</td></tr></table></div> 
+</body></html>
