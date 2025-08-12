@@ -1,0 +1,11 @@
+WARNING: library MIDIUSB claims to run on avr, sam, samd architecture(s) and may be incompatible with your current board which runs on stm32 architecture(s).
+In file included from F:\Ruby32-x64\msys64\tmp\.arduinoIDE-unsaved2025712-14380-1fz3vo8.jnvw\MIDIUSB_loop\MIDIUSB_loop.ino:9:
+c:\Users\bleke\Documents\Arduino\libraries\MIDIUSB\src/MIDIUSB.h:18:2: error: #error MIDIUSB can only be used with an USB MCU.
+   18 | #error MIDIUSB can only be used with an USB MCU.
+      |  ^~~~~
+c:\Users\bleke\Documents\Arduino\libraries\MIDIUSB\src/MIDIUSB.h:78:2: error: #error "Unsupported architecture"
+   78 | #error "Unsupported architecture"
+      |  ^~~~~
+exit status 1
+
+Compilation error: exit status 1
