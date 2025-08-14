@@ -14,6 +14,10 @@
 <dt>Arduino IDE 2 with 
  <a href=https://github.com/stm32duino/Arduino_Core_STM32>STM32 core 2.8.x</a>
  supports <a href=https://github.com/stm32duino/Arduino_Core_STM32/wiki/How-to-debug>debugging</a>
+<dd>Crap UI employs electron, refuses to launch with <a href=https://ltr-data.se/opencode.html#ImDisk>ImDisk</a>
+<br>my workaround:&nbsp; launch from <code>msys64/ucrt64.exe</code> bash terminal:
+<br> &emsp; <code>$ Arduino2/ArduinoIDE.exe</code>
+<br>Alternatively, replace ImDisk by <a href=https://github.com/tmcdos/ramdisk><b>tmdcos / ramdisk</b></a>
 
 <dt><br><b>The plan</b>
 <dd>add USB MIDI for STM32
@@ -28,7 +32,8 @@
 	How to program and debug the STM32 using the Arduino IDE and ST-Link</a>
 
 <br>- git repository
-<br>- add libraries, starting with <a href=MIDIUSB.htm>MIDIUSB</a>
+<br>- add libraries, <b>starting with <a href=MIDIUSB.htm>MIDIUSB</a>
+and <a href=MIDIUSB.htm#USBLibrarySTM32>USBLibrarySTM32</a></b>
 </dl>
 
 <h4><a href=https://visualgdb.com/tutorials/arm/st-link/gdbserver/>Visual Studio, VisualGDB ($99?) and ST-Link for STM32duino</a></h4>

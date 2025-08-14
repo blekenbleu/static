@@ -1,0 +1,32 @@
+<html>
+<head>
+<link rel='stylesheet' type='text/css' href='../my.css'>
+
+<title>USBSerial</title>
+</head>
+
+<body>
+<div align=center>
+<table class="my_table"><tr><td> 
+<font size=-1><i><a href="MIDIUSB.htm">back</a></i></font>
+
+<h3>USBSerial</h3><dl compact>
+<dt>For STM32duino, USBSerial is part of <code>USBDevice</code>;
+<dd>replacing <code>USBDevice</code> with <a href=>USBLibrarySTM32</a> loses USBSerial.
+<br>Attempts to construct a USBSerial user library from <code>USBDevice</code> source fails:
+<br>- STM32duino core does not "see" it
+<br>- Arduino 2 compiles fail;&nbsp; seemingly different rules apply for core compilation
+
+<dt><br>After creating <code>Documents/Arduino/libraries/USBSerial/</code>,
+<br><a href=WSerial.txt>builds <i>still</i> fail for <code>USBSerial.h: No such file or directory</code></a>
+<br> with <code>USB support (if available):</code> <i>other than</i> <code>"None"</code>.
+<dd><i>Note that it reports</i>: <code>Using library USBSerial at version 1.0.0 in folder:
+<br> &emsp; C:\Users\bleke\Documents\Arduino\libraries\USBSerial</code>...??
+
+<dt><br>Next, try moving USBSerial to <code>packages/STMicroelectronics/hardware/stm32/2.11.0/libraries/</code>,
+<br>then modify <code>platform.local.txt</code> to include it.
+
+</td></tr><tr><td align=center>
+maintained by <a href="https://github.com/blekenbleu">blekenbleu</a><br>
+</td></tr></table></div> 
+</body></html>

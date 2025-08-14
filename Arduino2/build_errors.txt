@@ -1,0 +1,7 @@
+C:\Users\bleke\Documents\Arduino\MIDIUSB_loop\MIDIUSB_loop.ino:1:10: fatal error: USBAPI.h: No such file or directory
+    1 | #include "USBAPI.h"
+      |          ^~~~~~~~~~
+compilation terminated.
+exit status 1
+
+Compilation error: USBAPI.h: No such file or directory

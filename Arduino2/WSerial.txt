@@ -1,0 +1,68 @@
+
+In file included from C:\Users\bleke\AppData\Local\Arduino15\packages\STMicroelectronics\hardware\stm32\2.11.0\cores\arduino\WSerial.cpp:1:
+C:\Users\bleke\AppData\Local\Arduino15\packages\STMicroelectronics\hardware\stm32\2.11.0\cores\arduino\WSerial.h:7:12: fatal error: USBSerial.h: No such file or directory
+    7 |   #include <USBSerial.h>
+      |            ^~~~~~~~~~~~~
+compilation terminated.
+In file included from C:\Users\bleke\AppData\Local\Arduino15\packages\STMicroelectronics\hardware\stm32\2.11.0\cores\arduino\wiring.h:48,
+                 from C:\Users\bleke\AppData\Local\Arduino15\packages\STMicroelectronics\hardware\stm32\2.11.0\cores\arduino\Arduino.h:36,
+                 from C:\Users\bleke\AppData\Local\Arduino15\packages\STMicroelectronics\hardware\stm32\2.11.0\cores\arduino\Stream.cpp:25:
+C:\Users\bleke\AppData\Local\Arduino15\packages\STMicroelectronics\hardware\stm32\2.11.0\cores\arduino\WSerial.h:7:12: fatal error: USBSerial.h: No such file or directory
+    7 |   #include <USBSerial.h>
+      |            ^~~~~~~~~~~~~
+compilation terminated.
+In file included from C:\Users\bleke\AppData\Local\Arduino15\packages\STMicroelectronics\hardware\stm32\2.11.0\cores\arduino/wiring.h:48,
+                 from C:\Users\bleke\AppData\Local\Arduino15\packages\STMicroelectronics\hardware\stm32\2.11.0\cores\arduino/Arduino.h:36,
+                 from C:\Users\bleke\AppData\Local\Arduino15\packages\STMicroelectronics\hardware\stm32\2.11.0\cores\arduino\IPAddress.cpp:20:
+C:\Users\bleke\AppData\Local\Arduino15\packages\STMicroelectronics\hardware\stm32\2.11.0\cores\arduino/WSerial.h:7:12: fatal error: USBSerial.h: No such file or directory
+    7 |   #include <USBSerial.h>
+      |            ^~~~~~~~~~~~~
+compilation terminated.
+In file included from C:\Users\bleke\AppData\Local\Arduino15\packages\STMicroelectronics\hardware\stm32\2.11.0\cores\arduino\wiring.h:48,
+                 from C:\Users\bleke\AppData\Local\Arduino15\packages\STMicroelectronics\hardware\stm32\2.11.0\cores\arduino\Arduino.h:36,
+                 from C:\Users\bleke\AppData\Local\Arduino15\packages\STMicroelectronics\hardware\stm32\2.11.0\cores\arduino\HardwareSerial.cpp:26:
+C:\Users\bleke\AppData\Local\Arduino15\packages\STMicroelectronics\hardware\stm32\2.11.0\cores\arduino\WSerial.h:7:12: fatal error: USBSerial.h: No such file or directory
+    7 |   #include <USBSerial.h>
+      |            ^~~~~~~~~~~~~
+compilation terminated.
+In file included from C:\Users\bleke\AppData\Local\Arduino15\packages\STMicroelectronics\hardware\stm32\2.11.0\cores\arduino\wiring.h:48,
+                 from C:\Users\bleke\AppData\Local\Arduino15\packages\STMicroelectronics\hardware\stm32\2.11.0\cores\arduino\Arduino.h:36,
+                 from C:\Users\bleke\AppData\Local\Arduino15\packages\STMicroelectronics\hardware\stm32\2.11.0\cores\arduino\Print.cpp:23:
+C:\Users\bleke\AppData\Local\Arduino15\packages\STMicroelectronics\hardware\stm32\2.11.0\cores\arduino\WSerial.h:7:12: fatal error: USBSerial.h: No such file or directory
+    7 |   #include <USBSerial.h>
+      |            ^~~~~~~~~~~~~
+compilation terminated.
+In file included from C:\Users\bleke\AppData\Local\Arduino15\packages\STMicroelectronics\hardware\stm32\2.11.0\cores\arduino\wiring.h:48,
+                 from C:\Users\bleke\AppData\Local\Arduino15\packages\STMicroelectronics\hardware\stm32\2.11.0\cores\arduino\Arduino.h:36,
+                 from C:\Users\bleke\AppData\Local\Arduino15\packages\STMicroelectronics\hardware\stm32\2.11.0\cores\arduino\wiring_pulse.cpp:19:
+C:\Users\bleke\AppData\Local\Arduino15\packages\STMicroelectronics\hardware\stm32\2.11.0\cores\arduino\WSerial.h:7:12: fatal error: USBSerial.h: No such file or directory
+    7 |   #include <USBSerial.h>
+      |            ^~~~~~~~~~~~~
+compilation terminated.
+In file included from C:\Users\bleke\AppData\Local\Arduino15\packages\STMicroelectronics\hardware\stm32\2.11.0\cores\arduino\wiring.h:48,
+                 from C:\Users\bleke\AppData\Local\Arduino15\packages\STMicroelectronics\hardware\stm32\2.11.0\cores\arduino\Arduino.h:36,
+                 from C:\Users\bleke\AppData\Local\Arduino15\packages\STMicroelectronics\hardware\stm32\2.11.0\cores\arduino\Tone.cpp:22:
+C:\Users\bleke\AppData\Local\Arduino15\packages\STMicroelectronics\hardware\stm32\2.11.0\cores\arduino\WSerial.h:7:12: fatal error: USBSerial.h: No such file or directory
+    7 |   #include <USBSerial.h>
+      |            ^~~~~~~~~~~~~
+compilation terminated.
+In file included from C:\Users\bleke\AppData\Local\Arduino15\packages\STMicroelectronics\hardware\stm32\2.11.0\cores\arduino\wiring.h:48,
+                 from C:\Users\bleke\AppData\Local\Arduino15\packages\STMicroelectronics\hardware\stm32\2.11.0\cores\arduino\Arduino.h:36,
+                 from C:\Users\bleke\AppData\Local\Arduino15\packages\STMicroelectronics\hardware\stm32\2.11.0\cores\arduino\WInterrupts.cpp:20:
+C:\Users\bleke\AppData\Local\Arduino15\packages\STMicroelectronics\hardware\stm32\2.11.0\cores\arduino\WSerial.h:7:12: fatal error: USBSerial.h: No such file or directory
+    7 |   #include <USBSerial.h>
+      |            ^~~~~~~~~~~~~
+compilation terminated.
+In file included from C:\Users\bleke\AppData\Local\Arduino15\packages\STMicroelectronics\hardware\stm32\2.11.0\cores\arduino\wiring.h:48,
+                 from C:\Users\bleke\AppData\Local\Arduino15\packages\STMicroelectronics\hardware\stm32\2.11.0\cores\arduino\Arduino.h:36,
+                 from C:\Users\bleke\AppData\Local\Arduino15\packages\STMicroelectronics\hardware\stm32\2.11.0\cores\arduino\main.cpp:21:
+C:\Users\bleke\AppData\Local\Arduino15\packages\STMicroelectronics\hardware\stm32\2.11.0\cores\arduino\WSerial.h:7:12: fatal error: USBSerial.h: No such file or directory
+    7 |   #include <USBSerial.h>
+      |            ^~~~~~~~~~~~~
+compilation terminated.
+Using library USBSerial at version 1.0.0 in folder: C:\Users\bleke\Documents\Arduino\libraries\USBSerial 
+Using library USBLibrarySTM32 at version 1.0.1 in folder: C:\Users\bleke\Documents\Arduino\libraries\USBLibrarySTM32 
+Using library MIDIUSB at version 1.0.5 in folder: C:\Users\bleke\Documents\Arduino\libraries\MIDIUSB 
+Using library SrcWrapper at version 1.0.1 in folder: C:\Users\bleke\AppData\Local\Arduino15\packages\STMicroelectronics\hardware\stm32\2.11.0\libraries\SrcWrapper 
+Using library USBDevice at version 1.0.0 in folder: C:\Users\bleke\AppData\Local\Arduino15\packages\STMicroelectronics\hardware\stm32\2.11.0\libraries\USBDevice 
+exit status 1

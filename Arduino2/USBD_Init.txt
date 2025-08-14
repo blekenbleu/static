@@ -1,0 +1,24 @@
+packages/STMicroelectronics/hardware/stm32/2.11.0/libraries/USBDevice/src/cdc/usbd_cdc_if.c:    if (USBD_Init(&hUSBD_Device_CDC, &USBD_Desc, 0) == USBD_OK) {
+packages/STMicroelectronics/hardware/stm32/2.11.0/libraries/USBDevice/src/hid/usbd_hid_composite_if.c:    if (USBD_Init(&hUSBD_Device_HID, &USBD_Desc, 0) == USBD_OK) {
+packages/STMicroelectronics/hardware/stm32/2.11.0/system/Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_core.h:USBD_StatusTypeDef USBD_Init(USBD_HandleTypeDef *pdev, USBD_DescriptorsTypeDef *pdesc, uint8_t id);
+packages/STMicroelectronics/hardware/stm32/2.11.0/system/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.c:  * @brief  USBD_Init
+packages/STMicroelectronics/hardware/stm32/2.11.0/system/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.c:USBD_StatusTypeDef USBD_Init(USBD_HandleTypeDef *pdev,
+packages/STMicroelectronics/hardware/stm32/2.11.0/system/Middlewares/ST/STM32_USB_Device_Library/Release_Notes.html:<td style="text-align: left;">minor rework on USBD_Init()
+packages/STMicroelectronics/tools/CMSIS/5.9.0/CMSIS/DAP/Firmware/Examples/LPC-Link2/main.c:  USBD_Initialize(0U);                  // USB Device Initialization
+packages/STMicroelectronics/tools/CMSIS/5.9.0/CMSIS/DAP/Firmware/Examples/LPC-Link2/USBD_User_CDC_ACM_UART_0.c:// Called during USBD_Initialize to initialize the USB CDC class instance (ACM).
+packages/STMicroelectronics/tools/CMSIS/5.9.0/CMSIS/DAP/Firmware/Examples/LPC-Link2/USBD_User_CustomClass_0.c:// \brief Callback function called during USBD_Initialize to initialize the USB Custom class instance
+packages/STMicroelectronics/tools/CMSIS/5.9.0/CMSIS/DAP/Firmware/Examples/MCU-LINK/main.c:  USBD_Initialize(0U);                  // USB Device Initialization
+packages/STMicroelectronics/tools/CMSIS/5.9.0/CMSIS/DAP/Firmware/Examples/MCU-LINK/USBD1_LPC55xxx.c:  \fn          int32_t USBD_Initialize (ARM_USBD_SignalDeviceEvent_t   cb_device_event,
+packages/STMicroelectronics/tools/CMSIS/5.9.0/CMSIS/DAP/Firmware/Examples/MCU-LINK/USBD1_LPC55xxx.c:static int32_t USBD_Initialize (ARM_USBD_SignalDeviceEvent_t   cb_device_event,
+packages/STMicroelectronics/tools/CMSIS/5.9.0/CMSIS/DAP/Firmware/Examples/MCU-LINK/USBD1_LPC55xxx.c:  USBD_Initialize,
+packages/STMicroelectronics/tools/CMSIS/5.9.0/CMSIS/DAP/Firmware/Examples/MCU-LINK/USBD_User_CDC_ACM_UART_0.c:// Called during USBD_Initialize to initialize the USB CDC class instance (ACM).
+packages/STMicroelectronics/tools/CMSIS/5.9.0/CMSIS/DAP/Firmware/Examples/MCU-LINK/USBD_User_CustomClass_0.c:// \brief Callback function called during USBD_Initialize to initialize the USB Custom class instance
+packages/STMicroelectronics/tools/CMSIS/5.9.0/CMSIS/DAP/Firmware/Template/MDK5/main.c:  USBD_Initialize(0U);                  // USB Device Initialization
+packages/STMicroelectronics/tools/CMSIS/5.9.0/CMSIS/DAP/Firmware/Template/MDK5/USBD_User_CDC_ACM_UART_0.c:// Called during USBD_Initialize to initialize the USB CDC class instance (ACM).
+packages/STMicroelectronics/tools/CMSIS/5.9.0/CMSIS/DAP/Firmware/Template/MDK5/USBD_User_CustomClass_0.c:// \brief Callback function called during USBD_Initialize to initialize the USB Custom class instance
+packages/STMicroelectronics/tools/CMSIS/5.9.0/CMSIS/DAP/Firmware/Template/MDK5/USBD_User_HID_0.c:// Called during USBD_Initialize to initialize the USB HID class instance.
+packages/STMicroelectronics/tools/CMSIS/5.9.0/CMSIS/Driver/DriverTemplates/Driver_USBD.c:static int32_t ARM_USBD_Initialize(ARM_USBD_SignalDeviceEvent_t cb_device_event,
+packages/STMicroelectronics/tools/CMSIS/5.9.0/CMSIS/Driver/DriverTemplates/Driver_USBD.c:    ARM_USBD_Initialize,
+packages/STMicroelectronics/tools/CMSIS/5.9.0/CMSIS/Driver/Include/Driver_USBD.h:  \fn          int32_t ARM_USBD_Initialize (ARM_USBD_SignalDeviceEvent_t   cb_device_event,
+packages/STMicroelectronics/tools/CMSIS/5.9.0/CMSIS/Driver/Include/Driver_USBD.h:                                                      ARM_USBD_SignalEndpointEvent_t cb_endpoint_event);  ///< Pointer to \ref ARM_USBD_Initialize : Initialize USB Device Interface.
+

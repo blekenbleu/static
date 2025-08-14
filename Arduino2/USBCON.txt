@@ -1,0 +1,550 @@
+packages/STMicroelectronics/hardware/stm32/2.11.0/CI/update/templates/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/cores/arduino/HardwareSerial.cpp:#if !defined(USBCON) || defined(USBD_USE_CDC) && defined(DISABLE_GENERIC_SERIALUSB)
+packages/STMicroelectronics/hardware/stm32/2.11.0/cores/arduino/WSerial.h:#if defined (USBCON) && defined(USBD_USE_CDC)
+packages/STMicroelectronics/hardware/stm32/2.11.0/cores/arduino/WSerial.h:#endif /* USBCON && USBD_USE_CDC */
+packages/STMicroelectronics/hardware/stm32/2.11.0/cores/arduino/WSerial.h:#if defined (USBCON) && defined(USBD_USE_CDC)
+packages/STMicroelectronics/hardware/stm32/2.11.0/cores/arduino/WSerial.h:#endif /* USBCON && USBD_USE_CDC */
+packages/STMicroelectronics/hardware/stm32/2.11.0/libraries/Keyboard/src/Keyboard.cpp:#if defined(USBCON)
+packages/STMicroelectronics/hardware/stm32/2.11.0/libraries/Keyboard/src/Keyboard.h:#if !defined(USBCON) || !defined(USBD_USE_HID_COMPOSITE)
+packages/STMicroelectronics/hardware/stm32/2.11.0/libraries/Mouse/src/Mouse.cpp:#if defined(USBCON)
+packages/STMicroelectronics/hardware/stm32/2.11.0/libraries/Mouse/src/Mouse.h:#if !defined(USBCON) || !defined(USBD_USE_HID_COMPOSITE)
+packages/STMicroelectronics/hardware/stm32/2.11.0/libraries/SrcWrapper/src/stm32/hw_config.c:#if defined (USBCON) && defined(USBD_USE_CDC)
+packages/STMicroelectronics/hardware/stm32/2.11.0/libraries/SrcWrapper/src/stm32/hw_config.c:#if defined (USBCON) && defined(USBD_USE_CDC)
+packages/STMicroelectronics/hardware/stm32/2.11.0/libraries/USBDevice/inc/usbd_cdc_if.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/libraries/USBDevice/inc/usbd_cdc_if.h:#endif /* USBCON */
+packages/STMicroelectronics/hardware/stm32/2.11.0/libraries/USBDevice/inc/usbd_conf.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/libraries/USBDevice/inc/usbd_conf.h:#endif /* USBCON */
+packages/STMicroelectronics/hardware/stm32/2.11.0/libraries/USBDevice/inc/usbd_desc.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/libraries/USBDevice/inc/usbd_desc.h:#endif /* USBCON */
+packages/STMicroelectronics/hardware/stm32/2.11.0/libraries/USBDevice/inc/usbd_ep_conf.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/libraries/USBDevice/inc/usbd_ep_conf.h:#endif /* USBCON */
+packages/STMicroelectronics/hardware/stm32/2.11.0/libraries/USBDevice/inc/usbd_hid_composite_if.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/libraries/USBDevice/inc/usbd_hid_composite_if.h:#endif /* USBCON */
+packages/STMicroelectronics/hardware/stm32/2.11.0/libraries/USBDevice/inc/usbd_if.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/libraries/USBDevice/inc/usbd_if.h:#endif /* USBCON */
+packages/STMicroelectronics/hardware/stm32/2.11.0/libraries/USBDevice/inc/USBSerial.h:#if defined (USBCON) && defined(USBD_USE_CDC)
+packages/STMicroelectronics/hardware/stm32/2.11.0/libraries/USBDevice/inc/USBSerial.h:#endif /* USBCON */
+packages/STMicroelectronics/hardware/stm32/2.11.0/libraries/USBDevice/src/cdc/cdc_queue.c:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/libraries/USBDevice/src/cdc/cdc_queue.c:#endif /* USBCON */
+packages/STMicroelectronics/hardware/stm32/2.11.0/libraries/USBDevice/src/cdc/usbd_cdc.c:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/libraries/USBDevice/src/cdc/usbd_cdc.c:#endif /* USBCON */
+packages/STMicroelectronics/hardware/stm32/2.11.0/libraries/USBDevice/src/cdc/usbd_cdc_if.c:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/libraries/USBDevice/src/cdc/usbd_cdc_if.c:#endif /* USBCON */
+packages/STMicroelectronics/hardware/stm32/2.11.0/libraries/USBDevice/src/hid/usbd_hid_composite.c:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/libraries/USBDevice/src/hid/usbd_hid_composite.c:#endif /* USBCON */
+packages/STMicroelectronics/hardware/stm32/2.11.0/libraries/USBDevice/src/hid/usbd_hid_composite.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/libraries/USBDevice/src/hid/usbd_hid_composite.h:#endif /* USBCON */
+packages/STMicroelectronics/hardware/stm32/2.11.0/libraries/USBDevice/src/hid/usbd_hid_composite_if.c:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/libraries/USBDevice/src/hid/usbd_hid_composite_if.c:#endif /* USBCON */
+packages/STMicroelectronics/hardware/stm32/2.11.0/libraries/USBDevice/src/usbd_conf.c:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/libraries/USBDevice/src/usbd_conf.c:#endif /* USBCON */
+packages/STMicroelectronics/hardware/stm32/2.11.0/libraries/USBDevice/src/usbd_desc.c:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/libraries/USBDevice/src/usbd_desc.c:#endif /* USBCON */
+packages/STMicroelectronics/hardware/stm32/2.11.0/libraries/USBDevice/src/usbd_ep_conf.c:#if defined(HAL_PCD_MODULE_ENABLED) && defined(USBCON)
+packages/STMicroelectronics/hardware/stm32/2.11.0/libraries/USBDevice/src/usbd_ep_conf.c:#endif /* HAL_PCD_MODULE_ENABLED && USBCON */
+packages/STMicroelectronics/hardware/stm32/2.11.0/libraries/USBDevice/src/usbd_if.c:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/libraries/USBDevice/src/usbd_if.c:#endif /* USBCON */
+packages/STMicroelectronics/hardware/stm32/2.11.0/libraries/USBDevice/src/USBSerial.cpp:#if defined (USBCON) && defined(USBD_USE_CDC)
+packages/STMicroelectronics/hardware/stm32/2.11.0/libraries/USBDevice/src/USBSerial.cpp:#endif // USBCON && USBD_USE_CDC
+packages/STMicroelectronics/hardware/stm32/2.11.0/libraries/USBDevice/src/usb_device_core.c:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/libraries/USBDevice/src/usb_device_core.c:#endif /* USBCON */
+packages/STMicroelectronics/hardware/stm32/2.11.0/libraries/USBDevice/src/usb_device_ctlreq.c:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/libraries/USBDevice/src/usb_device_ctlreq.c:#endif /* USBCON */
+packages/STMicroelectronics/hardware/stm32/2.11.0/libraries/USBDevice/src/usb_device_ioreq.c:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/libraries/USBDevice/src/usb_device_ioreq.c:#endif /* USBCON */
+packages/STMicroelectronics/hardware/stm32/2.11.0/platform.txt:build.usb_flags=-DUSBCON {build.usb_speed} -DUSBD_VID={build.vid} -DUSBD_PID={build.pid} -DHAL_PCD_MODULE_ENABLED
+packages/STMicroelectronics/hardware/stm32/2.11.0/tools/platformio/platformio-build.py:                "USBCON",
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32C0xx/C071C(8-B)(T-U)/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32C0xx/C071C(8-B)(T-U)xN/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32C0xx/C071F(8-B)PxN/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32C0xx/C071F8P_C071FB(P-Y)/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32C0xx/C071G(8-B)U/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32C0xx/C071G(8-B)UxN/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32C0xx/C071K(8-B)(T-U)/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32C0xx/C071K(8-B)(T-U)xN/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32C0xx/C071R(8-B)T/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32C0xx/C071R8TxN_C071RB(I-T)xN/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F0xx/F042C(4-6)(T-U)/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F0xx/F042F(4-6)P/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F0xx/F042G(4-6)U/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F0xx/F042K(4-6)T/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F0xx/F042K(4-6)U/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F0xx/F042T6Y/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F0xx/F048C6U/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F0xx/F048G6U/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F0xx/F048T6Y/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F0xx/F070C6T/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F0xx/F070CBT/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F0xx/F070F6P/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F0xx/F070RBT/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F0xx/F072C8(T-U)_F072CB(T-U-Y)/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F0xx/F072R8T_F072RB(H-I-T)/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F0xx/F072V(8-B)(H-T)/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F0xx/F078CB(T-U-Y)/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F0xx/F078RB(H-T)/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F0xx/F078VB(H-T)/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F1xx/F102C(4-6)T/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F1xx/F102C(8-B)T/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F1xx/F102R(4-6)T/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F1xx/F102R(8-B)T/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F1xx/F103C4T_F103C6(T-U)/generic_clock.c:#if defined(USBCON)
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F1xx/F103C4T_F103C6(T-U)/generic_clock.c:#endif /* USBCON */
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F1xx/F103C4T_F103C6(T-U)/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F1xx/F103C8T_F103CB(T-U)/generic_clock.c:#if defined(USBCON)
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F1xx/F103C8T_F103CB(T-U)/generic_clock.c:#endif /* USBCON */
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F1xx/F103C8T_F103CB(T-U)/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F1xx/F103R(4-6)H/generic_clock.c:#if defined(USBCON)
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F1xx/F103R(4-6)H/generic_clock.c:#endif /* USBCON */
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F1xx/F103R(4-6)H/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F1xx/F103R(4-6)T/generic_clock.c:#if defined(USBCON)
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F1xx/F103R(4-6)T/generic_clock.c:#endif /* USBCON */
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F1xx/F103R(4-6)T/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F1xx/F103R(8-B)H/generic_clock.c:#if defined(USBCON)
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F1xx/F103R(8-B)H/generic_clock.c:#endif /* USBCON */
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F1xx/F103R(8-B)H/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F1xx/F103R(8-B)T/generic_clock.c:#if defined(USBCON)
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F1xx/F103R(8-B)T/generic_clock.c:#endif /* USBCON */
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F1xx/F103R(8-B)T/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F1xx/F103R(C-D-E)T/generic_clock.c:#if defined(USBCON)
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F1xx/F103R(C-D-E)T/generic_clock.c:#endif /* USBCON */
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F1xx/F103R(C-D-E)T/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F1xx/F103R(C-D-E)Y/generic_clock.c:#if defined(USBCON)
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F1xx/F103R(C-D-E)Y/generic_clock.c:#endif /* USBCON */
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F1xx/F103R(C-D-E)Y/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F1xx/F103R(F-G)T/generic_clock.c:#if defined(USBCON)
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F1xx/F103R(F-G)T/generic_clock.c:#endif /* USBCON */
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F1xx/F103R(F-G)T/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F1xx/F103T(4-6)U/generic_clock.c:#if defined(USBCON)
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F1xx/F103T(4-6)U/generic_clock.c:#endif /* USBCON */
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F1xx/F103T(4-6)U/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F1xx/F103T(8-B)U/generic_clock.c:#if defined(USBCON)
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F1xx/F103T(8-B)U/generic_clock.c:#endif /* USBCON */
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F1xx/F103T(8-B)U/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F1xx/F103V(C-D-E)(H-T)/generic_clock.c:#if defined(USBCON)
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F1xx/F103V(C-D-E)(H-T)/generic_clock.c:#endif /* USBCON */
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F1xx/F103V(C-D-E)(H-T)/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F1xx/F103V(F-G)T/generic_clock.c:#if defined(USBCON)
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F1xx/F103V(F-G)T/generic_clock.c:#endif /* USBCON */
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F1xx/F103V(F-G)T/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F1xx/F103V8(H-T)_F103VB(H-I-T)/generic_clock.c:#if defined(USBCON)
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F1xx/F103V8(H-T)_F103VB(H-I-T)/generic_clock.c:#endif /* USBCON */
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F1xx/F103V8(H-T)_F103VB(H-I-T)/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F1xx/F103Z(C-D-E)(H-T)/generic_clock.c:#if defined(USBCON)
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F1xx/F103Z(C-D-E)(H-T)/generic_clock.c:#endif /* USBCON */
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F1xx/F103Z(C-D-E)(H-T)/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F1xx/F103Z(F-G)(H-T)/generic_clock.c:#if defined(USBCON)
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F1xx/F103Z(F-G)(H-T)/generic_clock.c:#endif /* USBCON */
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F1xx/F103Z(F-G)(H-T)/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F1xx/F105R(8-B-C)T/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F1xx/F105V(8-B)(H-T)_F105VCT/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F1xx/F107R(B-C)T/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F1xx/F107VBT_F107VC(H-T)/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F2xx/F205RE(T-Y)_F205R(B-C-F)T_F205RG(E-T-Y)_F215R(E-G)T/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F2xx/F205V(B-C-E-F-G)T_F215V(E-G)T/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F2xx/F205Z(C-E-F-G)T_F215Z(E-G)T/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F2xx/F207I(C-E-F-G)(H-T)_F217I(E-G)(H-T)/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F2xx/F207V(C-E-F-G)T_F217V(E-G)T/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F2xx/F207Z(C-E-F-G)T_F217Z(E-G)T/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F3xx/F302C(B-C)T/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F3xx/F302C6T_F302C8(T-Y)/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F3xx/F302K(6-8)U/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F3xx/F302R(6-8)T/generic_clock.c:#if defined(USBCON)
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F3xx/F302R(6-8)T/generic_clock.c:#endif /* USBCON */
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F3xx/F302R(6-8)T/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F3xx/F302R(B-C)T/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F3xx/F302R(D-E)T/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F3xx/F302V(B-C)T/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F3xx/F302V(D-E)(H-T)/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F3xx/F302VCY/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F3xx/F302Z(D-E)T/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F3xx/F303C(B-C)T/generic_clock.c:#if defined(USBCON)
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F3xx/F303C(B-C)T/generic_clock.c:#endif /* USBCON */
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F3xx/F303C(B-C)T/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F3xx/F303K(6-8)T_F334K(4-6-8)T/generic_clock.c:#if defined(USBCON)
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F3xx/F303K(6-8)T_F334K(4-6-8)T/generic_clock.c:#endif /* USBCON */
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F3xx/F303R(B-C)T/generic_clock.c:#if defined(USBCON)
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F3xx/F303R(B-C)T/generic_clock.c:#endif /* USBCON */
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F3xx/F303R(B-C)T/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F3xx/F303R(D-E)T/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F3xx/F303V(B-C)T/generic_clock.c:#if defined(USBCON)
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F3xx/F303V(B-C)T/generic_clock.c:#endif /* USBCON */
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F3xx/F303V(B-C)T/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F3xx/F303V(D-E)(H-T)/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F3xx/F303VCY/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F3xx/F303VEY/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F3xx/F303Z(D-E)T/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F3xx/F373C(8-B-C)T/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F3xx/F373R(8-B-C)T/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F3xx/F373V(8-B-C)(H-T)/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F4xx/F401CC(F-U-Y)_F401C(B-D-E)(U-Y)/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F4xx/F401R(B-C-D-E)T/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F4xx/F401V(B-C-D-E)H/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F4xx/F401V(B-C-D-E)T/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F4xx/F405O(E-G)Y_F415OGY/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F4xx/F405RGT_F415RGT/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F4xx/F405VGT_F415VGT/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F4xx/F405ZGT_F415ZGT/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F4xx/F407I(E-G)(H-T)_F417I(E-G)(H-T)/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F4xx/F407V(E-G)T_F417V(E-G)T/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F4xx/F407Z(E-G)T_F417Z(E-G)T/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F4xx/F411C(C-E)(U-Y)/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F4xx/F411R(C-E)T/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F4xx/F411V(C-E)H/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F4xx/F411V(C-E)T/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F4xx/F412C(E-G)U/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F4xx/F412R(E-G)(T-Y)x(P)/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F4xx/F412V(E-G)H/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F4xx/F412V(E-G)T/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F4xx/F412Z(E-G)(J-T)/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F4xx/F413C(G-H)U_F423CHU/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F4xx/F413M(G-H)Y_F423MHY/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F4xx/F413R(G-H)T_F423RHT/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F4xx/F413V(G-H)H_F423VHH/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F4xx/F413V(G-H)T_F423VHT/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F4xx/F413Z(G-H)(J-T)_F423ZH(J-T)/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F4xx/F427A(G-I)H_F429A(G-I)H_F437AIH_F439AIH/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F4xx/F427I(G-I)(H-T)_F429I(E-G-I)(H-T)_F437I(G-I)(H-T)_F439I(G-I)(H-T)/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F4xx/F427V(G-I)T_F429V(E-G-I)T_F437V(G-I)T_F439V(G-I)T/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F4xx/F427Z(G-I)T_F429ZET_F429Z(G-I)(T-Y)_F437Z(G-I)T_F439Z(G-I)(T-Y)/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F4xx/F429B(E-G-I)T_F429N(E-G-I)H_F439B(G-I)T_F439N(G-I)H/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F4xx/F446M(C-E)Y/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F4xx/F446R(C-E)T/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F4xx/F446V(C-E)T/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F4xx/F446Z(C-E)(H-J-T)/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F4xx/F469A(E-G-I)(H-Y)_F479A(G-I)(H-Y)/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F4xx/F469B(E-G-I)T_F469N(E-G-I)H_F479B(G-I)T_F479N(G-I)H/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F4xx/F469I(E-G-I)(H-T)_F479I(G-I)(H-T)/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F4xx/F469V(E-G-I)T_F479V(G-I)T/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F4xx/F469Z(E-G-I)T_F479Z(G-I)T/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F7xx/F722I(C-E)(K-T)_F732IE(K-T)/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F7xx/F722R(C-E)T_F730R8T_F732RET/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F7xx/F722V(C-E)T_F730V8T_F732VET/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F7xx/F722Z(C-E)T_F732ZET/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F7xx/F723I(C-E)(K-T)_F730I8K_F733IE(K-T)/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F7xx/F723V(C-E)(T-Y)_F733VE(T-Y)/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F7xx/F723Z(C-E)(I-T)_F730Z8T_F733ZE(I-T)/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F7xx/F745I(E-G)(K-T)_F746I(E-G)(K-T)_F756IG(K-T)/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F7xx/F745V(E-G)(H-T)_F746V(E-G)(H-T)_F750V8T_F756VG(H-T)/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F7xx/F745Z(E-G)T_F746Z(E-G)(T-Y)_F750Z8T_F756ZG(T-Y)/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F7xx/F746B(E-G)T_F746N(E-G)H_F750N8H_F756BGT_F756NGH/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F7xx/F765B(G-I)T_F765N(G-I)H_F767B(G-I)T_F767N(G-I)H_F777BIT_F777NIH/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F7xx/F765I(G-I)(K-T)_F767I(G-I)(K-T)_F777II(K-T)/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F7xx/F765V(G-I)(H-T)_F767V(G-I)(H-T)_F777VI(H-T)/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F7xx/F765Z(G-I)T_F767Z(G-I)T_F777ZIT/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F7xx/F768AIY_F769A(G-I)Y_F778AIY_F779AIY/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F7xx/F769B(G-I)T_F769N(G-I)H_F779BIT_F779NIH/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32F7xx/F769I(G-I)T_F779IIT/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32G0xx/G0B0CET/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32G0xx/G0B0KET/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32G0xx/G0B0RET/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32G0xx/G0B0VET/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32G0xx/G0B1C(B-C-E)(T-U)xN_G0C1C(C-E)(T-U)xN/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32G0xx/G0B1C(B-C-E)(T-U)_G0C1C(C-E)(T-U)/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32G0xx/G0B1K(B-C-E)(T-U)xN_G0C1K(C-E)(T-U)xN/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32G0xx/G0B1K(B-C-E)(T-U)_G0C1K(C-E)(T-U)/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32G0xx/G0B1M(B-C-E)T_G0C1M(C-E)T/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32G0xx/G0B1NEY_G0C1NEY/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32G0xx/G0B1R(B-C-E)(I-T)xN_G0C1R(C-E)(I-T)xN/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32G0xx/G0B1R(B-C-E)T_G0C1R(C-E)T/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32G0xx/G0B1V(B-C-E)(I-T)_G0C1V(C-E)(I-T)/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32G4xx/G431C(6-8-B)T_G441CBT/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32G4xx/G431C(6-8-B)U_G441CBU/generic_clock.c:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32G4xx/G431C(6-8-B)U_G441CBU/generic_clock.c:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32G4xx/G431C(6-8-B)U_G441CBU/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32G4xx/G431C(6-8-B)U_G441CBU/variant_B_G431B_ESC1.cpp:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32G4xx/G431C(6-8-B)U_G441CBU/variant_B_G431B_ESC1.cpp:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32G4xx/G431CBTxZ/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32G4xx/G431CBY_G441CBY/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32G4xx/G431K(6-8-B)(T-U)_G441KB(T-U)/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32G4xx/G431M(6-8-B)T_G441MBT/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32G4xx/G431R(6-8)(I-T)_G431RB(I-T)x(Z)_G441RB(I-T)/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32G4xx/G431R(6-8)(I-T)_G431RB(I-T)x(Z)_G441RB(I-T)/variant_NUCLEO_G431RB.cpp:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32G4xx/G431R(6-8)(I-T)_G431RB(I-T)x(Z)_G441RB(I-T)/variant_NUCLEO_G431RB.cpp:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32G4xx/G431V(6-8-B)T_G441VBT/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32G4xx/G471C(C-E)T/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32G4xx/G471C(C-E)U/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32G4xx/G471M(C-E)T/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32G4xx/G471MEY/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32G4xx/G471Q(C-E)T/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32G4xx/G471R(C-E)T/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32G4xx/G471V(C-E)(H-I-T)/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32G4xx/G473C(B-C-E)T_G474C(B-C-E)T_G483CET_G484CET/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32G4xx/G473C(B-C-E)U_G474C(B-C-E)U_G483CEU_G484CEU/generic_clock.c:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32G4xx/G473C(B-C-E)U_G474C(B-C-E)U_G483CEU_G484CEU/generic_clock.c:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32G4xx/G473C(B-C-E)U_G474C(B-C-E)U_G483CEU_G484CEU/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32G4xx/G473C(B-C-E)U_G474C(B-C-E)U_G483CEU_G484CEU/variant_WEACT_G474CE.cpp:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32G4xx/G473C(B-C-E)U_G474C(B-C-E)U_G483CEU_G484CEU/variant_WEACT_G474CE.cpp:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32G4xx/G473M(B-C-E)T_G474M(B-C-E)T_G483MET_G484MET/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32G4xx/G473MEY_G474MEY_G483MEY_G484MEY/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32G4xx/G473P(B-C-E)I_G474P(B-C-E)I_G483PEI_G484PEI/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32G4xx/G473Q(B-C)T_G473QETx(Z)_G474Q(B-C-E)T_G483QET_G484QET/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32G4xx/G473R(B-C)T_G473RETx(Z)_G474R(B-C-E)T_G483RET_G484RET/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32G4xx/G473V(B-C-E)(H-T)_G474V(B-C-E)(H-T)_G483VE(H-T)_G484VE(H-T)/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32G4xx/G491C(C-E)T_G4A1CET/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32G4xx/G491C(C-E)U_G4A1CEU/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32G4xx/G491K(C-E)U_G4A1KEU/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32G4xx/G491M(C-E)(S-T)_G4A1ME(S-T)/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32G4xx/G491RC(I-T)_G491RE(I-T-Y)x(Z)_G4A1RE(I-T-Y)/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32G4xx/G491V(C-E)T_G4A1VET/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32H5xx/H503CB(T-U)/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32H5xx/H503EBY/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32H5xx/H503KBU/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32H5xx/H503RBT/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32H5xx/H523C(C-E)(T-U)_H533CE(T-U)/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32H5xx/H523HEY_H533HEY/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32H5xx/H523R(C-E)T_H533RET/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32H5xx/H523V(C-E)(I-T)_H533VE(I-T)/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32H5xx/H523Z(C-E)(J-T)_H533ZE(J-T)/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32H5xx/H562A(G-I)I/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32H5xx/H562I(G-I)(K-T)/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32H5xx/H562R(G-I)T/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32H5xx/H562R(G-I)V/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32H5xx/H562V(G-I)T/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32H5xx/H562Z(G-I)T/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32H5xx/H563A(G-I)I_H573AII/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32H5xx/H563AIIxQ_H573AIIxQ/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32H5xx/H563I(G-I)(K-T)_H573II(K-T)/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32H5xx/H563IIKxQ_H573IIKxQ/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32H5xx/H563IITxQ_H573IITxQ/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32H5xx/H563MIYxQ_H573MIYxQ/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32H5xx/H563R(G-I)T_H573RIT/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32H5xx/H563R(G-I)V_H573RIV/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32H5xx/H563V(G-I)T_H573VIT/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32H5xx/H563VITxQ_H573VITxQ/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32H5xx/H563Z(G-I)T_H573ZIT/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32H5xx/H563ZITxQ_H573ZITxQ/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32H7xx/H723V(E-G)(H-T)_H730VB(H-T)_H733VG(H-T)/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32H7xx/H723Z(E-G)I_H730ZBI_H733ZGI/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32H7xx/H723Z(E-G)T_H730ZBT_H733ZGT/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32H7xx/H725A(E-G)I_H730ABIxQ_H735AGI/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32H7xx/H725I(E-G)K_H730IBKxQ_H735IGK/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32H7xx/H725I(E-G)T_H730IBTxQ_H735IGT/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32H7xx/H725R(E-G)V_H735RGV/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32H7xx/H725V(E-G)H_H735VGH/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32H7xx/H725V(E-G)T_H735VGT/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32H7xx/H725VGY_H735VGY/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32H7xx/H725Z(E-G)T_H735ZGT/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32H7xx/H742A(G-I)I_H743A(G-I)I_H753AII/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32H7xx/H742B(G-I)T_H743B(G-I)T_H753BIT/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32H7xx/H742I(G-I)(K-T)_H743I(G-I)(K-T)_H750IB(K-T)_H753II(K-T)/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32H7xx/H742V(G-I)(H-T)_H743V(G-I)(H-T)_H750VBT_H753VI(H-T)/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32H7xx/H742X(G-I)H_H743X(G-I)H_H745X(G-I)H_H747X(G-I)H_H750XBH_H753XIH_H755XIH_H757XIH/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32H7xx/H742Z(G-I)T_H743Z(G-I)T_H747A(G-I)I_H747I(G-I)T_H750ZBT_H753ZIT_H757AII_H757IIT/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32H7xx/H745B(G-I)T_H755BIT/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32H7xx/H745I(G-I)K_H755IIK/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32H7xx/H745I(G-I)T_H755IIT/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32H7xx/H745Z(G-I)T_H755ZIT/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32H7xx/H747B(G-I)T_H757BIT/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32H7xx/H747ZIY_H757ZIY/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32H7xx/H7A3A(G-I)IxQ_H7B0ABIxQ_H7B3AIIxQ/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32H7xx/H7A3I(G-I)(K-T)_H7B0IBT_H7B3II(K-T)/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32H7xx/H7A3I(G-I)KxQ_H7B0IBKxQ_H7B3IIKxQ/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32H7xx/H7A3I(G-I)TxQ_H7B3IITxQ/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32H7xx/H7A3L(G-I)HxQ_H7B3LIHxQ/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32H7xx/H7A3N(G-I)H_H7B3NIH/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32H7xx/H7A3QIYxQ_H7B3QIYxQ/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32H7xx/H7A3R(G-I)T_H7B0RBT_H7B3RIT/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32H7xx/H7A3V(G-I)(H-T)_H7B0VBT_H7B3VI(H-T)/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32H7xx/H7A3V(G-I)HxQ_H7B3VIHxQ/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32H7xx/H7A3V(G-I)TxQ_H7B3VITxQ/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32H7xx/H7A3Z(G-I)TxQ_H7B3ZITxQ/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32H7xx/H7A3Z(G-I)T_H7B0ZBT_H7B3ZIT/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32L0xx/L052C(6-8)(T-U)_L053C(6-8)(T-U)_L062C8U_L063C8(T-U)/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32L0xx/L052K(6-8)T_L062K8T/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32L0xx/L052K(6-8)U_L062K8U/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32L0xx/L052R(6-8)H_L053R(6-8)H/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32L0xx/L052R(6-8)T_L053R(6-8)T_L063R8T/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32L0xx/L052R(6-8)T_L053R(6-8)T_L063R8T/variant_NUCLEO_L053R8.cpp:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32L0xx/L052T6Y_L052T8(F-Y)/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32L0xx/L072C(B-Z)(T-U)_L073C(B-Z)(T-U)_L082CZU_L083CBT_L083CZ(T-U)/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32L0xx/L072CBY_L072CZ(E-Y)_L073CZY_L082CZY/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32L0xx/L072K(B-Z)T_L082K(B-Z)T/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32L0xx/L072K(B-Z)U_L082K(B-Z)U/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32L0xx/L072R(B-Z)(H-I)_L073RBH_L073RZ(H-I)_L083R(B-Z)H/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32L0xx/L072R(B-Z)T_L073R(B-Z)T_L083R(B-Z)T/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32L0xx/L072V(8-B-Z)(I-T)_L073V(8-B-Z)(I-T)_L083V(8-B-Z)(I-T)/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32L1xx/L100C6Ux(A)_L151C(6-8-B)(T-U)x(A)_L152C(6-8-B)(T-U)x(A)/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32L1xx/L100R(8-B)Tx(A)_L151R(6-8-B)Tx(A)_L152R(6-8-B)Tx(A)/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32L1xx/L100RCT/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32L1xx/L151CC(T-U)_L152CC(T-U)/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32L1xx/L151QCH_L152QCH_L162QCH/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32L1xx/L151QDH_L152QDH_L162QDH/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32L1xx/L151QEH_L152QEH/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32L1xx/L151R(6-8-B)Hx(A)_L152R(6-8-B)Hx(A)/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32L1xx/L151RC(T-Y)x(A)_L151UCY_L152RCTx(A)_L152UCY_L162RCTx(A)/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32L1xx/L151RD(T-Y)_L152RD(T-Y)_L162RD(T-Y)/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32L1xx/L151RET_L152RET_L162RET/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32L1xx/L151V(8-B)(H-T)x(A)_L152V(8-B)(H-T)x(A)/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32L1xx/L151VC(H-T)x(A)_L152VC(H-T)x(A)_L162VC(H-T)x(A)/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32L1xx/L151VD(T-Y)xX_L151VE(T-Y)_L152VDTxX_L152VE(T-Y)_L162VDYxX_L162VE(T-Y)/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32L1xx/L151VDT_L152VDT_L162VDT/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32L1xx/L151ZCT_L152ZCT_L162ZCT/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32L1xx/L151ZDT_L152ZDT_L162ZDT/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32L1xx/L151ZET_L152ZET_L162ZET/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32L4xx/L412C(8-B)(T-U)_L422CB(T-U)/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32L4xx/L412CB(T-U)xP/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32L4xx/L412K(8-B)(T-U)_L422KB(T-U)/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32L4xx/L412R(8-B)(I-T)_L422RB(I-T)/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32L4xx/L412RB(I-T)xP/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32L4xx/L412T(8-B)Y_L422TBY/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32L4xx/L412TBYxP/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32L4xx/L432K(B-C)U_L442KCU/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32L4xx/L433C(B-C)(T-U)_L443CC(T-U)/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32L4xx/L433C(B-C)Y_L443CC(F-Y)/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32L4xx/L433R(B-C)(I-T-Y)_L443RC(I-T-Y)/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32L4xx/L433RCTxP/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32L4xx/L433VC(I-T)_L443VC(I-T)/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32L4xx/L452CCU_L452CE(T-U)x(P)_L462CE(T-U)/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32L4xx/L452RC(I-T-Y)_L452RE(I-T-Y)x(P)_L462RE(I-T-Y)/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32L4xx/L452RETxP/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32L4xx/L452V(C-E)(I-T)_L462VE(I-T)/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32L4xx/L475R(C-E-G)T_L476R(C-E-G)T_L486RGT/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32L4xx/L475V(C-E-G)T_L476V(C-E-G)T_L486VGT/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32L4xx/L476J(E-G)Y_L485J(C-E)Y_L486JGY/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32L4xx/L476JGYxP/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32L4xx/L476M(E-G)Y/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32L4xx/L476QEI_L476QGIx(P)_L486QGI/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32L4xx/L476VGYxP/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32L4xx/L476ZET_L476ZG(J-T)_L486ZGT/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32L4xx/L476ZGTxP/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32L4xx/L496A(E-G)I_L4A6AGI/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32L4xx/L496AGIxP_L4A6AGIxP/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32L4xx/L496QEI_L496QGIx(S)_L4A6QGI/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32L4xx/L496QGIxP_L4A6QGIxP/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32L4xx/L496R(E-G)T_L4A6RGT/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32L4xx/L496RGTxP/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32L4xx/L496V(E-G)T_L4A6VGT/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32L4xx/L496VGTxP_L4A6VGTxP/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32L4xx/L496VGYxP_L4A6VGYxP/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32L4xx/L496VGY_L4A6VGY/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32L4xx/L496WGYxP/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32L4xx/L496Z(E-G)T_L4A6ZGT/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32L4xx/L496ZGTxP_L4A6ZGTxP/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32L4xx/L4A6RGTxP/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32L4xx/L4P5A(G-E)I_L4Q5AGI/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32L4xx/L4P5AGIxP_L4Q5AGIxP/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32L4xx/L4P5C(E-G)(T-U)_L4Q5CG(T-U)/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32L4xx/L4P5CG(T-U)xP_L4Q5CG(T-U)xP/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32L4xx/L4P5Q(G-E)I_L4Q5QGI/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32L4xx/L4P5QGIx(P-S)_L4Q5QGIxP/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32L4xx/L4P5R(G-E)T_L4Q5RGT/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32L4xx/L4P5RGTxP_L4Q5RGTxP/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32L4xx/L4P5V(G-E)T_L4Q5VGT/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32L4xx/L4P5V(G-E)Y_L4Q5VGY/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32L4xx/L4P5VGTxP_L4Q5VGTxP/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32L4xx/L4P5VGYxP_L4Q5VGYxP/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32L4xx/L4P5Z(G-E)T_L4Q5ZGT/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32L4xx/L4P5ZGTxP_L4Q5ZGTxP/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32L4xx/L4R5AGI_L4R5AIIx(P)_L4R7AII_L4S5AII_L4S7AII/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32L4xx/L4R5QGIx(S)_L4R5QIIx(P)_L4S5QII/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32L4xx/L4R5V(G-I)T_L4R7VIT_L4S5VIT_L4S7VIT/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32L4xx/L4R5Z(G-I)T_L4R7ZIT_L4S5ZIT_L4S7ZIT/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32L4xx/L4R5Z(G-I)Y_L4R9Z(G-I)Y_L4S5ZIY_L4S9ZIY/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32L4xx/L4R5ZITxP/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32L4xx/L4R9A(G-I)I_L4S9AII/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32L4xx/L4R9V(G-I)T_L4S9VIT/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32L4xx/L4R9Z(G-I)J_L4S9ZIJ/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32L4xx/L4R9Z(G-I)T_L4S9ZIT/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32L4xx/L4R9ZIYxP/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32L5xx/L552C(C-E)(T-U)_L562CE(T-U)/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32L5xx/L552CE(T-U)xP_L562CE(T-U)xP/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32L5xx/L552MEYxP_L562MEYxP/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32L5xx/L552MEYxQ_L562MEYxQ/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32L5xx/L552Q(C-E)IxQ_L562QEIxQ/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32L5xx/L552QEIxP_L562QEIxP/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32L5xx/L552QEI_L562QEI/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32L5xx/L552R(C-E)T_L562RET/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32L5xx/L552RETxP_L562RETxP/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32L5xx/L552RETxQ_L562RETxQ/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32L5xx/L552V(C-E)TxQ_L562VETxQ/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32L5xx/L552VET_L562VET/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32L5xx/L552Z(C-E)TxQ_L562ZETxQ/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32L5xx/L552ZET_L562ZET/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32MP1xx/MP151AA(B-D)_MP151CA(B-D)_MP151DA(B-D)_MP151FA(B-D)/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32MP1xx/MP151AAA_MP151CAA_MP151DAA_MP151FAA/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32MP1xx/MP151AAC_MP151CAC_MP151DAC_MP151FAC/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32MP1xx/MP153AA(B-D)_MP153CA(B-D)_MP153DA(B-D)_MP153FA(B-D)_MP157AA(B-D)_MP157CA(B-D)_MP157DA(B-D)_MP157FA(B-D)/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32MP1xx/MP153AAA_MP153CAA_MP153DAA_MP153FAA_MP157AAA_MP157CAA_MP157DAA_MP157FAA/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32MP1xx/MP153AAC_MP153CAC_MP153DAC_MP153FAC_MP157AAC_MP157CAC_MP157DAC_MP157FAC/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32U0xx/U073C(8-B-C)(T-U)_U083CC(T-U)/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32U0xx/U073H(8-B-C)Y_U083HCY/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32U0xx/U073K(8-B-C)U_U083KCU/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32U0xx/U073M(8-B-C)I_U083MCI/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32U0xx/U073M(8-B-C)T_U083MCT/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32U0xx/U073R(8-B-C)(I-T)_U083RC(I-T)/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32U3xx/U375C(E-G)(T-U)xQ_U385CG(T-U)xQ/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32U3xx/U375C(E-G)(T-U)_U385CG(T-U)/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32U3xx/U375C(E-G)YxQ_U385CGYxQ/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32U3xx/U375K(E-G)U_U385KGU/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32U3xx/U375R(E-G)IxQ_U385RGIxQ/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32U3xx/U375R(E-G)I_U385RGI/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32U3xx/U375R(E-G)TxQ_U385RGTxQ/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32U3xx/U375R(E-G)T_U385RGT/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32U3xx/U375R(E-G)YxG_U385RGYxG/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32U3xx/U375R(E-G)YxQ_U385RGYxQ/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32U3xx/U375V(E-G)IxQ_U385VGIxQ/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32U3xx/U375V(E-G)I_U385VGI/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32U3xx/U375V(E-G)TxQ_U385VGTxQ/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32U3xx/U375V(E-G)T_U385VGT/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32U5xx/U535C(B-C-E)(T-U)xQ_U545CE(T-U)xQ/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32U5xx/U535C(B-C-E)(T-U)_U545CE(T-U)/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32U5xx/U535JEYxQ_U545JEYxQ/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32U5xx/U535N(C-E)YxQ_U545NEYxQ/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32U5xx/U535R(B-C-E)IxQ_U545REIxQ/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32U5xx/U535R(B-C-E)I_U545REI/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32U5xx/U535R(B-C-E)TxQ_U545RETxQ/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32U5xx/U535R(B-C-E)T_U545RET/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32U5xx/U535V(C-E)IxQ_U545VEIxQ/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32U5xx/U535V(C-E)I_U545VEI/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32U5xx/U535V(C-E)TxQ_U545VETxQ/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32U5xx/U535V(C-E)T_U545VET/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32U5xx/U575A(G-I)IxQ_U585AIIxQ/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32U5xx/U575A(G-I)I_U585AII/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32U5xx/U575C(G-I)(T-U)xQ_U585CI(T-U)xQ/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32U5xx/U575C(G-I)(T-U)_U585CI(T-U)/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32U5xx/U575O(G-I)YxQ_U585OIYxQ/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32U5xx/U575Q(G-I)IxQ_U585QIIxQ/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32U5xx/U575Q(G-I)I_U585QII/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32U5xx/U575R(G-I)TxQ_U585RITxQ/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32U5xx/U575R(G-I)T_U585RIT/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32U5xx/U575V(G-I)TxQ_U585VITxQ/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32U5xx/U575V(G-I)T_U585VIT/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32U5xx/U575Z(G-I)TxQ_U585ZITxQ/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32U5xx/U575Z(G-I)T_U585ZIT/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32U5xx/U595A(I-J)HxQ_U5A5AJHxQ/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32U5xx/U595A(I-J)H_U5A5AJH/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32U5xx/U595Q(I-J)IxQ_U5A5Q(I-J)IxQ/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32U5xx/U595Q(I-J)I_U5A5QJI/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32U5xx/U595R(I-J)TxQ_U5A5RJTxQ/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32U5xx/U595R(I-J)T_U5A5RJT/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32U5xx/U595V(I-J)TxQ_U599V(I-J)TxQ_U5A5VJTxQ_U5A9VJTxQ/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32U5xx/U595V(I-J)T_U599VJT_U5A5VJT/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32U5xx/U595Z(I-J)TxQ_U599Z(I-J)TxQ_U5A5ZJTxQ_U5A9ZJTxQ/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32U5xx/U595Z(I-J)T_U5A5ZJT/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32U5xx/U595Z(I-J)YxQ_U5A5ZJYxQ/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32U5xx/U599BJYxQ_U5A9BJYxQ/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32U5xx/U599N(I-J)HxQ_U5A9NJHxQ/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32U5xx/U599Z(I-J)YxQ_U5A9ZJYxQ/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32U5xx/U5F7V(I-J)T/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32U5xx/U5F7V(I-J)TxQ/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32U5xx/U5F9BJYxQ_U5G9BJYxQ/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32U5xx/U5F9NJHxQ/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32U5xx/U5F9V(I-J)TxQ/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32U5xx/U5F9Z(I-J)JxQ/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32U5xx/U5F9Z(I-J)TxQ/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32U5xx/U5G7VJT/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32U5xx/U5G7VJTxQ/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32U5xx/U5G9NJHxQ/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32U5xx/U5G9VJTxQ/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32U5xx/U5G9ZJJxQ/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32U5xx/U5G9ZJTxQ/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32WBAxx/WBA62C(G-I)U_WBA64C(G-I)U/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32WBAxx/WBA62M(G-I)F_WBA65M(G-I)F/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32WBAxx/WBA62P(G-I)I_WBA65P(G-I)I/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32WBAxx/WBA65C(G-I)U/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32WBAxx/WBA65R(G-I)V/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32WBAxx/WBA6MOIH/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32WBxx/WB35C(C-E)UxA_WB55C(C-E-G)U/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32WBxx/WB55R(C-E-G)V/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32WBxx/WB55V(C-E-G)(Q-Y)_WB55VYY/PinNamesVar.h:#ifdef USBCON
+packages/STMicroelectronics/hardware/stm32/2.11.0/variants/STM32WBxx/WB5MMGH/PinNamesVar.h:#ifdef USBCON

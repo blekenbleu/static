@@ -8,7 +8,7 @@
 <body>
 <div align=center>
 <table class="my_table"><tr><td> 
-<font size=-1><i><a href="../">back</a></i></font>
+<font size=-1><i><a href="index.htm">back</a></i></font>
 
 <h3><a href=https://docs.arduino.cc/libraries/midiusb/>Arduino MIDIUSB</a></h3><dl compact>
 <dt>Can be used as the "transport layer" for the more advanced Arduino MIDI library
@@ -16,11 +16,60 @@
 <dd>based on <a href=https://github.com/arduino/Arduino/wiki/PluggableUSB-and-PluggableHID-howto>PluggableUSB</a>
 <dd>supports AVR, SAM, SAMD
 
-<dt>building example sketch <code>MIDIUSB_loop.ino</code>
+<dt>Building example sketch <code>MIDIUSB_loop.ino</code>
  for Generic STM32F1 <a href=MIDIUSB_loop_errors.txt>fails</a>
-<dd>Unlike ESP32, STM32duino seeminly does NOT use TinyUSB...?
-<dt>STM32F1 <i>had</i> Arduino MIDI support,<br> using
+<dd>- fixed USB MCU error by enabling, in <b>Tools</b>
+<br> &emsp; <code>USB support "CDC (generic 'Serial' supersede U(S)ART)"</code> fixed USB MCU error
+<dt><br>Unlike ESP32, STM32duino does NOT use TinyUSB
+<dd>STM32F1 <i>had</i> Arduino MIDI support,<br> using
 <a href=https://github.com/arpruss/USBComposite_stm32f1>USB Composite library for Roger's Melbourne's STM32F1 core</a>
+
+<a name=USBLibrarySTM32>
+<dt></a><br><a href=https://github.com/Levi--G/USBLibrarySTM32>@Levi--G's <font size=+2><b>USBLibrarySTM32</b></font></a>
+<dd>reportedly works with Arduino sketches in platformio,
+<dd> emulates <code>PluggableUSB</code>, but has issues in Arduino 2.
+<br>- wanted to pretend that it is <code>ARDUINO_ARCH_AVR</code>;
+<br> &emsp; instead, hacked <code>MIDIUSB.h</code></a>:
+<pre>	- #if defined(ARDUINO_ARCH_AVR)
+	+ #if defined(ARDUINO_ARCH_AVR) || defined(HAL_PCD_MODULE_ENABLED)</pre>
+<br>- requires <a href=USBCON.txt><code>USBCON</code></a> and <a href=HAL_PCD_MODULE_ENABLED.txt><code>HAL_PCD_MODULE_ENABLED</code></a> build flags
+<br> &emsp; probably set in menu based on <a href=usb_flags.txt><code>usb_flags</code></a> and <a href=https://github.com/stm32duino/Arduino_Core_STM32/blob/main/platform.txt><code>platform.txt</code></a>
+<br>- Arduino 2 does not see files in <code>USBLibrarySTM32/include/</code>;
+<br> &emsp; moving files to <code>USBLibrarySTM32/src/</code> fixes that.
+<br>- <a href=https://github.com/Levi--G/USBLibrarySTM32/issues/6#issuecomment-3181102825>reported my experience</a>
+<br>- coordination with STM32duino core USB is discussed <a href=https://github.com/orgs/stm32duino/discussions/2724#discussioncomment-13191087>here</a>;
+<br> &emsp; likely integration would be as a menu option
+
+<dd><br>This compiles with hacked <a href=https://github.com/arduino-libraries/MIDIUSB>MIDIUSB Library for Arduino</a> example sketch,
+<br>but then <a href=verbose.txt>fails to link because it duplicates STM32duino USB library definitions</a>.
+
+<dt><br><b>STM32duino USB multiple definition</b> possible workaround
+<dd><a href=https://support.arduino.cc/hc/en-us/articles/360021232160-How-to-install-and-use-a-custom-core-version-in-the-IDE>install and use a custom core version</a>
+<br> &emsp; <i>more details</i>:&nbsp; <a href=https://arduino.github.io/arduino-cli/1.3/platform-specification/>Platform specification</a>
+<br> - hopefully applies to Arduino 2...?
+<br> - is STM32duino "core" literally <a href=https://github.com/stm32duino/Arduino_Core_STM32>https://github.com/stm32duino/Arduino_Core_STM32</a>?
+<br> &emsp; that seemingly matches (658MB) content at
+<br> &emsp; <code>AppData/Local/Arduino15/packages/STMicroelectronics/hardware/stm32/2.11.0/</code>
+<p><a href=USBD_Init.txt>results from <code>grep -R USBD_Init</code></a>
+</p>
+<dt><b>potential hack</b>, based on feedback from @Levi--G
+<dd>add <code>platform.local.txt</code> file in <code>packages/STMicroelectronics/hardware/stm32/2.11.0/</code>:
+<br> &emsp; <code>USBDevice_include_dir=<arduinosketchfolder>/libraries/USBLibrarySTM32</code>
+<br>With only this change, builds fail:
+<pre>C:\Users\bleke\AppData\Local\Arduino15\packages\STMicroelectronics\hardware\stm32\2.11.0\cores\arduino/WSerial.h:7:12:
+	 fatal error: USBSerial.h: No such file or directory
+    7 |   #include "USBSerial.h"
+      |            ^~~~~~~~~~~~~
+compilation terminated.</pre>
+Success requires setting <code>USB support (if available): "None"</code>, then:
+<pre>$ cat MIDIUSB_loop/build_opt.h
+-DUSBCON -DHAL_PCD_MODULE_ENABLED
+</pre>
+
+<dt><a href=USBSerial.htm>Attempts to build a USBSerial library in user space failed</a>
+<dd>Compiling STM32 core seemingly uses incompatible rules...
+
+<dt><br><a href=https://warrantyvoids.github.io/ModSynth/modules/midi2cv/midi-descriptor>USB enumeration, endpoints and descriptors</a>
 </dl>
 
 </td></tr><tr><td align=center>
