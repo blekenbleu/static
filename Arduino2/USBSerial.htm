@@ -23,8 +23,13 @@
 <dd><i>Note that it reports</i>: <code>Using library USBSerial at version 1.0.0 in folder:
 <br> &emsp; C:\Users\bleke\Documents\Arduino\libraries\USBSerial</code>...??
 
-<dt><br>Next, try moving USBSerial to <code>packages/STMicroelectronics/hardware/stm32/2.11.0/libraries/</code>,
-<br>then modify <code>platform.local.txt</code> to include it.
+<dt><br>Next, tried moving USBSerial to <code>packages/STMicroelectronics/hardware/stm32/2.11.0/libraries/</code>,
+<br>then modified <code>platform.local.txt</code> to include it.
+<dd>- builds fail with <code>file not found</code> for some header files.
+<br>- STM32duino has e.g. <code>hardware/stm32/2.11.0/system/extras/prebuild.sh</code>
+<br> &emsp; that forces USBDevice library for <code>-DUSBD_USE_CDC</code>
+<br>- instead of changing <code>USBSerial_include_dir</code> in <code>platform.local.txt</code>,
+<br> &emsp; try replacing <code>libraries/USBDevice</code> contents...
 
 </td></tr><tr><td align=center>
 maintained by <a href="https://github.com/blekenbleu">blekenbleu</a><br>
