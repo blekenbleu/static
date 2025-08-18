@@ -2,7 +2,7 @@
 <head>
 <link rel='stylesheet' type='text/css' href='../my.css'>
 
-<title>VSCode-Arduino</title>
+<title>VSCode</title>
 </head>
 
 <body>
@@ -12,24 +12,96 @@
 
 <p>Want to program <a href=../USB/index.htm#BlackPill>STM32 Black Pill</a> as a USB MIDI device.
 <br>Cannot launch <a href=../Arduino2/index.htm>Arduino 2</a> without unnatural acts
-<br> &emsp; bogus incompatibility with ImDisk</p>
+<br> &emsp; <a href=../Arduino2/install.htm#oopsie>bogus incompatibility with ImDisk</a>...
+</p>
+
+<h3>VSCode</h3>
+
+<details><summary>rant</summary>
+<a name=rant><pre></a>
+Visual Studio Code describes itself as a "standalone source code editor",
+NOT an IDE, which it is indeed NOT, since more mashup than integrated.
+
+Task-oriented vs event-driven
+Users presumably employ VSCode to accomplish tasks.
+Event-driven user interfaces can make that nearly impossible.
+
+Configuring VSCode <i>should be</i> a rare event...
+- Given that rarity, configuration should be easily accomplished and well explained.
+- At least for <a href=../VSCodeArduino/index.htm>VSCode-Arduino</a>, configuration is hardly explained
+	and unclear whether actually accomplished.
+
+This is my first Visual Studio Code experience.
+I <a href=https://code.visualstudio.com/docs/setup/windows>downloaded and installed it</a>,
+ then immediately added <b>Arduino Community Edition</b> and <b>Vim</b> <a href=https://marketplace.visualstudio.com/VSCode>extensions</a>
+ - clicking on those extensions shows a page about <b><i>installing</i></b>, already done.. wtf???
+After initial installation, <b>Arduino Community Edition</b> reported itself <i>not activated</i>...??
+<a href=https://marketplace.visualstudio.com/items?itemName=vscode-arduino.vscode-arduino-community><b>Arduino Community Edition</b> store page</a> is at best misleading.
+No <a href=https://github.com/arduino/arduino-cli/releases/>Arduino CLI</a> was bundled with it;  it silently used that already installed by Arduino 2.</a>
+When setting <code>BlackPill F411CE</code> Board, OUTPUT logged ESP32 installation...??!!
+
+Admittedly, the store page did mention using <code>F1</code>, which I missed/forgot,
+but F1 is absolutely essential to running Arduino in VSCode;
+-  nearly everything task-oriented requires first pressing <code>F1</code>.
+</pre>
+<h3>Adding insult to injury</h3>
+VSCode editor response to keystrokes is unusably slow.<hr>
+</details>
 
 <h3><a href=https://github.com/vscode-arduino/vscode-arduino>VSCode-Arduino</a></h3><dl compact>
 <dt>Community maintained version of Visual Studio Code extension for Arduino
-<dd><a href=https://github.com/arduino/vscode-arduino-tools>corresponding Arduino Tools extension for VS Code</a>
+<dd>- <a href=https://github.com/arduino/vscode-arduino-tools>corresponding Arduino Tools extension for VS Code</a>
 
 <dt><br><b>So far</b>
-<dd>Downloaded and installed VSCode (about 434MB); added extensions
+<dd>Installed VSCode (about 434MB in <code>F:\VSCode</code> + 309MB in <code>~\.vscode</code>);
+<br> added extensions
 <br>- Arduino Community Edition
 <br>- Vim emulation
+<br>- selected BlackPill F411CE
+<br>- <code>F1, Arduino: Verify</code> SerialUSB.ino
 
-<dt>Documentation
-<dd><a href=https://deepwiki.com/vscode-arduino/vscode-arduino>DeepWiki</a>;
+<p>This builds (<code>F1</code>, then scroll to and select <code>Arduino: Verify</code>)
+<br> &emsp; first OUTPUTs:
+<pre>[Warning] Output path is not specified.
+ Unable to reuse previously compiled files. Build will be slower. See README.</pre><ul>
+<li> what <code>Output path</code>?
+<li> where to specify?
+<li> what <code>README</code>?</ul></dl>
+
+<ul><li>FWIW, found builds in <code>F:\Temp\arduino</code></a>
+<li>found configuration crap in <code>/c/Users/bleke/AppData/Roaming/Code</code>.
+<li>vscode-arduino stuff is in <br><code>~/.vscode/extensions/vscode-arduino.vscode-arduino-community-0.7.2-win32-x64</code>
+<li>The <code>[Warning]</code> may be from <code>arduino-cli</code>
+<li><details><summary><code>find . -name 'arduino-cli*' -print</code></summary>
+<pre>~/.arduinoIDE/arduino-cli.yaml
+~/.vscode/extensions/vscode-arduino.vscode-arduino-community-0.7.2-win32-x64/assets/platform/win32-x64/arduino-cli
+~/.vscode/extensions/vscode-arduino.vscode-arduino-community-0.7.2-win32-x64/assets/platform/win32-x64/arduino-cli/arduino-cli.exe
+~/AppData/Local/Arduino15/packages/STMicroelectronics/hardware/stm32/2.11.0/CI/build/arduino-cli.py</pre>
+<li>I find no Python installed...  </details>
+<li><code>arduino-cli.exe  Version: 0.31.0</code> is installed; <code>1.3.0</code> is available,
+<br>but seemingly does not find <code>~/.arduinoIDE/arduino-cli.yaml</code>;
+<br>bundled <code>arduino-cli</code> does not support:<pre>build_cache:
+    path: f:/Temp/arduino</pre>
+</ul>
+
+<b>Consequently, must set <code>arduino.json "output"</code> uniquely <a href=https://arduino.stackexchange.com/a/45360>for each sketch</a></b>
+<details><summary>e.g.:&nbsp; <code>$ cat .vscode/arduino.json</code></summary>
+<pre>{
+    "configuration": "pnum=BLACKPILL_F411CE,upload_method=swdMethod,xserial=generic,usb=none,xusb=FS,opt=osstd,dbg=none,rtlib=nano",
+    "board": "STMicroelectronics:stm32:GenF4",
+    "sketch": "SerialUSB.ino",
+    <font color=red>"output": "f:/Temp/arduino/sketches/SerialUSB"</font>
+}</pre></details>
+
+<dl><dt><br>Documentation
+<dd><a href=https://marketplace.visualstudio.com/items?itemName=vscode-arduino.vscode-arduino-community>VS Marketplace</a>
+&nbsp; &lt;- <b><i>this wants careful reading (and rereading)</i></b>
+<br><a href=https://github.com/arduino/arduino-cli>arduino-cli</a> &emsp; &emsp; <i>GitHub</i>
+<br><a href=https://deepwiki.com/vscode-arduino/vscode-arduino>DeepWiki</a>;
 <br><a href=https://dev.to/udara_dananjaya/how-to-set-up-arduino-development-with-vscode-and-arduino-cli-3382>DEV</a>
-<br><a href=https://marketplace.visualstudio.com/items?itemName=vscode-arduino.vscode-arduino-community>VS Marketplace</a>
 <br><a href=https://www.circuitstate.com/tutorials/how-to-use-vs-code-for-creating-and-uploading-arduino-sketches/>CIRCUITSTATE</a>
 
-<p><a href=https://stm32world.com/wiki/STM32_development_and_debugging_using_VSCode>ST has their own VSCode plugin</a></p>
+<p><a href=https://stm32world.com/wiki/STM32_development_and_debugging_using_VSCode>ST has a non-Arduino VSCode plugin</a></p>
 </dl>
 
 </td></tr><tr><td align=center>
