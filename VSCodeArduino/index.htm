@@ -22,9 +22,10 @@
 Visual Studio Code describes itself as a "standalone source code editor",
 NOT an IDE, which it is indeed NOT, since more mashup than integrated.
 
-Task-oriented vs event-driven
+<b>Task-oriented vs event-driven</b>
 Users presumably employ VSCode to accomplish tasks.
 Event-driven user interfaces can make that nearly impossible.
+- some VSCode menus are empty until some other menu items are completed...
 
 Configuring VSCode <i>should be</i> a rare event...
 - Given that rarity, configuration should be easily accomplished and well explained.
@@ -36,9 +37,10 @@ I <a href=https://code.visualstudio.com/docs/setup/windows>downloaded and instal
  then immediately added <b>Arduino Community Edition</b> and <b>Vim</b> <a href=https://marketplace.visualstudio.com/VSCode>extensions</a>
  - clicking on those extensions shows a page about <b><i>installing</i></b>, already done.. wtf???
 After initial installation, <b>Arduino Community Edition</b> reported itself <i>not activated</i>...??
+(... which is never explained ...)
 <a href=https://marketplace.visualstudio.com/items?itemName=vscode-arduino.vscode-arduino-community><b>Arduino Community Edition</b> store page</a> is at best misleading.
 No <a href=https://github.com/arduino/arduino-cli/releases/>Arduino CLI</a> was bundled with it;  it silently used that already installed by Arduino 2.</a>
-When setting <code>BlackPill F411CE</code> Board, OUTPUT logged ESP32 installation...??!!
+When setting <a href=https://blekenbleu.github.io/Arduino/black.htm><code>BlackPill F411CE</code> Board</a>, OUTPUT logged ESP32 installation...??!!
 
 Admittedly, the store page did mention using <code>F1</code>, which I missed/forgot,
 but F1 is absolutely essential to running Arduino in VSCode;
@@ -73,17 +75,44 @@ VSCode editor response to keystrokes is unusably slow.
 <ul><li>FWIW, found builds in <code>F:\Temp\arduino</code></a>
 <li>found configuration crap in <code>/c/Users/bleke/AppData/Roaming/Code</code>.
 <li>vscode-arduino stuff is in <br><code>~/.vscode/extensions/vscode-arduino.vscode-arduino-community-0.7.2-win32-x64</code>
-<li>The <code>[Warning]</code> may be from <code>arduino-cli</code>
-<li><details><summary><code>find . -name 'arduino-cli*' -print</code></summary>
+<li>That <code>[Warning]</code> may be from <code>arduino-cli</code>
+<li><details><summary><code>find . -name '<b>arduino-cli</b>*' -print</code></summary>
 <pre>~/.arduinoIDE/arduino-cli.yaml
 ~/.vscode/extensions/vscode-arduino.vscode-arduino-community-0.7.2-win32-x64/assets/platform/win32-x64/arduino-cli
 ~/.vscode/extensions/vscode-arduino.vscode-arduino-community-0.7.2-win32-x64/assets/platform/win32-x64/arduino-cli/arduino-cli.exe
 ~/AppData/Local/Arduino15/packages/STMicroelectronics/hardware/stm32/2.11.0/CI/build/arduino-cli.py</pre>
-<li>I find no Python installed...  </details>
-<li><code>arduino-cli.exe  Version: 0.31.0</code> is installed; <code>1.3.0</code> is available,
-<br>but seemingly does not find <code>~/.arduinoIDE/arduino-cli.yaml</code>;
-<br>bundled <code>arduino-cli</code> does not support:<pre>build_cache:
+<li>I find no Python installed...<br><br>
+
+<li><code>arduino-cli.exe  Version: 0.31.0</code> is installed;&nbsp; <code>1.3.0</code> is available,
+<br>but does not by default find <code>~/.arduinoIDE/arduino-cli.yaml</code>;
+<li>bundled <code>arduino-cli</code> does not support:<pre>build_cache:
     path: f:/Temp/arduino</pre>
+<li>My default shell is <code>msys64 bash</code>;  added to <code>.bash_profile</code>:
+<pre># 19 Aug 2025 arduino-cli
+if [ -r "${USERPROFILE}/.arduinoIDE/arduino-cli.yaml" ]; then
+    export ARDUINO_CONFIG_FILE="${USERPROFILE}/.arduinoIDE/arduino-cli.yaml"
+fi
+if [ -d "/d/my/arduino-cli_1.3" ]; then
+    PATH="${PATH}:/d/my/arduino-cli_1.3"
+    alias arduino-cli="/d/my/arduino-cli_1.3/arduino-cli.exe"
+fi</pre>...yielding:<pre>bleke@Antec UCRT64 ~
+$ arduino-cli version
+arduino-cli  Version: 1.3.0 Commit: 3eecf201 Date: 2025-08-11T08:40:48Z
+
+bleke@Antec UCRT64 ~
+$ arduino-cli config dump
+board_manager:
+    additional_urls:
+        - https://github.com/stm32duino/BoardManagerFiles/raw/main/package_stmicroelectronics_index.json
+build_cache:
+    path: f:/Temp/arduino
+directories:
+    builtin:
+        libraries: C:\Users\bleke\AppData\Local\Arduino15\libraries
+    data: c:\Users\bleke\AppData\Local\Arduino15
+    user: c:\Users\bleke\Documents\Arduino
+locale: en</pre></details>
+
 </ul>
 
 <b>Consequently, must set <code>arduino.json "output"</code> uniquely <a href=https://arduino.stackexchange.com/a/45360>for each sketch</a></b>
@@ -95,7 +124,10 @@ VSCode editor response to keystrokes is unusably slow.
     <font color=red>"output": "f:/Temp/arduino/sketches/SerialUSB"</font>
 }</pre></details>
 
-<dl><dt><br>Documentation
+<dl>
+<dt><br><b>STM32 Upload method</b> is set in <code>Arduino Board Configuration</code>;<dd>NOT <code>Arduino: Select Programmer</code>
+
+<dt><br>Documentation
 <dd><a href=https://marketplace.visualstudio.com/items?itemName=vscode-arduino.vscode-arduino-community>VS Marketplace</a>
 &nbsp; &lt;- <b><i>this wants careful reading (and rereading)</i></b>
 <br><a href=https://github.com/arduino/arduino-cli>arduino-cli</a> &emsp; &emsp; <i>GitHub</i>
