@@ -1,0 +1,35 @@
+<html lang="en-US"><head>
+<link rel='stylesheet' type='text/css' href='../my.css'>
+<title>blekenbleu | STM32CubeProgrammer for VSCode-Arduino</title>
+</head>
+<body>
+<div class="inner" align=center>
+<table class="my_table"><tr><td width=860>
+
+<a href="index.htm"><font size=-1><i>back</i></font></a>
+<h3>STM32CubeProgrammer for VSCode-Arduino</h3>
+Arduino and Arduino 2 both find <code>STM32_Programmer_CLI.exe</code>
+when it is in PATH.<br>
+<a href=https://arduino.github.io/arduino-cli/1.3/platform-specification/#sketch-upload-configuration><code>arduino-cli</code></a>
+wants information in <code>boards.txt</code>.<br>
+
+vscode-arduino <a href=https://github.com/vscode-arduino/vscode-arduino/blob/00cc5f1d40a25992df3766950a24eb94b4314645/CHANGELOG.md?plain=1#L134>has some support</a> ... but I have yet to sort where/how.
+
+<p><a href=https://github.com/microsoft/vscode-arduino/issues/407>This page</a>
+suggests ~/.vscode/extensions/vscode-arduino.vscode-arduino*<br>
+Browsing code there (<code>programmerManager.js)</code> has programmer selected by<br> <code>_arduinoApp.boardManager.currentBoard</code><br>
+.. but <code>boardManager.js</code> parses them from <code>programmers.txt</code>
+<br> via <code>loadInstalledProgrammersFromPlatform()</code>,<br> but STM32duino does not bundle <code>STM32_Programmer_CLI</code><br>
+and <a href=https://github.com/stm32duino/Arduino_Core_STM32/commit/f9a35fd714b889475e067d8c2c72c551ea3c0cba>
+<b>removed stlink from boards.txt, platform.txt and programmers.txt</b></p>
+
+STM32 core <a href=https://github.com/stm32duino/Arduino_Core_STM32/issues/2415>broke between 2.7.1 and 2.8.0</a>...<br>
+
+This seemingly impacts only <a href=https://forum.arduino.cc/t/arduino-extension-for-vscode-being-deprecated/1293983/21>VSCode-Arduino</a>;<br>
+seemingly nobody else uploads using arduino-cli.
+
+</td></tr><tr><td align=center>
+maintained by <a href="https://github.com/blekenbleu">blekenbleu</a>
+
+</td></tr></table></div>
+</body></html>
