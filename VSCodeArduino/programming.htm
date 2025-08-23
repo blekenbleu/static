@@ -4,29 +4,43 @@
 </head>
 <body>
 <div class="inner" align=center>
-<table class="my_table"><tr><td width=860>
+<table class="my_table"><tr><td width=640>
 
 <a href="index.htm"><font size=-1><i>back</i></font></a>
-<h3>STM32CubeProgrammer for VSCode-Arduino</h3>
-Arduino and Arduino 2 both find <code>STM32_Programmer_CLI.exe</code>
-when it is in PATH.<br>
-<a href=https://arduino.github.io/arduino-cli/1.3/platform-specification/#sketch-upload-configuration><code>arduino-cli</code></a>
-wants information in <code>boards.txt</code>.<br>
 
-vscode-arduino <a href=https://github.com/vscode-arduino/vscode-arduino/blob/00cc5f1d40a25992df3766950a24eb94b4314645/CHANGELOG.md?plain=1#L134>has some support</a> ... but I have yet to sort where/how.
+<h2>STM32_Programmer_CLI for <a href=https://github.com/vscode-arduino/vscode-arduino><font color=green>VSCode-Arduino</font></a></h2>
+
+<a href=https://www.st.com/en/development-tools/stm32cubeprog.html><code>STM32_Programmer_CLI.exe</code></a> controls ST-Link dongles
+<br> &emsp; and is used with Arduino-CLI to program and debug STM32 boards.
+
+<p>Arduino and Arduino 2 IDEs both find <code>STM32_Programmer_CLI.exe</code> when it is in PATH.<br>
+but <a href=https://arduino.github.io/arduino-cli/1.3/platform-specification/#sketch-upload-configuration>Arduino-CLI</a>
+<i>also</i> wants information from <code>boards.txt</code>.<br>
+
+VSCode-Arduino <a href=https://github.com/vscode-arduino/vscode-arduino/blob/00cc5f1d40a25992df3766950a24eb94b4314645/CHANGELOG.md?plain=1#L134>
+ST-Link support</a> depends on Arduino-CLI (which it bundles).</p>
 
 <p><a href=https://github.com/microsoft/vscode-arduino/issues/407>This page</a>
-suggests ~/.vscode/extensions/vscode-arduino.vscode-arduino*<br>
-Browsing code there (<code>programmerManager.js)</code> has programmer selected by<br> <code>_arduinoApp.boardManager.currentBoard</code><br>
-.. but <code>boardManager.js</code> parses them from <code>programmers.txt</code>
-<br> via <code>loadInstalledProgrammersFromPlatform()</code>,<br> but STM32duino does not bundle <code>STM32_Programmer_CLI</code><br>
-and <a href=https://github.com/stm32duino/Arduino_Core_STM32/commit/f9a35fd714b889475e067d8c2c72c551ea3c0cba>
-<b>removed stlink from boards.txt, platform.txt and programmers.txt</b></p>
+suggests <code>~/.vscode/extensions/vscode-arduino.vscode-arduino*</code><br>
+Browsing code there, (<code>programmerManager.js)</code> selects programmer by<br>
+ &emsp; <code>_arduinoApp.boardManager.currentBoard</code><br>
+.. while <code>boardManager.js</code> parses programmer from <code>programmers.txt</code>
+<br> &emsp; via <code>loadInstalledProgrammersFromPlatform()</code>,<br>
+but STM32duino <i>does not bundle</i> <code>STM32_Programmer_CLI</code> and <br>
+<a href=https://github.com/stm32duino/Arduino_Core_STM32/commit/f9a35fd714b889475e067d8c2c72c551ea3c0cba>
+<b>removed stlink from boards.txt, platform.txt and programmers.txt</b></a></p>
 
-STM32 core <a href=https://github.com/stm32duino/Arduino_Core_STM32/issues/2415>broke between 2.7.1 and 2.8.0</a>...<br>
+STM32 core <a href=https://github.com/stm32duino/Arduino_Core_STM32/issues/2415>broke</a> ST-Link support
+between releases <a href=https://github.com/stm32duino/Arduino_Core_STM32/releases/tag/2.7.1>2.7.1</a> and 2.8.0</a>...<br>
 
-This seemingly impacts only <a href=https://forum.arduino.cc/t/arduino-extension-for-vscode-being-deprecated/1293983/21>VSCode-Arduino</a>;<br>
-seemingly nobody else uploads using arduino-cli.
+That now seemingly impacts mostly <a href=https://forum.arduino.cc/t/arduino-extension-for-vscode-being-deprecated/1293983/21>VSCode-Arduino</a>, with nothing else<br>
+ &emsp; using <code>arduino-cli</code> to program STM32 boards with sketch builds.
+
+<h3>My work-around for Arduino-CLI ST-Link support is <a href=https://github.com/blekenbleu/STLink-vscode-arduino><code>here</code></a></h3> &emsp;
+<a href=https://deepwiki.com/microsoft/vscode-arduino/2.2-arduino-app-and-core-managers>background:&nbsp; DeepWiki microsoft/vscode-arduino</a></h4>
+
+<p>FWIW, <a href=https://www.st.com/en/development-tools/stm32cubeprog.html>STM32CubeProgrammer software</a>
+ also bundles a Java <code>jre</code>.
 
 </td></tr><tr><td align=center>
 maintained by <a href="https://github.com/blekenbleu">blekenbleu</a>
