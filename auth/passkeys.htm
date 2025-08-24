@@ -18,13 +18,50 @@ table.my_table td { width:600px; }
 
 <a href="../"<i>back</i></a>
 
-<h2><a href=https://bitwarden.com/help/storing-passkeys//><font color = blue>BitWarden</font></a> and passkeys</h2>
-<i>24 Aug 2025</i><br>
-2FAS does not yet offer <a href=passkey.htm>passkey authentication</a>.<br>
-Whether Bitwarden Password Manager can be deployed <i>only</i> for passkeys is unclear.<ul>
-<li>Since I mostly use Google for website logins,
-and <a href=https://blog.google/inside-google/googlers/ask-a-techspert/how-passkeys-work/>their passkey support appears well integrated</a>,<br>
-but I trust them much less that when signing up for Gmail (2001).
+<h2><img align=center width=95 src=Google.png>,
+ <a href=https://bitwarden.com/help/storing-passkeys//><font color = blue>BitWarden</font></a> and passkeys</h2>
+<i>24 Aug 2025</i><br><br>
+
+2FAS does not yet offer <a href=passkey.htm>passkey authentication</a>.<ul>
+<li>Using mostly Google for website logins,
+and <a href=https://blog.google/inside-google/googlers/ask-a-techspert/how-passkeys-work/><br>
+their passkey support appears well integrated</a>,<br>
+but I trust them less than when signing up for Gmail (2001).
+<li>Google seemingly assumes that users will<br>
+<a href=https://safety.google/authentication/passkey/><b>keep</b> conventional passwords for sites as backup</a>,<br>
+so arguably <b>less</b> secure, with larger security perimeter to exploit.
+<li>Google
+<a href=https://www.zdnet.com/article/how-to-sync-passkeys-in-chrome-across-your-android-iphone-mac-or-pc-and-why-you-should/>
+supports using an iPhone</a> as
+ <a href=https://www.forbes.com/sites/zakdoffman/2025/08/01/google-confirms-gmail-warning-you-must-upgrade-your-account/>
+ Passkey authentication</a> device.
+<br><a href=https://www.youtube.com/watch?v=IMsgoCFihZ8>YouTube demonstration</a>
+<br><font color=red><b>Use iPhone to authenticate Gmail account passkey<br> &emsp; with complex password for backup</b></font>.
+<br><br>
+<li><b>Passkeys are <a href=https://en.wikipedia.org/wiki/Public-key_cryptography>Public-key cryptography</a></b><ul>
+<li>public-private key pairs
+<li>passkey private keys <b><i>must be secured</i></b> and unlocked<br>
+ <b>by password</b> and/or biometrics e.g. on two-factor device.
+<li>Passkey private keys <i><b>should be backed up</b></i>.
+<br>If they are automatically synced by Internet,<br>
+then those passkey bundles are vulnerable<br> to whatever password mechanism decrypts them.
+<li><a href=https://www.passkeycentral.org/introduction-to-passkeys/how-passkeys-work>FIDO</a> is a standard for passkey management.
+</ul>
+<li><a href=https://www.youtube.com/watch?v=_tQbWop1P7o&t=360s>Amazon login by passkey kinda sucks</a>.
+<br>Like many sites, Amazon implemented passkeys only as an alternative 2-factor authentication method, not login replacement.
+<li><a href=https://www.passkeys.io/who-supports-passkeys>Here is a list of websites supporting passkey login</a>;
+<br><a href=https://passkeyindex.io/>these websites support passkeys one way or another (e.g. 2FA)</a>
+</ul>
+<h3><font color=blue>BitWarden passkeys</font> seems half-baked,<br> &emsp; compared to Google's implementation</h3>
+Whether Bitwarden Password Manager could be deployed<br>
+ &emsp; <i>only</i> for passkeys is unclear.<ul>
+<li>BitWarden seemingly does NOT (<i>yet</i>) support iPhone<br> as authenticator device for e.g. Windows Chrome browser.
+<li>BitWarden Vaults sync to their webserver.
+<br><a href=https://bitwarden.com/help/authenticator-faqs/>BitWarden apps <b>do not encrypt their data</b></a>.
+<br> &emsp; Perhaps <a href=https://www.intowindows.com/how-to-create-password-protected-zip-file-using-7-zip-in-windows-10/>
+7z vault with password</a>, save to USB thumb drive...?
+</ul>
+
 </td></tr><tr><td align=center>
 maintained by <a href="https://github.com/blekenbleu">blekenbleu</a><br>
 </td></tr></table></div>
