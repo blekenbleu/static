@@ -1,0 +1,56 @@
+<html><head>
+<link rel='stylesheet' type='text/css' href='../my.css'>
+<style>
+table.my_table td { background-color:#DDEEFF; }
+</style>
+
+<title>RAMdisk</title>
+</head>
+
+<body>
+<div align=center>
+<table class="my_table"><tr><td style="padding-left:30">
+
+<h3>RAMdisk</h3>
+<h4>there and back again</h4>
+<a href=https://blekenbleu.github.io/Windows/compare.htm#SW>Antec</a> was set up
+with <a href="http://www.ultraramdisk.com/?mid=en_home&l=en">Ultra RAMDisk</a>
+<br><img align=top width=50% src="http://www.ultraramdisk.com/files/attach/images/1477/479/001/7d06afd34b7152b2a1ae46419ee2af89.png">,<br>
+to reduce SSD thrashing and speed <a href=../Covid/index.htm>Covid calculations</a>.
+<br>Switched to ImDisk when Ultra RAMDisk was monetized,
+<br> but Windows 11 changes earlier this year
+<br>disabled launching binaries from ImDisk,
+then <a href=../Arduino2/index.htm>Arduino 2</a> refused to run.
+
+<h4>SCSI miniport</h4>
+<a href=https://news.ycombinator.com/item?id=25905164>ImDisk uses Direct-IO</a>, which is faster than SCSI miniport RAMdisks,
+<br><b>but Arduino 2 will not launch</b>.
+<br>Among SCSI miniport RAMdisks:&nbsp; Arsenal, Ultra RAMDisk, StarWind.
+<br><a href=https://www.jhouseconsulting.com/2024/07/18/the-best-free-for-commercial-use-ram-disk-that-works-perfectly-with-desktop-virtualisation-2982#more-2982>Arsenal is well regarded</a>, but by itself supports neither
+<br>custom drive letter nor Temp folder creation when Windows boots.
+
+<p><a href=https://github.com/tmcdos/ramdisk>tmcdos/ramdisk</a> offers ImDisk function and simplicity for Arsenal,
+<br>but may work only for Windows 7.
+</p>
+
+Back to Ultra RAMDisk Lite
+
+<h3>ImDisk lacks uninstaller</h3><ul>
+<li>unmount
+<li>unclick all options
+<li>set size to 0
+<li>set drive to Z
+<li>not there after reboot...
+</ul>
+
+<h3>Ultra RAMDisk Lite install</h3>
+<ul><li>first verify as 100MB S drive
+<li>remove <code>TEMP</code> folder;&nbsp; add <code>Temp</code> folder <br>(match Chrome browser DATA_CACHE)
+<li>2000MB R drive
+<li><b>Arduino 2 now launches</b>
+</ul>
+</td></tr><tr><td align=center>
+maintained by <a href="https://github.com/blekenbleu">blekenbleu</a><br>
+</td></tr></table></div>
+
+</body></html>
