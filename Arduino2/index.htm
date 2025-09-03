@@ -14,13 +14,16 @@
 <dt>Arduino IDE 2 with 
  <a href=https://github.com/stm32duino/Arduino_Core_STM32>STM32 core 2.8.x</a>
  supports <a href=https://github.com/stm32duino/Arduino_Core_STM32/wiki/How-to-debug>debugging</a>
-<dd>Crap UI employs electron, refuses to launch with <a href=https://ltr-data.se/opencode.html#ImDisk>ImDisk</a>
-<br>my workaround:&nbsp; launch from <code>msys64/ucrt64.exe</code> bash terminal:
+<dd>Crap UI employs electron, refuses to launch with <a href=https://ltr-data.se/opencode.html#ImDisk>ImDisk</a><ul>
+<li>first workaround:&nbsp; launch from <code>msys64/ucrt64.exe</code> bash terminal:
 <br> &emsp; <code>$ Arduino2/ArduinoIDE.exe</code>
+<li>fix:&nbsp <a href=../RAMdisk/index.htm>replace ImDisk with Ultra RAMdisk Lite</a>
+<br>Perhaps eventually, <a href=https://github.com/tmcdos/ramdisk><b>tmdcos / ramdisk</b></a>
+</ul>
+
 <br><a href=../VSCodeArduino/index.htm><b>VSCode-Arduino</b> runs and builds</a>, arguably better than Arduino 2,
 <br>&emsp; but is about half-baked and tricky (impossible?) to configure <br>&emsp; (e.g.
 <a href=https://blekenbleu.github.io/Arduino/black.htm#STM32CubeProgrammer>STM32CubeProgrammer</a>)
-<br>Alternatively, replace ImDisk by <a href=https://github.com/tmcdos/ramdisk><b>tmdcos / ramdisk</b></a>
 
 <dt><br><b>The plan</b>
 <dd>add USB MIDI for STM32
@@ -36,7 +39,7 @@
 
 <br>- git repository
 <br>- add libraries, <b>starting with <a href=MIDIUSB.htm>MIDIUSB</a>
-and <a href=MIDIUSB.htm#USBLibrarySTM32>USBLibrarySTM32</a></b>
+and <a href=../USBLibrarySTM32/index.htm>USBLibrarySTM32</a></b>
 </dl>
 
 <h4><a href=https://visualgdb.com/tutorials/arm/st-link/gdbserver/>Visual Studio, VisualGDB ($99?) and ST-Link for STM32duino</a></h4>
