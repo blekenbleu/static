@@ -23,7 +23,7 @@ to reduce SSD thrashing and speed <a href=../Covid/index.htm>Covid calculations<
 then <a href=../Arduino2/index.htm>Arduino 2</a> refused to run.
 
 <h4>SCSI miniport</h4>
-<a href=https://news.ycombinator.com/item?id=25905164>ImDisk uses Direct-IO</a>, which is faster than SCSI miniport RAMdisks,
+<a href=https://news.ycombinator.com/item?id=25905164>ImDisk uses Direct-IO</a>, which can be faster than SCSI miniport RAMdisks,
 <br><b>but Arduino 2 will not launch</b>.
 <br>Among SCSI miniport RAMdisks:&nbsp; Arsenal, Ultra RAMDisk, StarWind.
 <br><a href=https://www.jhouseconsulting.com/2024/07/18/the-best-free-for-commercial-use-ram-disk-that-works-perfectly-with-desktop-virtualisation-2982#more-2982>Arsenal is well regarded</a>, but by itself supports neither
@@ -68,9 +68,18 @@ Back to Ultra RAMDisk Lite
 <br><i>UltraRamDisk Lite</i></p>
 <p align=center><img src=ArsenalMark.png>
 <br><i>Arsenal tmcdos / ramdisk</i></p>
+<p align=center><img src=PassMarkOSFMount.png>
+<br><i>PassMark OSFMount</i></p>
 
 <h3><a href=https://www.osforensics.com/tools/mount-disk-images.html>OFSMount</a></h3>
-(reportedly fast) RAM drive option <a href=https://github.com/search?q=repo%3Aflexxxxer%2FRamDrive.OsfMount%20scsi&type=code>seemingly uses SCSI miniport driver</a>...
+RAM drive option <a href=https://github.com/search?q=repo%3Aflexxxxer%2FRamDrive.OsfMount%20scsi&type=code>with SCSI miniport driver option</a>...<ul>
+<li>cannot specify drive letter
+<li>cannot specify Temp folder,
+<br> but could mount disk image file (with Temp folder) as RAM drive
+<li>No automount at boot option,
+<br> but could <a href=https://forums.passmark.com/osforensics-osfmount-osfclone/48264-how-to-automate-mounting-and-saving-image-file-of-a-ram-disk#post48862>Use Windows Task Scheduler</a>
+<li><b>Ultra RAMDisk Lite is faster</b></ul>
+
 </td></tr><tr><td align=center>
 maintained by <a href="https://github.com/blekenbleu">blekenbleu</a><br>
 </td></tr></table></div>
