@@ -15,19 +15,20 @@ table.my_table td { background-color:#DDEEFF; }
 <h4>there and back again</h4>
 <a href=https://blekenbleu.github.io/Windows/compare.htm#SW>Antec</a> was set up
 with <a href="http://www.ultraramdisk.com/?mid=en_home&l=en">Ultra RAMDisk</a>
-<br><img align=top width=50% src="http://www.ultraramdisk.com/files/attach/images/1477/479/001/7d06afd34b7152b2a1ae46419ee2af89.png">,<br>
-to reduce SSD thrashing and speed <a href=../Covid/index.htm>Covid calculations</a>.
+<br><img align=top width=50% src="Lite.png">,<br>
+ &emsp; to reduce SSD thrashing and speed <a href=../Covid/index.htm>Covid calculations</a>.<br>
+
 <br>Switched to ImDisk when Ultra RAMDisk was monetized,
-<br> but Windows 11 changes earlier this year
-<br>disabled launching binaries from ImDisk,
+<br> &emsp; but Windows 11 changes earlier this year
+<br> &emsp; disabled launching binaries from ImDisk,
 then <a href=../Arduino2/index.htm>Arduino 2</a> refused to run.
 
 <h4>SCSI miniport</h4>
 <a href=https://news.ycombinator.com/item?id=25905164>ImDisk uses Direct-IO</a>, which can be faster than SCSI miniport RAMdisks,
-<br><b>but Arduino 2 will not launch</b>.
-<br>Among SCSI miniport RAMdisks:&nbsp; Arsenal, Ultra RAMDisk, StarWind.
+<br> &emsp; <b>but Arduino 2 will not launch</b>.
+<br>Free SCSI miniport RAMdisks:&nbsp; Arsenal, OFSMount, Ultra RAMDisk, StarWind.
 <br><a href=https://www.jhouseconsulting.com/2024/07/18/the-best-free-for-commercial-use-ram-disk-that-works-perfectly-with-desktop-virtualisation-2982#more-2982>Arsenal is well regarded</a>, but by itself supports neither
-<br>custom drive letter nor Temp folder creation when Windows boots.
+<br> &emsp; custom drive letter nor Temp folder creation when Windows boots.
 
 <p><a href=https://github.com/tmcdos/ramdisk>tmcdos/ramdisk</a> offers ImDisk functionality for Arsenal.
 </p>
@@ -56,22 +57,22 @@ Back to Ultra RAMDisk Lite
 <h3></a><a href=https://github.com/tmcdos/ramdisk>tmcdos / ramdisk</a>
 	(<a href=https://github.com/ArsenalRecon/Arsenal-Image-Mounter/raw/master/DriverSetup/DriverSetup.7z>Arsenal-Image-Mounter</a>)</h3>
  &emsp; <a href=https://github.com/tmcdos/ramdisk/releases>V1.6</a> works for me...
-
-<p>Because unsigned binaries want admin permissions:
+<dl>
+<dd>Unsigned binaries want admin permissions:
 <br><code>Windows Security > Virus & threat protection settings > Add or remove exclusions</code>
-<br><img width=640 src=exclusions.png></p><p align=center>
+<br><img width=600 src=exclusions.png></p><p align=center>
 
-<img src=UI.png>
+<img src=UI.png></dl>
 
-</p><a href=https://crystalmark.info/en/software/crystaldiskmark/crystaldiskmark-main-menu/>CrystalDiskMark</a> comparison:
-<p align=center><img src=UltraMark.png>
-<br><i>UltraRamDisk Lite</i></p>
+<h3><a href=https://crystalmark.info/en/software/crystaldiskmark/crystaldiskmark-main-menu/>CrystalDiskMark</a> comparisons</h3>
 <p align=center><img src=ArsenalMark.png>
 <br><i>Arsenal tmcdos / ramdisk</i></p>
 <p align=center><img src=PassMarkOSFMount.png>
 <br><i>PassMark OSFMount</i></p>
+<p align=center><img src=UltraMark.png>
+<br><i>Ultra RamDisk Lite</i></p>
 
-<h3><a href=https://www.osforensics.com/tools/mount-disk-images.html>OFSMount</a></h3>
+<h3><a href=https://www.osforensics.com/tools/mount-disk-images.html>PassMark OFSMount</a></h3>
 RAM drive option <a href=https://github.com/search?q=repo%3Aflexxxxer%2FRamDrive.OsfMount%20scsi&type=code>with SCSI miniport driver option</a>...<ul>
 <li>cannot specify drive letter
 <li>cannot specify Temp folder,
