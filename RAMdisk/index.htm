@@ -29,8 +29,7 @@ then <a href=../Arduino2/index.htm>Arduino 2</a> refused to run.
 <br><a href=https://www.jhouseconsulting.com/2024/07/18/the-best-free-for-commercial-use-ram-disk-that-works-perfectly-with-desktop-virtualisation-2982#more-2982>Arsenal is well regarded</a>, but by itself supports neither
 <br>custom drive letter nor Temp folder creation when Windows boots.
 
-<p><a href=https://github.com/tmcdos/ramdisk>tmcdos/ramdisk</a> offers ImDisk function and simplicity for Arsenal,
-<br>but may work only for Windows 7.
+<p><a href=https://github.com/tmcdos/ramdisk>tmcdos/ramdisk</a> offers ImDisk functionality for Arsenal.
 </p>
 
 Back to Ultra RAMDisk Lite
@@ -58,11 +57,20 @@ Back to Ultra RAMDisk Lite
 	(<a href=https://github.com/ArsenalRecon/Arsenal-Image-Mounter/raw/master/DriverSetup/DriverSetup.7z>Arsenal-Image-Mounter</a>)</h3>
  &emsp; <a href=https://github.com/tmcdos/ramdisk/releases>V1.6</a> works for me...
 
-<br><br><a href=https://crystalmark.info/en/software/crystaldiskmark/crystaldiskmark-main-menu/>CrystakDiskMark</a> comparison:
+<p>Because unsigned binaries want admin permissions:
+<br><code>Windows Security > Virus & threat protection settings > Add or remove exclusions</code>
+<br><img width=640 src=exclusions.png></p><p align=center>
+
+<img src=UI.png>
+
+</p><a href=https://crystalmark.info/en/software/crystaldiskmark/crystaldiskmark-main-menu/>CrystalDiskMark</a> comparison:
 <p align=center><img src=UltraMark.png>
 <br><i>UltraRamDisk Lite</i></p>
 <p align=center><img src=ArsenalMark.png>
 <br><i>Arsenal tmcdos / ramdisk</i></p>
+
+<h3><a href=https://www.osforensics.com/tools/mount-disk-images.html>OFSMount</a></h3>
+(reportedly fast) RAM drive option <a href=https://github.com/search?q=repo%3Aflexxxxer%2FRamDrive.OsfMount%20scsi&type=code>seemingly uses SCSI miniport driver</a>...
 </td></tr><tr><td align=center>
 maintained by <a href="https://github.com/blekenbleu">blekenbleu</a><br>
 </td></tr></table></div>
