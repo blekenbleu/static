@@ -1,0 +1,56 @@
+<html><head>
+<link rel='stylesheet' type='text/css' href='../my.css'>
+<style>
+table.my_table td { background-color:#DDEEFF; }
+</style>
+
+<title>Windows 11 Serial Port Management</title>
+</head>
+
+<body>
+<div align=center>
+<table class="my_table"><tr><td style="padding-left:30">
+
+<h3>Windows 11 Serial Port Management</h3><br>
+
+I have a Desktop folder for COM port utilities;<br>
+&emsp; programming Arduino devices generates, then abandons many COMn names..
+
+<dl><dt><br><a href=https://www.trishtech.com/2015/01/change-com-port-in-windows/><b>COM port renaming</b></a>
+<dd>Device Manager can rename active COM devices, but will not free "in use" names...
+
+<dt><br><a href=https://www.uwe-sieber.de/misc_tools_e.html#arbiter><b>ComNameArbiterTool</b></a>
+<dd>Preferred over <a href=https://github.com/devilwacause/COM-Port-Clear>Registry hacking to free "in use" COM ports</a>
+
+<dt><br><a href=https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html>PuTTY</a>
+<dd>Popular terminal emulator
+
+<dt><br><a href=https://pete.akeo.ie/2011/07/com0com-signed-drivers.html><b>com0com</b> virtual null modem <b><i>signed drivers</i></b></a>
+<dd>Modern Windows wants signed drivers...
+<dd><a href=https://com0com.sourceforge.net/doc/UsingCom0com.pdf> How to PDF</a>
+ &emsp; Run as admin:&nbsp <code>setupc.exe</code>
+<pre>Enter 'help' to get info about usage of Setup for com0com.
+
+command> list
+       CNCA0 PortName=COM18,PlugInMode=no,cts=ldtr
+       CNCB0 PortName=COM2,EmuOverrun=yes,ExclusiveMode=no,cts=on,dsr=on,dcd=on
+command> change CNCA0 PortName=COM8
+       CNCA0 PortName=COM18,PlugInMode=no,cts=ldtr
+change CNCA0 PortName=COM8,PlugInMode=no,cts=ldtr
+Restarted CNCA0 com0com\port \Device\com0com10
+       CNCB0 PortName=COM2,EmuOverrun=yes,ExclusiveMode=no,cts=on,dsr=on,dcd=on
+ComDB: COM8 - logged as "in use"
+ComDB: COM18 - released
+command> quit</pre>
+
+<dt><br><code>mode.com</code>
+<dd>traditional command line binary that lists ports, e.g.:
+<br><code>R:\Temp></code><a href=serial.txt><code>mode.com</code></a>
+
+</dl>
+
+</td></tr><tr><td align=center>
+maintained by <a href="https://github.com/blekenbleu">blekenbleu</a><br>
+</td></tr></table></div>
+
+</body></html>
