@@ -31,12 +31,22 @@
 <dd><br>This compiles with hacked <a href=https://github.com/arduino-libraries/MIDIUSB>MIDIUSB Library for Arduino</a> example sketch,
 <br>but then <a href=verbose.txt>fails to link because it duplicates STM32duino USB library definitions</a>.
 
+<dt><br><b>working</b> &nbsp <i>5 Sep 2025</i>
+<dd>sample <a href=>SerialUSB sketch</a> compiles, loads and runs on a Black Pill from VSCode-Arduino. then Arduino 2:
+<ul><li>moved <code>USBDevice</code> folder out of <code>Arduino15/packages/STMicroelectronics/hardware/stm32/2.11.0/libraries</code>
+<br> &emsp; Arduino 2 scripting wanted to use <code>USBDevice</code> source, whether referenced or not..
+<li>added <code>USBLibrarySTM32</code> to <code>Documents/Arduino/libraries</code>
+<li>in <code>USBLibrarySTM32</code>, moved files from <code>include</code> to <code>src</code>
+<li>moved <code>SerialUSB</code> example <code>src/main.cpp</code> to <code>SerialUSB.ino</code>, added <code>build_opt.h</code>
+<br> &emsp; added syncopated LED blink code to <a href=SerialUSB.ino><code>SerialUSB.ino</code></a>, for deducing execution state
+<li>Arduino Serial Monitor or PuTTY can connect and pass data
+<br> &emsp; initially failed, because COM8 conflict with <a href=../SerialPorts/index.htm>com0com null modem</a>
+</ul>
 <dt><br><b>STM32duino USB multiple definition</b> possible workaround
 <dd><a href=https://support.arduino.cc/hc/en-us/articles/360021232160-How-to-install-and-use-a-custom-core-version-in-the-IDE>install and use a custom core version</a>
 <br> &emsp; <i>more details</i>:&nbsp; <a href=https://arduino.github.io/arduino-cli/1.3/platform-specification/>Platform specification</a>
-<br> - hopefully applies to Arduino 2...?
-<br> - is STM32duino "core" literally <a href=https://github.com/stm32duino/Arduino_Core_STM32>https://github.com/stm32duino/Arduino_Core_STM32</a>?
-<br> &emsp; that seemingly matches (658MB) content at
+<br> <a href=https://github.com/stm32duino/Arduino_Core_STM32>https://github.com/stm32duino/Arduino_Core_STM32</a>
+ seemingly matches (658MB) content at
 <br> &emsp; <code>AppData/Local/Arduino15/packages/STMicroelectronics/hardware/stm32/2.11.0/</code>
 <p><a href=USBD_Init.txt>results from <code>grep -R USBD_Init</code></a>
 </p>
@@ -59,6 +69,16 @@ Success requires setting <code>USB support (if available): "None"</code>, then:
 
 <dt><br><a href=https://warrantyvoids.github.io/ModSynth/modules/midi2cv/midi-descriptor>USB enumeration, endpoints and descriptors</a>
 </dl>
+
+<h3>problematic <code>USBSerial.availableForWrite()</code></h3>
+<code>USBLibrarySTM32</code> seemingly lacks means to detect COM port session disconnects;
+<br> &emsp; <code>USBSerial.availableForWrite()</code> presumably reports space available when not.
+<ul><li>Sending from Black Pill to e.g. PuTTY after reconnection is broken
+<br> &emsp; if writes while disconnected overran its buffer
+<li>No obvious means for sketch to detect session disconnections.
+<li>Want to configure Black Pill composite USB device with CDC and MIDI,
+<br>occasionally using CDC for logging and debugging...
+</ul>
 
 </td></tr><tr><td align=center>
 maintained by <a href="https://github.com/blekenbleu">blekenbleu</a><br>
