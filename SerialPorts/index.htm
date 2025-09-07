@@ -11,16 +11,19 @@ table.my_table td { background-color:#DDEEFF; }
 <div align=center>
 <table class="my_table"><tr><td style="padding-left:30">
 
-<h3>Windows 11 Serial Port Management</h3><br>
+<h3>Windows 11 Serial Device Management</h3><br>
 
-I have a Desktop folder for COM port utilities;<br>
-&emsp; programming Arduino devices generates, then abandons many COMn names..
+<dl><dt>COM port utilities<br>
+<dd>programming Arduino devices uses, then abandons, COMn names,
+<br>... which Windows continues to consider "in use".
 
-<dl><dt><br><a href=https://www.trishtech.com/2015/01/change-com-port-in-windows/><b>COM port renaming</b></a>
-<dd>Device Manager can rename active COM devices, but will not free "in use" names...
+<dt><br><a href=https://www.trishtech.com/2015/01/change-com-port-in-windows/><b>COM port renaming</b></a>
+<dd>Device Manager can rename active COM devices,
+<br>but in Windows 11 does not support removing "in use" COM ports
+<br>by <code>set DEVMGR_SHOW_NONPRESENT_DEVICES=1</code> with <code>View > Show hidden devices</code>
 
 <dt><br><a href=https://www.uwe-sieber.de/misc_tools_e.html#arbiter><b>ComNameArbiterTool</b></a>
-<dd>Preferred over <a href=https://github.com/devilwacause/COM-Port-Clear>Registry hacking to free "in use" COM ports</a>
+<dd>Frees "in use" COM ports without <a href=https://github.com/devilwacause/COM-Port-Clear>Registry Editor fiddling</a>
 
 <dt><br><a href=https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html>PuTTY</a>
 <dd>Popular terminal emulator
