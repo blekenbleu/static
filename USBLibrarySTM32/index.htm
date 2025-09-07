@@ -20,8 +20,8 @@
 <br> &emsp; instead, hacked <code>MIDIUSB.h</code></a>:
 <pre>	- #if defined(ARDUINO_ARCH_AVR)
 	+ #if defined(ARDUINO_ARCH_AVR) || defined(HAL_PCD_MODULE_ENABLED)</pre>
-<br>- requires <a href=USBCON.txt><code>USBCON</code></a> and <a href=HAL_PCD_MODULE_ENABLED.txt><code>HAL_PCD_MODULE_ENABLED</code></a> build flags
-<br> &emsp; probably set in menu based on <a href=usb_flags.txt><code>usb_flags</code></a> and <a href=https://github.com/stm32duino/Arduino_Core_STM32/blob/main/platform.txt><code>platform.txt</code></a>
+<br>- requires <a href=../Arduino2/USBCON.txt><code>USBCON</code></a> and <a href=../Arduino2/HAL_PCD_MODULE_ENABLED.txt><code>HAL_PCD_MODULE_ENABLED</code></a> build flags
+<br> &emsp; probably set in menu based on <a href=../Arduino2/usb_flags.txt><code>usb_flags</code></a> and <a href=https://github.com/stm32duino/Arduino_Core_STM32/blob/main/platform.txt><code>platform.txt</code></a>
 <br>- Arduino 2 does not see files in <code>USBLibrarySTM32/include/</code>;
 <br> &emsp; moving files to <code>USBLibrarySTM32/src/</code> fixes that.
 <br>- <a href=https://github.com/Levi--G/USBLibrarySTM32/issues/6#issuecomment-3181102825>reported my experience</a>
@@ -29,10 +29,10 @@
 <br> &emsp; likely integration would be as a menu option
 
 <dd><br>This compiles with hacked <a href=https://github.com/arduino-libraries/MIDIUSB>MIDIUSB Library for Arduino</a> example sketch,
-<br>but then <a href=verbose.txt>fails to link because it duplicates STM32duino USB library definitions</a>.
+<br>but then <a href=../Arduino2/verbose.txt>failed to link because it duplicates STM32duino USB library definitions</a>.
 
 <dt><br><b>working</b> &nbsp <i>5 Sep 2025</i>
-<dd>sample <a href=>SerialUSB sketch</a> compiles, loads and runs on a Black Pill from VSCode-Arduino. then Arduino 2:
+<dd>sample <a href=SerialUSB.ino>SerialUSB sketch</a> compiles, loads and runs on a Black Pill from VSCode-Arduino. then Arduino 2:
 <ul><li>moved <code>USBDevice</code> folder out of <code>Arduino15/packages/STMicroelectronics/hardware/stm32/2.11.0/libraries</code>
 <br> &emsp; Arduino 2 scripting wanted to use <code>USBDevice</code> source, whether referenced or not..
 <li>added <code>USBLibrarySTM32</code> to <code>Documents/Arduino/libraries</code>
@@ -48,10 +48,10 @@
 <br> <a href=https://github.com/stm32duino/Arduino_Core_STM32>https://github.com/stm32duino/Arduino_Core_STM32</a>
  seemingly matches (658MB) content at
 <br> &emsp; <code>AppData/Local/Arduino15/packages/STMicroelectronics/hardware/stm32/2.11.0/</code>
-<p><a href=USBD_Init.txt>results from <code>grep -R USBD_Init</code></a>
+<p><a href=../Arduino2/USBD_Init.txt>results from <code>grep -R USBD_Init</code></a>
 </p>
 <dt><b>potential hack</b>, based on feedback from @Levi--G
-<dd>add <code>platform.local.txt</code> file in <code>packages/STMicroelectronics/hardware/stm32/2.11.0/</code>:
+<dd>add <code>../Arduino2/platform.local.txt</code> file in <code>packages/STMicroelectronics/hardware/stm32/2.11.0/</code>:
 <br> &emsp; <code>USBDevice_include_dir=<arduinosketchfolder>/libraries/USBLibrarySTM32</code>
 <br>With only this change, builds fail:
 <pre>C:\Users\bleke\AppData\Local\Arduino15\packages\STMicroelectronics\hardware\stm32\2.11.0\cores\arduino/WSerial.h:7:12:
