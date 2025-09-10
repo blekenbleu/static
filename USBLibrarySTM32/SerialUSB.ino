@@ -2,6 +2,8 @@
 #include "USBCDC.h"
 
 USBCDC USBSerial;
+// separate USB dongle for serial trace
+HardwareSerial Serial2(PA3, PA2);	// RX2, TX2 https://forum.arduino.cc/t/stm32f411ce-black-pill-serial-port-pin-mapping/907459
 
 bool toggle = true, timeout = false, ok = true, restart = true;
 unsigned long now, then, wait = 0;
@@ -52,6 +54,7 @@ void setup()
   // according to https://hackaday.com/2021/01/20/blue-pill-vs-black-pill-transitioning-from-stm32f103-to-stm32f411/
   pinMode(PC13, OUTPUT);    // LED
   
+  Serial2.begin(9600);
   USBSerial.begin(115200);
   USB_Begin();
   LEDb4();   
@@ -62,6 +65,8 @@ void setup()
     delay(80);
     LEDb4();
   }
+  Serial2.print("USBSerial USB_EP_SIZE = ");
+  Serial2.println(USB_EP_SIZE);
 
   wait4CDC();
 
@@ -71,20 +76,28 @@ void setup()
  */
 
   USBSerial.print("USBSerial connect\n");
+  Serial2.println("USBSerial connect");
   now = then = millis();
   wait = 250;
 }
 
 bool printUSB(const char *string)
 {
-  int m = strlen(string), l = USBSerial.availableForWrite();
+  int n, m = strlen(string), l = USBSerial.availableForWrite();
+  bool rc = false;
 
   if (ok && m < l) // resist buffer overflow
   {
-//  if (wait < 400)
-      return (m == USBSerial.write(string, m));
+//  if (wait >= 400) return true;
+    Serial2.print(string); Serial2.print("\r");
+    if (!(rc = (m == (n = USBSerial.write(string, m)))))
+    {
+      Serial2.print("printUSB():  not ok;  USBSerial.availableForWrite() returned ");
+      Serial2.println(l); Serial2.print("USBSerial.write() returned "); Serial2.print(n);
+      Serial2.print(" for USBSerial.write() length "); Serial2.println(m);
+    }
   }
-  return false;
+  return rc;
 }
 
 void loop()

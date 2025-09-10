@@ -75,14 +75,15 @@ Success requires setting <code>USB support (if available): "None"</code>, then:
 </dl>
 
 <h3><a href=https://github.com/Levi--G/USBLibrarySTM32/issues/11>problematic <code>USBSerial.availableForWrite()</code></a></h3>
-<code>USBLibrarySTM32</code> seemingly lacks means to detect COM port session disconnects;
+ &emsp; <a href=SerialLog.txt><i>hardware serial trace log</i></a>; <code>USBSerial COM</code> <i>session terminated after</i> goodbye
+<p><code>USBLibrarySTM32</code> seemingly lacks means to detect COM port session disconnects;
 <br> &emsp; <code>USBSerial.availableForWrite()</code> presumably reports space available when not.
 <ul><li>Sending from Black Pill to e.g. PuTTY after reconnection is broken
 <br> &emsp; if writes while disconnected overran its buffer
 <li>No obvious means for sketch to detect session disconnections.
 <li>Want to configure Black Pill composite USB device with CDC and MIDI,
 <br>occasionally using CDC for logging and debugging...
-</ul>
+</ul></p>
 
 </td></tr><tr><td align=center>
 maintained by <a href="https://github.com/blekenbleu">blekenbleu</a><br>

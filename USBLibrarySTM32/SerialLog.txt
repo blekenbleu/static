@@ -1,0 +1,16 @@
+USBSerial USB_EP_SIZE = 64
+USBSerial connect
+hello there
+
+USBSerial waiting...
+
+USBSerial resumed
+goodbye
+
+USBSerial waiting...
+
+USBSerial waiting...
+
+USBSerial waiting...
+printUSB():  not ok;  USBSerial.availableForWrite() returned 64
+USBSerial.write() returned 0 for USBSerial.write() length 22
