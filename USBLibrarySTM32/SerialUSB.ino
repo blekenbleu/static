@@ -2,9 +2,11 @@
 #include "USBCDC.h"
 
 USBCDC USBSerial;
-bool toggle = true, unavailable = false;
+
+bool toggle = true, timeout = false, ok = true, restart = true;
 unsigned long now, then, wait = 0;
 // char sname[33];
+char buffer[USB_EP_SIZE + 1];
 
 void LEDb4()
 {
@@ -16,10 +18,33 @@ void LED()
 {
   if (millis() < then + wait)
     return;
-  if (25 > USBSerial.availableForWrite())
-    wait = (toggle) ? 500 : 700;
+
+  if (!ok)
+    wait = 50;
+  else if (timeout)
+    wait = 1250;
+  else if (25 > USBSerial.availableForWrite())
+    wait = (toggle) ? 400 : 800;
+  else if (restart)
+    wait = 250;
+  else wait = 100;
   LEDb4();
   then = millis();
+}
+
+void wait4CDC()
+{
+  while (!USBSerial)
+  {
+    // wait for Serial port connection
+    delay(500);    // syncopated blink
+    LEDb4();
+    delay(250);
+    LEDb4();
+    delay(750);
+    LEDb4();
+  }
+  restart = true;
 }
 
 void setup()
@@ -38,16 +63,7 @@ void setup()
     LEDb4();
   }
 
-  while (!USBSerial)
-  {
-    // wait for Serial port connection
-    delay(500);    // syncopated blink
-    LEDb4();
-    delay(250);
-    LEDb4();
-    delay(750);
-    LEDb4();
-  }
+  wait4CDC();
 
 /* protected... why?
   uint8_t l = USBSerial.getShortName(sname);
@@ -59,44 +75,61 @@ void setup()
   wait = 250;
 }
 
+bool printUSB(const char *string)
+{
+  int m = strlen(string), l = USBSerial.availableForWrite();
+
+  if (ok && m < l) // resist buffer overflow
+  {
+//  if (wait < 400)
+      return (m == USBSerial.write(string, m));
+  }
+  return false;
+}
+
 void loop()
 {
+  int l, m;
+
   LED();
 
   if (!USBSerial)
   {
     USBSerial.begin(115200);
-    while (!USBSerial)
-    {
-      delay(150);
-      LEDb4();
-    }
-    if (25 < USBSerial.availableForWrite())
-      USBSerial.print("USBSerial restarted\n");
-    wait = 250;
+    wait4CDC();
+    ok = printUSB("USBSerial restarted\n");
   }
 
-  while (USBSerial.available())
+  while (0 < (l = USBSerial.available()))
   {
-    if (unavailable)
-    {
-      unavailable = false;
-      USBSerial.print("\nUSBSerial resumed\n");
-    }
-    USBSerial.print((char)USBSerial.read());
+    int i, a = USBSerial.availableForWrite();
+
+    ok = true;
     wait = 100;
+    if (timeout)
+    {
+      timeout = false;
+      ok = printUSB("\nUSBSerial resumed\n");
+    }
+    if (a > USB_EP_SIZE)
+      a = USB_EP_SIZE;
+    if (l > a)
+      l = a;
+    for (i = 0; i < l; i++)
+      buffer[i] = USBSerial.read();
+    buffer[i] = '\0';
+    ok = printUSB(buffer);
+    if (!ok)
+        while (0 < USBSerial.available())
+          USBSerial.read();            // flush 
     now = millis();
   }
 
-  if (millis() > 10000 + now)	// suspiciously quiet
+  if (millis() > 10000 + now)    // suspiciously quiet
   {
-    now = millis();
-    if (25 < USBSerial.availableForWrite())
-    {
-      unavailable = true;
-      if (wait < 400)	// prevent buffer overflow 
-        USBSerial.print("USBSerial waiting...");
-    }
+    ok = printUSB("\nUSBSerial waiting...\n");
+    timeout = true;
     wait = 1250;
+    now = millis();
   }
 }
