@@ -25,16 +25,16 @@ void LED()
     wait = 50;
   else if (timeout)
     wait = 1250;
-  else if (25 > USBSerial.availableForWrite())
-    wait = (toggle) ? 400 : 800;
   else if (restart)
     wait = 250;
+  else if (25 > USBSerial.availableForWrite())
+    wait = (toggle) ? 400 : 800;
   else wait = 100;
   LEDb4();
   then = millis();
 }
 
-void wait4CDC()
+void CDCwait()
 {
   while (!USBSerial)
   {
@@ -49,14 +49,35 @@ void wait4CDC()
   restart = true;
 }
 
-void setup()
+bool printUSB(const char *string)
 {
-  // according to https://hackaday.com/2021/01/20/blue-pill-vs-black-pill-transitioning-from-stm32f103-to-stm32f411/
-  pinMode(PC13, OUTPUT);    // LED
-  
-  Serial2.begin(9600);
+  int n, m = strlen(string), l = USBSerial.availableForWrite();
+  bool rc = false;
+
+  if (ok && m < l) // resist buffer overflow
+  {
+    Serial2.print(string); Serial2.print("\r");
+    if (!(rc = (m == (n = USBSerial.write(string, m)))))
+    {
+      Serial2.print("printUSB():  not ok;  USBSerial.availableForWrite() returned ");
+      Serial2.println(l); Serial2.print("USBSerial.write() returned "); Serial2.print(n);
+      Serial2.print(" for USBSerial.write() length "); Serial2.println(m);
+
+      USBSerial.end();
+      Serial2.println("USBSerial.end()");
+      USB_End();
+      Serial2.println("USB_End()");
+    }
+  }
+  return rc;
+}
+
+void startUSB()
+{
   USBSerial.begin(115200);
+  Serial2.println("USBSerial.begin(115200)");
   USB_Begin();
+  Serial2.println("USB_Begin()");
   LEDb4();   
 
   while (!USB_Running())
@@ -65,39 +86,29 @@ void setup()
     delay(80);
     LEDb4();
   }
+  Serial2.println("USB_Running()");
+  CDCwait();
+  ok = true;
+  ok = printUSB("USBSerial restarted\n");
+  USBSerial.clearWriteError();	// USBLibrarySTM32/src/USBCDC.cpp:271
+  timeout = false;
+}
+
+void setup()
+{
+  // https://hackaday.com/2021/01/20/blue-pill-vs-black-pill-transitioning-from-stm32f103-to-stm32f411/
+  pinMode(PC13, OUTPUT);    // LED
+  LEDb4();   
+  Serial2.begin(9600);
   Serial2.print("USBSerial USB_EP_SIZE = ");
   Serial2.println(USB_EP_SIZE);
-
-  wait4CDC();
 
 /* protected... why?
   uint8_t l = USBSerial.getShortName(sname);
   sname[l] = (char)0;
  */
 
-  USBSerial.print("USBSerial connect\n");
-  Serial2.println("USBSerial connect");
   now = then = millis();
-  wait = 250;
-}
-
-bool printUSB(const char *string)
-{
-  int n, m = strlen(string), l = USBSerial.availableForWrite();
-  bool rc = false;
-
-  if (ok && m < l) // resist buffer overflow
-  {
-//  if (wait >= 400) return true;
-    Serial2.print(string); Serial2.print("\r");
-    if (!(rc = (m == (n = USBSerial.write(string, m)))))
-    {
-      Serial2.print("printUSB():  not ok;  USBSerial.availableForWrite() returned ");
-      Serial2.println(l); Serial2.print("USBSerial.write() returned "); Serial2.print(n);
-      Serial2.print(" for USBSerial.write() length "); Serial2.println(m);
-    }
-  }
-  return rc;
 }
 
 void loop()
@@ -106,12 +117,8 @@ void loop()
 
   LED();
 
-  if (!USBSerial)
-  {
-    USBSerial.begin(115200);
-    wait4CDC();
-    ok = printUSB("USBSerial restarted\n");
-  }
+  if (!USBSerial)		// USBSerial.write() error recovery
+    startUSB();
 
   while (0 < (l = USBSerial.available()))
   {

@@ -128,6 +128,13 @@ static bool USB_SendAvailable_Internal(USBD_HID_HandleTypeDef *&hhid, uint8_t en
 #endif
 </pre>
 
+<h4>USBCDC write() error recovery</h4>
+<ul><li><code>USBLibrarySTM32/src/USBCDC.cpp setWriteError()</code> seems vestigial;
+<br> &emsp; <code>USBSerial.clearWriteError()</code> did not help...
+<li>neither did <code>USBSerial.end() .... USBSerial.begin(115200)</code> by itself help
+<li>What did work:&nbsp; <code>USBSerial.end();  USB_End();</code>, followed by restarting both
+</ul>
+
 </td></tr><tr><td align=center>
 maintained by <a href="https://github.com/blekenbleu">blekenbleu</a><br>
 </td></tr></table></div> 
