@@ -87,28 +87,29 @@ Success requires setting <code>USB support (if available): "None"</code>, then:
 
 <a name=how>
 <h3></a>How it works</h3>
-This library interfaces, via <code>USBD_HandleTypeDef</code>
-to <code>Arduino15/packages/STMicroelectronics/hardware/stm32/2.11.0/system/Middlewares/ST/STM32_USB_Device_Library/Core</code>,
+This library interfaces, via <code>USBD_HandleTypeDef</code> to<br>
+<code>Arduino15/packages/STMicroelectronics/hardware/stm32/2.11.0/system/Middlewares/ST/STM32_USB_Device_Library/Core</code>,
 <br> specifically <code>USBD_HandleTypeDef</code> in <code>STM32_USB_Device_Library/Core/Inc/<a href=usbd_def.h>usbd_def.h</a></code>,
 as <a href=https://wiki.st.com/stm32mcu/wiki/Category:USB#STM32_USB_device_library_main_variables>described in ST's wiki</a>
 
 <p>For <code>USBSerial</code>, <code>UDBCDC write(const uint8_t *buffer, size_t size)</code> calls <code>USB_Send(CDC_ENDPOINT_IN, buffer, size);</code>
-<br><code>USB_Send()</code> calls <code>USB_SendQuick()</code>,
+<br><code>USB_Send()</code> calls <code>USB_SendQuick()</code>,<br>
 which grabs the CDC endpoint buffer class instance and invokes its <code>Write</code> method,
 <br>then, if endpoint state is <code>HID_IDLE</code>, invokes <code>USB_SendTXBufferUnsafe()</code>,
-<br>which invokes <code>USBD_LL_Transmit()</code>, which calls <code>HAL_PCD_EP_Transmit()</code>,
-<br>which will be in <code>STMicroelectronics/hardware/stm32/2.11.0/system/Drivers/</code> for the appropriate chip type.
-<br>Curiously, this release "Remove Lock mechanism from HAL_PCD_EP_Transmit() and HAL_PCD_EP_Receive() API’s"...
-<br><code>HAL_PCD_EP_Transmit()</code> returns <code>HAL_StatusTypeDef</code>, which gets ignored.
-</p>
-<code>After <code>USB_SendQuick()</code>, <code>USB_Send()</code> calls <code>USB_Flush_Internal()</code>,
-<br>but ignores its return code.  <code>USB_Flush_Internal()</code> does nothing
-<br>if <code>USB_SendAvailable_Internal()</code> returns true.
+<br>which invokes <code>USBD_LL_Transmit()</code>, which calls <code>HAL_PCD_EP_Transmit()</code>
+<br>for the implicated chip type in <code>STMicroelectronics/hardware/stm32/2.11.0/system/Drivers/</code>.
+<br>Curiously, this release:<br> "Remove Lock mechanism from HAL_PCD_EP_Transmit() and HAL_PCD_EP_Receive() API’s"...
+</p><code>HAL_PCD_EP_Transmit()</code> returns <code>HAL_StatusTypeDef</code>, which gets ignored.
+<p>
+After <code>USB_SendQuick()</code>, <code>USB_Send()</code> calls <code>USB_Flush_Internal()</code>,
+ but ignores its return code.<br>
+<code>USB_Flush_Internal()</code> does nothing
+if <code>USB_SendAvailable_Internal()</code> returns true.
 
-<p><code>USBLibrarySTM32</code> seemingly handles only fixed size buffers;
+</p><code>USBLibrarySTM32</code> seemingly handles only fixed size buffers;
 <br>if only 1 byte is written, a full 64-byte buffer is used.
 <br>Thus, <code>availableForWrite()</code> returns either <code>USB_EP_SIZE</code>  or 0.
-</p>
+
 <h3>Because default <code>PACKETBUFFER_ALLOW_OVERWRITE</code> is true,<br>
  &emsp; <code>availableForWrite()</code> always returns <code>USB_EP_SIZE</code></h3>
 <pre>int USBCDC::availableForWrite(void)
@@ -124,7 +125,8 @@ static bool USB_SendAvailable_Internal(USBD_HID_HandleTypeDef *&hhid, uint8_t en
   {
     return true;
   }
-#endif 
+#endif
+</pre>
 
 </td></tr><tr><td align=center>
 maintained by <a href="https://github.com/blekenbleu">blekenbleu</a><br>
