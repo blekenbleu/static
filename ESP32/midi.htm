@@ -17,12 +17,14 @@
 <dd>trying <a href="/MIDI"><b>MIDI over Wi-Fi</b></a>, and specifically WebSocket (TCP),<br> to avoid running
  <a href="https://github.com/espressif/arduino-esp32/tree/master/libraries/AsyncUDP">AsyncUDP</a> in addition to 
  <a href="https://github.com/me-no-dev/ESPAsyncWebServer">AsyncTCP/ESPAsyncWebServer</a>
-<dd> &nbsp
 
-<dt><a href="https://github.com/blekenbleu/midi_examples#esp32tinyusb-known-issue">Known Issue</a> with current Arduino ESP32TinyUSB library:<br>
-<dd><code>"tinyusb callbacks cant be overriden and are used by arduino-esp32"</code><br> &nbsp
+<dt><br><a href="https://github.com/blekenbleu/midi_examples#esp32tinyusb-known-issue">Known Issue</a> with current Arduino ESP32TinyUSB library:<br>
+<dd><code>"tinyusb callbacks cant be overriden and are used by arduino-esp32"</code>
 
-<dt><b>Most Arduino MIDI examples want hacking for ESP32-S2 (ESPTinyUSB)</b>
+<dt><br><a href=https://github.com/aselectroworks/MIDIUSB_ESP32>aselectroworks / MIDIUSB_ESP32</a>
+<dd>supports <a href=https://github.com/FortySevenEffects/arduino_midi_library>Arduino MIDI Library</a> on arduino-esp32 tinyusb
+
+<dt><br><b>Most Arduino MIDI examples want hacking for ESP32-S2 (ESPTinyUSB)</b>
 <dd>Most Arduino MIDI sketches use <code>#include "MIDI.h"</code> paradigm;<br>
 <dd>often, also <code>digitalWrite(LED_BUILTIN, HIGH);</code><br>
   &nbsp ...which <code>LED_BUILTIN</code> does not exist on most ESP32-S2 boards.
