@@ -3,9 +3,9 @@
 
 USBCDC USBSerial;
 // separate USB dongle for serial trace
-HardwareSerial Serial2(PA3, PA2);	// RX2, TX2 https://forum.arduino.cc/t/stm32f411ce-black-pill-serial-port-pin-mapping/907459
+HardwareSerial HwSerial(PA3, PA2);	// RX2, TX2 https://forum.arduino.cc/t/stm32f411ce-black-pill-serial-port-pin-mapping/907459
 
-bool toggle = true, timeout = false, ok = true, restart = true;
+bool toggle = true, timeout = false, ok = true, restart = true, once = true;
 unsigned long now, then, wait = 0;
 // char sname[33];
 char buffer[USB_EP_SIZE + 1];
@@ -54,20 +54,27 @@ bool printUSB(const char *string)
   int n, m = strlen(string), l = USBSerial.availableForWrite();
   bool rc = false;
 
-  if (ok && m < l) // resist buffer overflow
+  if (m < l) // resist buffer overflow
   {
-    Serial2.print(string); Serial2.print("\r");
-    if (!(rc = (m == (n = USBSerial.write(string, m)))))
+    HwSerial.print(string); HwSerial.print("\r");
+    if ((rc = (m == (n = USBSerial.write(string, m)))))
     {
-      Serial2.print("printUSB():  not ok;  USBSerial.availableForWrite() returned ");
-      Serial2.println(l); Serial2.print("USBSerial.write() returned "); Serial2.print(n);
-      Serial2.print(" for USBSerial.write() length "); Serial2.println(m);
+      if (!once)
+        HwSerial.println("printUSB():  recovered!");
+      once = true;
+    } else {
+      HwSerial.print("printUSB():  not ok;  USBSerial.availableForWrite() returned ");
+      HwSerial.println(l); HwSerial.print("USBSerial.write() returned "); HwSerial.print(n);
+      HwSerial.print(" for USBSerial.write() length "); HwSerial.println(m);
 
       USBSerial.end();
-      Serial2.println("USBSerial.end()");
+      HwSerial.println("USBSerial.end()");
       USB_End();
-      Serial2.println("USB_End()");
+      HwSerial.println("USB_End()");
     }
+  } else if (once) {
+    HwSerial.print("printUSB(): not enough availableForWrite(): "); HwSerial.println(l);
+    once = false;
   }
   return rc;
 }
@@ -75,9 +82,9 @@ bool printUSB(const char *string)
 void startUSB()
 {
   USBSerial.begin(115200);
-  Serial2.println("USBSerial.begin(115200)");
+  HwSerial.println("USBSerial.begin(115200)");
   USB_Begin();
-  Serial2.println("USB_Begin()");
+  HwSerial.println("USB_Begin()");
   LEDb4();   
 
   while (!USB_Running())
@@ -86,7 +93,7 @@ void startUSB()
     delay(80);
     LEDb4();
   }
-  Serial2.println("USB_Running()");
+  HwSerial.println("USB_Running()");
   CDCwait();
   ok = true;
   ok = printUSB("USBSerial restarted\n");
@@ -99,9 +106,9 @@ void setup()
   // https://hackaday.com/2021/01/20/blue-pill-vs-black-pill-transitioning-from-stm32f103-to-stm32f411/
   pinMode(PC13, OUTPUT);    // LED
   LEDb4();   
-  Serial2.begin(9600);
-  Serial2.print("USBSerial USB_EP_SIZE = ");
-  Serial2.println(USB_EP_SIZE);
+  HwSerial.begin(19200);
+  HwSerial.print("USBSerial USB_EP_SIZE = ");
+  HwSerial.println(USB_EP_SIZE);
 
 /* protected... why?
   uint8_t l = USBSerial.getShortName(sname);
@@ -145,7 +152,7 @@ void loop()
     now = millis();
   }
 
-  if (millis() > 10000 + now)    // suspiciously quiet
+  if (millis() > 5000 + now)    // suspiciously quiet
   {
     ok = printUSB("\nUSBSerial waiting...\n");
     timeout = true;

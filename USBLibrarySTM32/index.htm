@@ -74,19 +74,20 @@ Success requires setting <code>USB support (if available): "None"</code>, then:
 <dt><br><a href=https://warrantyvoids.github.io/ModSynth/modules/midi2cv/midi-descriptor>USB enumeration, endpoints and descriptors</a>
 </dl>
 
-<h3><a href=https://github.com/Levi--G/USBLibrarySTM32/issues/11>problematic <code>USBSerial.availableForWrite()</code></a></h3>
+<h4><a href=https://github.com/Levi--G/USBLibrarySTM32/issues/11>problematic <code>USBSerial.availableForWrite()</code></a></h4>
  &emsp; <a href=SerialLog.txt><i>hardware serial trace log</i></a>; <code>USBSerial COM</code> <i>session terminated after</i> goodbye
-<p><code>USBLibrarySTM32</code> seemingly lacks means to detect COM port session disconnects;
+<br> &emsp; <code>USBLibrarySTM32</code> seemingly lacks means to detect COM port session disconnects;
 <br> &emsp; <code>USBSerial.availableForWrite()</code> presumably reports space available when not.
-<ul><li>Sending from Black Pill to e.g. PuTTY after reconnection is broken
-<br> &emsp; if writes while disconnected overran its buffer
-<li>No obvious means for sketch to detect session disconnections.
-<li>Want to configure Black Pill composite USB device with CDC and MIDI,
+<ul>
+<li>Want to configure Black Pill composite USB device with CDC and <a href=https://github.com/blekenbleu/MIDIecho><b>MIDI</b></a>,
 <br>occasionally using CDC for logging and debugging...
-</ul></p>
+</ul>
+<h3><i>13 Sep 2025</i> <code>availableForWrite()</code> fixed in
+ <a href=https://github.com/Levi--G/USBLibrarySTM32/tree/develop><code>develop</code> branch</a></h3>
+Updated <a href=SerialUSB.ino>SerialUSB sketch</a>
 
 <a name=how>
-<h3></a>How it works</h3>
+<h4></a>How it was</h4>
 This library interfaces, via <code>USBD_HandleTypeDef</code> to<br>
 <code>Arduino15/packages/STMicroelectronics/hardware/stm32/2.11.0/system/Middlewares/ST/STM32_USB_Device_Library/Core</code>,
 <br> specifically <code>USBD_HandleTypeDef</code> in <code>STM32_USB_Device_Library/Core/Inc/<a href=usbd_def.h>usbd_def.h</a></code>,
@@ -110,8 +111,8 @@ if <code>USB_SendAvailable_Internal()</code> returns true.
 <br>if only 1 byte is written, a full 64-byte buffer is used.
 <br>Thus, <code>availableForWrite()</code> returns either <code>USB_EP_SIZE</code>  or 0.
 
-<h3>Because default <code>PACKETBUFFER_ALLOW_OVERWRITE</code> is true,<br>
- &emsp; <code>availableForWrite()</code> always returns <code>USB_EP_SIZE</code></h3>
+<h4>Because default <code>PACKETBUFFER_ALLOW_OVERWRITE</code> was true, for e.g. Black Pill,<br>
+ &emsp; <code>availableForWrite()</code> always returned <code>USB_EP_SIZE</code></h4>
 <pre>int USBCDC::availableForWrite(void)
 {
   return USB_SendAvailable(CDC_ENDPOINT_OUT) ? USB_EP_SIZE : 0;
