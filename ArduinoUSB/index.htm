@@ -11,17 +11,15 @@ table.my_table td { background-color:#DDEEFF; }
 <div align=center>
 <table class="my_table"><tr><td style="padding-left:30">
 
-<h3>Arduino USB</h3><br>
+<h3>Arduino <a href=../USB/index.htm>USB</a></h3><br>
 
-<dl><dt><a href=https://knowledge.cambrionix.com/Content/Articles/USB/Understanding-The-Difference-Between-a-USB-Host-and-Device.htm>host vs device vs OTG</a>
-
-<dt><br><a href=https://github.com/arduino/ArduinoCore-API/blob/master/api/PluggableUSB.h>Pluggable USB</a> vs Tiny USB
+<dl>
+<dt><a href=https://github.com/arduino/ArduinoCore-API/blob/master/api/PluggableUSB.h>Pluggable USB</a> vs Tiny USB
 <br>In 2015, Arduino added <a href=https://github.com/arduino/Arduino/blob/3278173ef810935e07808deed58783c1bc7ca4cf/build/shared/revisions.txt#L570>PluggableUSB support</a>
 for most official <a href=https://github.com/arduino/Arduino/wiki/PluggableUSB-and-PluggableHID-howto>Arduino <b><i>devices</i></b></a>
 <dd><b>PluggableUSB</b> supports more functionality for
 	 <a href=https://webusb.github.io/arduino/#compatible-hardware>Arduino models with embedded USB</a>
 <dd>That functionality is typically incompatible with Tiny USB, and vice versa.
-<br><a href=https://docs.arduino.cc/libraries/midiusb/>ARDUINODOCS <b>MIDIUSB</b> device control</a>
 
 
 <dt><a href=https://docs.espressif.com/projects/esp-iot-solution/en/latest/usb/usb_overview/tinyusb_guide.html>Espressif</a>
@@ -30,12 +28,23 @@ for most official <a href=https://github.com/arduino/Arduino/wiki/PluggableUSB-a
 <dd>also used for mbed_rp2040, ArduinoCore-samd and Pico
 <br><a href=https://github.com/chegewara/EspTinyUSB>EspTinyUSB</a> USB composite device <a href=https://github.com/chegewara/EspTinyUSB/issues/61#issuecomment-974493512>lacks MIDI support</a></ul>
 
-<dt><a href=https://community.st.com/t5/stm32-mcus/how-to-program-and-debug-the-stm32-using-the-arduino-ide/ta-p/608514>STMicroelectronics' USB device Arduino support</a> is <a href=../USB/STM32MIDI.htm>relatively limited</a>.
+<dt><a href=https://community.st.com/t5/stm32-mcus/how-to-program-and-debug-the-stm32-using-the-arduino-ide/ta-p/608514>STM32duino's USB device support</a> is <a href=../USB/STM32MIDI.htm>relatively limited</a>.
 <dd>A Blue Pill <a href=https://github.com/arpruss/USBComposite_stm32f1>composite USB device library</a>
 for <a href=https://github.com/rogerclarkmelbourne/Arduino_STM32/>Roger Clark's Maple-based Arduino STM32</a>
-<br>is incompatible with current Arduino <a href=https://stm32world.com/images/5/5c/Whitepaper-guide-for-developing-usb-composite-device-for-stm32-hardware-platform.pdf>STM32 device USB based on STM32Cube</a>
+<br>is incompatible with current <a href=https://stm32world.com/images/5/5c/Whitepaper-guide-for-developing-usb-composite-device-for-stm32-hardware-platform.pdf>STM32duino device USB based on STM32Cube</a>
 
 <dt><a href=../USBLibrarySTM32/index.htm><b>USBLibrarySTM32</b></a> implements PluggableUSB API for STM32
+<dd>supports <a href=../USB/index.htm#composite>composite devices for STM32F103C8 Blue Pills</a>,
+<br> &emsp; which have 8 endpoints, but <i><b>not</b></i> Black Pills.</dl>
+
+<a name=MIDI><h3></a>Arduino USB <a href=https://blekenbleu.github.io/MIDI/>MIDI</a></h3>
+<dl>
+<dt><a href=https://docs.arduino.cc/libraries/midiusb/>ARDUINODOCS <b>MIDIUSB</b> device control</a>
+<dt><a href=https://github.com/FortySevenEffects/arduino_midi_library>FortySevenEffects / <b>Arduino MIDI Library</b></a>
+<dd>can read all MIDI channels, supports callbacks<br> and multiple MIDI interfaces, for mergers/splitters applications
+<br>depends on <a href=https://github.com/lathoub/Arduino-USBMIDI>lathoub / <b>Arduino-USBMIDI</b></a>, which in turn
+<br> &emsp; depends on Arduino <a href=https://github.com/arduino-libraries/MIDIUSB><b>MIDIUSB</b></a>, based on <b>PluggableUSB</b>.
+<br> &emsp; - <a href=https://github.com/deanm1278/MIDIUSB2>MIDIUSB2</a> adds callback support to MIDIUSB
 
 <dt><br><b>Arduino USB connections</b><ul>
 <li><a href=https://docs.arduino.cc/retired/boards/arduino-usb-2-serial-micro/>Atmega16U2 / USB 2 Serial Micro</a>
@@ -43,12 +52,6 @@ for <a href=https://github.com/rogerclarkmelbourne/Arduino_STM32/>Roger Clark's 
 <br>as used with <a href=https://www.instructables.com/Arduino-USB/>Arduino boards lacking USB connectivity</a>.
 <li><a href=https://docs.arduino.cc/retired/shields/arduino-usb-host-shield/>Host Shield</a>
 <li>STM32 and ESP32 microcontrollers embed USB,<br> but lack PluggableUSB support from those OEMs.</ul>
-
-<dt><br><a href=https://github.com/FortySevenEffects/arduino_midi_library>FortySevenEffects / <b>Arduino MIDI Library</b></a>
-<dd>can read all MIDI channels, supports callbacks<br> and multiple MIDI interfaces, for mergers/splitters applications
-<br>depends on <a href=https://github.com/lathoub/Arduino-USBMIDI>lathoub / <b>Arduino-USBMIDI</b></a>, which in turn
-<br> &emsp; depends on Arduino <a href=https://github.com/arduino-libraries/MIDIUSB><b>MIDIUSB</b></a>, based on <b>PluggableUSB</b>.
-<br> &emsp; - <a href=https://github.com/deanm1278/MIDIUSB2>MIDIUSB2</a> adds callback support to MIDIUSB
 </dl>
 
 </td></tr><tr><td align=center>
