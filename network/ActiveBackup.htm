@@ -17,10 +17,14 @@
 	<a href=https://global.synologydownload.com/download/Document/Software/AdminGuide/Package/ActiveBackup/All/enu/Synology_ABB_admin_guide_Windows_PC_PS_enu.pdf>Windows PCs</a>
 <dt>download and run the agent .msi;
 <dd> selecting <code>repair</code> option updates to latest Version: (3.0.0-4638 <i>6 Oct 2025</i>)
-<br> <a href=https://www.synology.com/en-us/releaseNote/ActiveBackupBusinessAgent>Using repair</a>
+<br> <a href=https://blekenbleu.github.io/Windows/compare.htm#ABBA>Windows installation</a> &emsp;
+<a href=https://www.synology.com/en-us/releaseNote/ActiveBackupBusinessAgent>Using repair</a>
 <dt>Backups cannot be initiated from Windows PC
-<dd>Backups are either scheduled or manual
-<br>- <b>right-click Task Name to launch immediate backup</b>
+<dd>Agent service automatically runs at Windows startup
+<br><b>Occasionally launch from Start menu</b>
+<br>- to ensure it can connect and is not out of date
+<dt>On DS920+, backups are either scheduled or manual
+<dd>- <b>right-click Task Name to launch immediate backup</b>
 <dt>Destination compression or encryption disables backup verification.
 <dt>Once the first backup task on that backup destination is created,<dd>
  <a href=https://kb.synology.com/en-us/DSM/tutorial/How_to_create_a_new_abb_backup_task_with_different_compression_and_encryption_settings>compression and encryption settings</a> cannot be changed.<dt>
