@@ -1,0 +1,36 @@
+<html><head>
+<link rel='stylesheet' type='text/css' href='../my.css'>
+<title>ESP32-S3</title></head>
+<body>
+<div align=center>
+<table class="my_table"><tr><td>
+<a href=index.htm><i>back</i>
+<font size=+1>
+
+<h3><a href=https://en.wikipedia.org/wiki/ESP32#ESP32-S3>ESP32-S3 has Dual-core 240 MHz Xtensa LX7</a></h3>
+Espressif ESP32-S3-WROOM-1 D2NBR2 modules obtained Dec 2021;
+<br><img src=DevKitC-1.png>
+<ul>
+<li> ESP-IDF first supported ESP32-S3 in v4.4
+<li>Arduino V1.8.19 supported ESP32-S3 in Apri 2022.</ul>
+
+<p>ESP32-S3-WROOM-1 D2NBR2 native USB is not detected by USBDeview
+<br> until releasing RESET while BOOT, then as <code>USB JTAG/serial debug unit</code>.
+<br>USB cable into dedicated UART port flashes RGB LED;&nbsp; USBDeview reports <code>CP2102N</code>.
+<br><img src=D2NBR2.jpg>
+</p>After Windows 11 installs
+<a href=https://www.silabs.com/software-and-tools/usb-to-uart-bridge-vcp-drivers>
+silabs driver</a>, PuTTY at 115200 scrolls:
+<pre>I (131888) example: log -> UART
+example: print -> stdout
+example: print -> stderr</pre>
+
+<h3><a href=https://thelastoutpostworkshop.github.io/microcontroller_devkit/espconnect/>ESPConnect</a> browser sniffer -
+<font size=-1><a href=https://www.youtube.com/watch?v=-nhDKzBxHiI>YouTube video</a></font>
+</h3>
+
+</font>
+</td></tr><tr><td align=center>
+maintained by <a href="https://github.com/blekenbleu">blekenbleu</a><br>
+</td></tr></table></div>
+</body></html>
