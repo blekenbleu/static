@@ -8,27 +8,36 @@
 
 <font size=+1>
 
-<h3><a href=ESP32-S3.htm>ESP32-S3 has Dual-core 240 MHz Xtensa LX7</a></h3>
-ESP32-Cx family have single RISC-V cores.<br><br><hr>
-
-<h3>Arduino and ESP32-S2-Saola-1</h3>
-Arguably more like single L106 core ESP8266,
-<br>ESP32-S2 has a Single-core 240 MHz Xtensa LX7,
-<br>while regular ESP32 had dual LX6 microprocessors.
-
-<h4>Ordered from <a href="https://www.jameco.com/z/ESP32-S2-Saola-1M-Espressif-Systems-ESP32-S2-WROOM-Series-Evaluation-Board-4MB-Flash-802-11-b-g-n-WiFi-WLAN-_2324583.html">JameCo</a> (<i>late 2021</i>:<br> &emsp;
-  ESP32-S2-Saola-1M <a href="https://docs.espressif.com/projects/esp-idf/en/latest/esp32s2/hw-reference/esp32s2/user-guide-saola-1-v1.2.html">ESP32-S2-WROOM Dev 4MB Flash</a> <code>XX0H32</code></h4>
-<img  width=640 src="https://dfimg.dfrobot.com/enshop/image/data/DFR0812/DFR0812.jpg"><br clear=all>
- &nbsp <a href="https://www.espressif.com/sites/default/files/documentation/esp32-s2-wroom_esp32-s2-wroom-i_datasheet_en.pdf">ESP32-S2-WROOM Data sheet</a>
- &nbsp <a href="https://docs.espressif.com/projects/esp-idf/en/latest/esp32s2/hw-reference/esp32s2/user-guide-saola-1-v1.2.html">ESP32-S2-Saola-1 user guide</a>
-
-<h4><a href=https://thelastoutpostworkshop.github.io/microcontroller_devkit/espconnect/>ESPConnect</a> to check operation</h4>
+<h3><a href=https://developer.espressif.com/blog/2025/10/arduino-get-started/#what-is-the-esp32-arduino-core>Getting Started with ESP32 Arduino</a></h3>
+<h4><a href=https://thelastoutpostworkshop.github.io/microcontroller_devkit/espconnect/>ESPConnect</a> to check ESP32 board operation</h4>
 Set speed to 115200 (factory default)<ul>
 <li>In Device Manager, <a href=https://randomnerdtutorials.com/install-esp32-esp8266-usb-drivers-cp210x-windows/>check driver installation</a>
 <li>for boards with a single USB port,
 <br>- Press and release RST button while holding down BOOT.
-<br>- Click ESPConnect <font size=+2 color=blue><code>CONNECT</code></font></ul>
+<br>- Click ESPConnect <font size=+2 color=blue><code>CONNECT</code></font>
+</ul>
 
+<h4><a href=https://docs.espressif.com/projects/arduino-esp32/en/latest/>ESP32 Arduino Core’s documentation</a></h4><ul>
+<li><a href=https://docs.espressif.com/projects/arduino-esp32/en/latest/troubleshooting.html>Arduino troubleshooting FAQ<a>
+<li><a href=https://docs.espressif.com/projects/arduino-esp32/en/latest/tutorials/preferences.html>arduino-esp32 preferences library tutorial</a>
+<li><a href=https://docs.espressif.com/projects/arduino-esp32/en/latest/tutorials/partition_table.html>arduino-esp32 flash partition table tutorial</a>
+</ul><br><hr>
+
+<h3><a href=ESP32-S3.htm>ESP32-S3 has Dual-core 240 MHz Xtensa LX7</a></h3>
+&emsp; ESP32-Cx familes have single RISC-V cores.<br><br><hr>
+
+<p><i>This page</i>:&nbsp;<font size=+2 color=green><b>Arduino and ESP32-S2-Saola-1</b></font><br>
+</p><p align=center>
+Arguably more like single L106 core ESP8266,
+<br>ESP32-S2 has a Single-core 240 MHz Xtensa LX7,
+<br>while regular ESP32 had dual LX6 microprocessors.</p>
+
+<h4>Ordered from <a href="https://www.jameco.com/z/ESP32-S2-Saola-1M-Espressif-Systems-ESP32-S2-WROOM-Series-Evaluation-Board-4MB-Flash-802-11-b-g-n-WiFi-WLAN-_2324583.html">JameCo</a>
+(<font size=-1><i>late 2021</i></font>):<br> &emsp;
+  ESP32-S2-Saola-1M <a href="https://docs.espressif.com/projects/esp-idf/en/latest/esp32s2/hw-reference/esp32s2/user-guide-saola-1-v1.2.html">ESP32-S2-WROOM Dev 4MB Flash</a> <code>XX0H32</code></h4>
+<img  width=640 src="https://dfimg.dfrobot.com/enshop/image/data/DFR0812/DFR0812.jpg"><br clear=all>
+ &nbsp <a href="https://www.espressif.com/sites/default/files/documentation/esp32-s2-wroom_esp32-s2-wroom-i_datasheet_en.pdf">ESP32-S2-WROOM Data sheet</a>
+ &nbsp <a href="https://docs.espressif.com/projects/esp-idf/en/latest/esp32s2/hw-reference/esp32s2/user-guide-saola-1-v1.2.html">ESP32-S2-Saola-1 user guide</a>
 
 <h5><a href="https://mischianti.org/esp32-s2-pinout-specs-and-arduino-ide-configuration-1/">Arduino pin assignments</a></h5>
 
@@ -87,10 +96,9 @@ Other:<ul compact>
 </ul>
 
 <h4><a href="https://maker.pro/esp8266/tutorial/a-comparison-of-the-new-esp32-s2-to-the-esp32">ESP32-S2 compared to ESP32</a> - Jun 14, 2020</h4>
-<iframe width="640" height="480" src="https://www.youtube.com/embed/L6IoSVdKwNM?start=80"></iframe><br>
+ &emsp; <a href=https://www.youtube.com/watch?v=L6IoSVdKwNM><b>YouTube</b>:&nbsp; ESP32-S2: How relevant for Makers? First tests</a><br>
 
-<h4>ESP32-S2 compared to STM32, Raspberry Pi Pico</h4>
-<iframe width="640" height="480" src="https://www.youtube.com/embed/cVHCllbN3bQ?start=82"></iframe><br>
+<br><a href=https://www.youtube.com/watch?v=cVHCllbN3bQ><b>YouTube</b>:&nbsp; Raspberry Pi Pico vs ESP32-S2 and STM32 Blackpill</a><br>
 
 <h4>solderless breadboarding</h4>
 ESP32-S2-Saola-1 width is inconvenient for 400-point breadboards:<br>
