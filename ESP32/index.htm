@@ -1,6 +1,6 @@
 <html><head>
 <link rel='stylesheet' type='text/css' href='../my.css'>
-<title>Arduino and ESP32-S2,3</title></head>
+<title>ESP32-S2,-S3</title></head>
 <body>
 <div align=center>
 <table class="my_table"><tr><td>
@@ -9,6 +9,12 @@
 <font size=+1>
 
 <h3><a href=https://developer.espressif.com/blog/2025/10/arduino-get-started/#what-is-the-esp32-arduino-core>Getting Started with ESP32 Arduino</a></h3>
+
+<i>ESP32 was originally for <a href=midi.htm>MIDI</a> and <a href=webserver.htm>webserver</a> by Arduino 1 IDE,<br> but ESP32-S3 has in-circuit debugging via
+<a href=https://docs.espressif.com/projects/esp-iot-solution/en/latest/usb/usb_overview/usb_serial_jtag.html>USB-Serial-JTAG peripheral</a></i>.
+<br>SimHub Custom Serial plugin only writes to COM ports, logging responses;
+<br>ESP32-S3 board second USB ports can attach to <b><i>other</i></b> Windows apps..</i>
+
 <h4><a href=https://thelastoutpostworkshop.github.io/microcontroller_devkit/espconnect/>ESPConnect</a> checks ESP32 board operation, features</h4>
 Set speed to 115200 (factory default)<ul>
 <li>In Device Manager, <a href=https://randomnerdtutorials.com/install-esp32-esp8266-usb-drivers-cp210x-windows/>check driver installation</a>
@@ -17,8 +23,11 @@ Set speed to 115200 (factory default)<ul>
 <br>- Click ESPConnect <font size=+2 color=blue><code>CONNECT</code></font>
 </ul>
 
+<h4><a href=esp-idf.htm>VS Code, ESP-IDF, arduino-idf-component</a></h4>
+&emsp; Cannot install separate ('portable') Arduino 2 for ESP32 vs STM32.
+
 <h4><a href=https://docs.espressif.com/projects/arduino-esp32/en/latest/>ESP32 Arduino Core’s documentation</a></h4><ul>
-<li><a href=https://docs.espressif.com/projects/arduino-esp32/en/latest/troubleshooting.html>Arduino troubleshooting FAQ<a>
+<li><a href=https://docs.espressif.com/projects/arduino-esp32/en/latest/troubleshooting.html>Arduino ESP32 troubleshooting FAQ<a>
 <li><a href=https://docs.espressif.com/projects/arduino-esp32/en/latest/tutorials/preferences.html>arduino-esp32 preferences library tutorial</a>
 <li><a href=https://docs.espressif.com/projects/arduino-esp32/en/latest/tutorials/partition_table.html>arduino-esp32 flash partition table tutorial</a>
 <li><a href=https://www.hackster.io/Vishalsoniindia/installing-multiple-versions-of-the-esp32-board-package-in-a-328f69>Installing Arduino ESP32 multiple board package versions</a>
