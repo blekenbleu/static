@@ -1,0 +1,50 @@
+ *  Executing task: f:\ESP\TOOLS\python_env\idf5.5_py3.11_env\Scripts\python.exe f:\ESP\IDF\v5.5.1\esp-idf\tools\idf.py -B d:\my\GitHub\ESP\hello_world\build -DSDKCONFIG='d:\my\GitHub\ESP\hello_world\sdkconfig' reconfigure 
+
+Executing action: reconfigure
+Running cmake in directory D:\my\GitHub\ESP\hello_world\build
+Executing "cmake -G Ninja -DPYTHON_DEPS_CHECKED=1 -DPYTHON=f:\ESP\TOOLS\python_env\idf5.5_py3.11_env\Scripts\python.exe -DESP_PLATFORM=1 -DSDKCONFIG='d:\my\GitHub\ESP\hello_world\sdkconfig' -DCCACHE_ENABLE=1 D:\my\GitHub\ESP\hello_world"...
+-- Found Git: F:/ESP/TOOLS/tools/idf-git/2.39.2/cmd/git.exe (found version "2.39.2.windows.1")
+-- Minimal build - ON
+-- ccache will be used for faster recompilation
+-- The C compiler identification is GNU 14.2.0
+-- The CXX compiler identification is GNU 14.2.0
+-- The ASM compiler identification is GNU
+-- Found assembler: F:/ESP/TOOLS/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc.exe
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: F:/ESP/TOOLS/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc.exe - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: F:/ESP/TOOLS/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/bin/xtensa-esp32-elf-g++.exe - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- git rev-parse returned 'fatal: not a git repository (or any of the parent directories): .git'
+-- Could not use 'git describe' to determine PROJECT_VER.
+-- Building ESP-IDF components for target esp32
+-- Project sdkconfig file D:/my/GitHub/ESP/hello_world/sdkconfig
+-- Compiler supported targets: xtensa-esp-elf
+-- Found Python3: f:/ESP/TOOLS/python_env/idf5.5_py3.11_env/Scripts/python.exe (found version "3.11.2") found components: Interpreter       
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE
+-- Performing Test C_COMPILER_SUPPORTS_WFORMAT_SIGNEDNESS
+-- Performing Test C_COMPILER_SUPPORTS_WFORMAT_SIGNEDNESS - Success
+-- USING O3
+-- App "hello_world" version: 1
+-- Adding linker script D:/my/GitHub/ESP/hello_world/build/esp-idf/esp_system/ld/memory.ld
+-- Adding linker script D:/my/GitHub/ESP/hello_world/build/esp-idf/esp_system/ld/sections.ld.in
+-- Adding linker script F:/ESP/IDF/v5.5.1/esp-idf/components/esp_rom/esp32/ld/esp32.rom.ld
+-- Adding linker script F:/ESP/IDF/v5.5.1/esp-idf/components/esp_rom/esp32/ld/esp32.rom.api.ld
+-- Adding linker script F:/ESP/IDF/v5.5.1/esp-idf/components/esp_rom/esp32/ld/esp32.rom.libgcc.ld
+-- Adding linker script F:/ESP/IDF/v5.5.1/esp-idf/components/esp_rom/esp32/ld/esp32.rom.newlib-data.ld
+-- Adding linker script F:/ESP/IDF/v5.5.1/esp-idf/components/esp_rom/esp32/ld/esp32.rom.syscalls.ld
+-- Adding linker script F:/ESP/IDF/v5.5.1/esp-idf/components/esp_rom/esp32/ld/esp32.rom.libc-funcs.ld
+-- Adding linker script F:/ESP/IDF/v5.5.1/esp-idf/components/esp_rom/esp32/ld/esp32.rom.newlib-reent-funcs.ld
+-- Adding linker script F:/ESP/IDF/v5.5.1/esp-idf/components/soc/esp32/ld/esp32.peripherals.ld
+-- Components: app_update bootloader bootloader_support cxx efuse esp_app_format esp_bootloader_format esp_common esp_driver_gpio esp_hw_support esp_mm esp_partition esp_pm esp_rom esp_security esp_system esp_timer esptool_py freertos hal heap log main mbedtls newlib partition_table pthread soc spi_flash xtensa
+-- Component paths: F:/ESP/IDF/v5.5.1/esp-idf/components/app_update F:/ESP/IDF/v5.5.1/esp-idf/components/bootloader F:/ESP/IDF/v5.5.1/esp-idf/components/bootloader_support F:/ESP/IDF/v5.5.1/esp-idf/components/cxx F:/ESP/IDF/v5.5.1/esp-idf/components/efuse F:/ESP/IDF/v5.5.1/esp-idf/components/esp_app_format F:/ESP/IDF/v5.5.1/esp-idf/components/esp_bootloader_format F:/ESP/IDF/v5.5.1/esp-idf/components/esp_common F:/ESP/IDF/v5.5.1/esp-idf/components/esp_driver_gpio F:/ESP/IDF/v5.5.1/esp-idf/components/esp_hw_support F:/ESP/IDF/v5.5.1/esp-idf/components/esp_mm F:/ESP/IDF/v5.5.1/esp-idf/components/esp_partition F:/ESP/IDF/v5.5.1/esp-idf/components/esp_pm F:/ESP/IDF/v5.5.1/esp-idf/components/esp_rom F:/ESP/IDF/v5.5.1/esp-idf/components/esp_security F:/ESP/IDF/v5.5.1/esp-idf/components/esp_system F:/ESP/IDF/v5.5.1/esp-idf/components/esp_timer F:/ESP/IDF/v5.5.1/esp-idf/components/esptool_py F:/ESP/IDF/v5.5.1/esp-idf/components/freertos F:/ESP/IDF/v5.5.1/esp-idf/components/hal F:/ESP/IDF/v5.5.1/esp-idf/components/heap F:/ESP/IDF/v5.5.1/esp-idf/components/log D:/my/GitHub/ESP/hello_world/main F:/ESP/IDF/v5.5.1/esp-idf/components/mbedtls F:/ESP/IDF/v5.5.1/esp-idf/components/newlib F:/ESP/IDF/v5.5.1/esp-idf/components/partition_table F:/ESP/IDF/v5.5.1/esp-idf/components/pthread F:/ESP/IDF/v5.5.1/esp-idf/components/soc F:/ESP/IDF/v5.5.1/esp-idf/components/spi_flash F:/ESP/IDF/v5.5.1/esp-idf/components/xtensa
+-- Configuring done (49.7s)
+-- Generating done (0.3s)
+-- Build files have been written to: D:/my/GitHub/ESP/hello_world/build
