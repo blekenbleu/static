@@ -10,10 +10,6 @@
 <h3><a href=https://en.wikipedia.org/wiki/ESP32#ESP32-S3>ESP32-S3 has Dual-core 240 MHz Xtensa LX7</a></h3>
 Espressif ESP32-S3-WROOM-1 D2N8R2 modules obtained Dec 2021;
 <br><img src=DevKitC-1.png>
-<ul>
-<li>S3 has built-in <a href=https://forum.arduino.cc/t/ide-2-3-0-debugging-esp32s3-using-built-in-usb-jtag/1222051?page=2>debugger interface over USB</a>.
-<li>ESP-IDF first supported ESP32-S3 in v4.4
-<li>Arduino V1.8.19 supported ESP32-S3 in Apri 2022.</ul>
 
 <p>ESP32-S3-WROOM-1 D2N8R2 native USB is not detected by USBDeview
 <br> until releasing RESET while BOOT, then as <code>USB JTAG/serial debug unit</code>.
@@ -26,6 +22,19 @@ silabs driver</a>, PuTTY at 115200 scrolls:
 example: print -> stdout
 example: print -> stderr</pre>
 
+<i>28 Nov 2025</i>:&nbsp; <a href=https://www.amazon.com/dp/B0F5QCK6X5><b>Hosyond ESP32-S3 Development Board N16R8</b></a>
+<br> &emsp; Compatible with Arduino IoT ESP32-S3-WROOM-1
+<br> &emsp; similar to <a href=https://github.com/yellobyte/ESP32-DevBoards-Getting-Started/tree/main/boards/YD-ESP32-S3>YD-ESP32-S3 Development Board</a>
+<p align=center><img width=640 src=https://github.com/yellobyte/ESP32-DevBoards-Getting-Started/blob/main/boards/YD-ESP32-S3/doc/YD-ESP32-S3_DevBoard2.jpg?raw=true>
+<br><img width=640 src=https://github.com/yellobyte/ESP32-DevBoards-Getting-Started/blob/main/boards/YD-ESP32-S3/doc/YD-ESP32-S3_DevBoard_Hardware.JPG?raw=true>
+<br><img width=840 src=https://github.com/yellobyte/ESP32-DevBoards-Getting-Started/blob/main/boards/YD-ESP32-S3/doc/YD-ESP32-S3_DevBoard_PinLayout.jpg?raw=true>
+</p>
+<ul>
+<li>S3 has built-in <a href=https://forum.arduino.cc/t/ide-2-3-0-debugging-esp32s3-using-built-in-usb-jtag/1222051?page=2>debugger interface over USB</a>.
+<li>ESP-IDF first supported ESP32-S3 in v4.4
+<li>Arduino V1.8.19 supported ESP32-S3 in Apri 2022.
+<li>ESP32-S3-WROOM-1-N16R8:&nbsp; 512k SRAM, 348K ROM, 8M PSRAM, 16M flash</ul>
+
 <h3><a href=https://thelastoutpostworkshop.github.io/microcontroller_devkit/espconnect/>ESPConnect</a> browser sniffer -
 <font size=-1><a href=https://www.youtube.com/watch?v=-nhDKzBxHiI>YouTube video</a></font>
 </h3><ul>
@@ -33,7 +42,6 @@ example: print -> stderr</pre>
 <li>Connects to ESP32-S3 native USB with any speed,<br> provided that ESP32-S3 USB port is visible as JTAG/serial 
 
 <h3><a href=https://www.youtube.com/watch?v=lYzUFUVqIMk>This YouTube video downloads Arduino via USB (not COM)</a></h3><ul>
-<li>Hosyond <a href=https://www.amazon.com/dp/B0F5QCK6X5>ESP32-S3 Dev Board N16R8</a> Arduino IoT ESP32-S3-WROOM-1
 <li>Espressif <a href=https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32s3/esp32-s3-devkitc-1/>ESP32-S3-DevKitC-1</a>
 <li><a href=https://www.reddit.com/r/esp32/comments/10rdngp/thirdparty_esp32s3_development_boards_inout_and/>Third-party ESP32-S3 development boards 'IN-OUT' and 'USB-OTG' pads</a>
 <li><a href=https://docs.espressif.com/projects/esp-idf/en/latest/esp32s3/api-guides/jtag-debugging/>OpenOCD JTAG Debugging</a>
@@ -46,6 +54,19 @@ example: print -> stderr</pre>
  <br>Alternatively, <a href=https://forum.arduino.cc/t/ide-2-3-0-debugging-esp32s3-using-built-in-usb-jtag/1222051/19>install Zadig <code>libusbk</code> driver</a>:
 <br> &emsp; <img width=640 align=top src=https://europe1.discourse-cdn.com/arduino/original/4X/7/6/e/76e33ee4fd14ca7a10c3c4304845ff0c5b18bf6e.png>
 <li><a href=https://forum.arduino.cc/t/esp32-s3-use-of-both-usbs-as-serial-out/1415911>ESP32-S3 Use of both USBs as Serial</a>
+<li>GitHub:&nbsp; <a href=https://github.com/espressif/esp-usb-bridge>esp-usb-bridge</a>
+<li>GitHub:&nbsp; <a href=https://github.com/khoih-prog/ESPAsync_WiFiManager>ESPAsync_WiFiManager</a>
+<li>GitHub:&nbsp; <a href=https://github.com/khoih-prog/ESP32TimerInterrupt>ESP32TimerInterrupt</a>
+<li>GitHub:&nbsp; <a href=https://github.com/chegewara/esp32-usb-v2>esp32-usb-v2</a>
+<li>GitHub:&nbsp; <a href=https://github.com/schnoog/Joystick_ESP32S2>Joystick_ESP32S2</a>
+<li>GitHub:&nbsp; <a href=https://github.com/esp32beans/ESP32USBMIDI>ESP32-S2 and ESP32-S3 USB MIDI Example for Arduino</a>
+<li>GitHub:&nbsp; <a href=https://github.com/0015/ESP32-S2-S3-Projects>ESP32-S2/S3 native USB Projects</a>
+<li>GitHub:&nbsp; <a href=https://github.com/shraiwi/simd-fast-esp32s3>simd-fast-esp32s3</a>
+<li>GitHub:&nbsp; <a href=https://github.com/zliu43/esp_simd>esp_simd</a>
+<li>Espressif:&nbsp; <a href=https://docs.espressif.com/projects/esptool/en/latest/esp32s3/advanced-topics/boot-mode-selection.html>Boot Mode Selection</a>
+<li>Espressif:&nbsp; <a href=https://docs.espressif.com/projects/esp-idf/en/v5.5.1/esp32s3/get-started/establish-serial-connection.html>Flash Using USB</a>
+<li>Espressif:&nbsp; <a href=https://docs.espressif.com/projects/esp-idf/en/v5.5.1/esp32s3/api-guides/usb-serial-jtag-console.html>USB Serial/JTAG Controller Console</a>
+<li>Espressif:&nbsp; <a href=https://documentation.espressif.com/esp32-s3_technical_reference_manual_en.pdf>ESP32-S3 Reference Manual</a>
 </ul>
 </font>
 </td></tr><tr><td align=center>
