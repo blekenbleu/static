@@ -12,12 +12,31 @@
 
 <dl>
 <h3>SimHub Plugins</h3>
-<a href="https://www.simhubdash.com/">SimHub</a> is a <code>.Net framework</code>
+<a href="https://www.simhubdash.com/">SimHub</a> is a
 	<a href="https://learn.microsoft.com/en-us/dotnet/desktop/wpf/overview/">WPF</a>
-	 C# application with <a href="https://learn.microsoft.com/en-us/dotnet/desktop/wpf/xaml/">XAML</a> user interface.<br>
-Many <b>plugins</b> (.dll files) extract telemetry properties from games,<br>
+	<code>.NET Framework 4.8 User Control</code>
+	(<a href="https://learn.microsoft.com/en-us/dotnet/desktop/wpf/xaml/">XAML</a> user interface) C# application.<br>
+Its plugins must also employ <code>.NET Framework 4.8</code> for SimHub to recognize and load them.<br>
+<a href=https://medium.com/@sweetondonie/the-evolution-of-net-a-beginners-perspective-29dd0dd5f4b7>In 2016,
+	 .NET Core split from .NET Framework</a>.<br>
+<code>.NET Framework 4.8</code> was introduced in May 2018, along with <code>.NET Core 2.2</code>,<br>
+ then M$ merged .NET Core and .NET Framework into .NET 5 in November 2020.</a><br>
+<a href=https://en.wikipedia.org/wiki/ASP.NET><code>ASP.NET</code></a> preceded <code>.NET Framework</code>, being released in 2002.<br>
+ <a href=https://dotnettutorials.net/course/asp-dot-net-mvc-tutorials/>ASP.NET MVC is an open-source Model-View-Controller framework</a> built on top of the Microsoft .NET Framework<br>
+	and was merged with <code>ASP.NET Core MVC6</code> in 2016.
+Many popular C# techniques, articles and examples are broken for <code>.NET Framework 4.8</code>.<br>
+<code>.NET Framework 4.0</code> introduced <a href=https://towardsdev.com/thread-vs-task-in-c-whats-the-difference-48989517077a>Tasks</a>, adding a layer of abstraction to <code>Threads</code>.<br>
+<code>ASP.NET</code> is based on .NET Framework 4.7.2.;&nbsp; ASP.NET Web MVC seemingly worked with .NET Framework 4.6.1.<br>
+<code>ASP.NET Core</code> runs on top of the <code>.NET Framework</code> on Windows in addition to running on top of <code>.NET Core</code>.<br>
+	&emsp; <a href=https://learn.microsoft.com/en-us/aspnet/core/fundamentals/servers/?view=aspnetcore-10.0&tabs=windows>Web server implementations in ASP.NET Core</a>
+
+<p>A SimHub plugin C# project will have in its <code>.csproj</code> either<ul>
+<li><a href=https://skjoldrun.github.io/docs/csharp/migrate-sdk-project.html>SDK (newer) project</a>:<br><code>&lt;TargetFramework&gt;net48&lt;/TargetFramework&gt;</code><br>or
+<li>older project files:<br><code>&lt;TargetFrameworkVersion&gt;v4.8&lt;/TargetFrameworkVersion&gt;</code></ul></p>
+
+Many <b>SimHub plugins</b> (.dll files) extract telemetry properties from games,<br>
 while other <b>plugins</b> enabled in <img align=middle src="Settings.png"> do things with those properties.<br>
-SimHub bundles many <b>plugins</b>, but more are <a href=https://github.com/search?q=simhub%20plugin&type=repositories>available from others</a>.<br><br>
+SimHub bundles many <b>plugins</b>, but more are <a href=https://github.com/search?q=simhub%20plugin&type=repositories>available from others</a>.</p>
 
 <ul compact>
 <li><a href="HowTo.htm#HowTo"><b>SimHub SDK How-To</b></a> &nbsp <a href="VisualStudio.htm"><b>C# Visual Studio How-To</b></a>
