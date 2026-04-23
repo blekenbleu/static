@@ -1,0 +1,76 @@
+<html>
+<head>
+<link rel='stylesheet' type='text/css' href='../my.css'>
+
+<title>RainMachine</title>
+<!-- for text wrap around images:  https://www.homeandlearn.co.uk/WD/wds4p6.html -->
+<style>
+table.my_table td { width:670px; }
+</style>
+</head>
+
+<body>
+<div align=center>
+<table class="my_table"><tr><td>
+
+<font size=-1><a href="index.htm"><i>back</i></a></font>
+<a href="https://www.gixen.com/index.php" name="9e092736783d0da1dfd8413d57d10faf" target="_blank" >
+<img align=right src="https://www.gixen.com/images/gixenlink.gif" border="0" alt="Auction Sniper" title="Auction Sniper">
+</a>
+<br>
+<h2>precision irrigation and personal weather station (PWS)</h2>
+<font size=+2><pre>
+Traditional irrigation timers typically support optional rain sensors
+that open the circuit to irrigation valve solenoids while rain falls,
+but generally do not account for rainfall amounts,
+much less rain that falls while irrigation is not happening.
+A number of irrigation controllers and weather stations for consumers are Internet-aware,
+and several irrigation controller companies apply smart metering
+based on local weather information, e.g. from NOAA.
+At least 3 companies will supplement that with information
+from websites collecting data from personal weather stations:
+Orbit b-hyve, RainMachine and rachio.
+Of these, RainMachine may obtain data from e.g.
+Acurite weather stations via Weather Underground AKA Wunderground.
+
+IBM recently acquired Wunderground
+and disabled access to that API for new consumers.
+RainMachine released beta firmware to obtain Wunderground PWS (but not forecast) data.
+Meanwhile, b-hyve and rachio use aerisweather.com,
+which in turn collects PWS data via pwsweather.com and NOAA's Citizen Weather Observation Program (CWOP):
+<a href=https://www.aerisweather.com/support/kb/api/what-data-sources-are-used-for-the-api/>https://www.aerisweather.com/support/kb/api/what-data-sources-are-used-for-the-api/</a>
+<a href=https://support.rachio.com/en_us/rachio-weather-intelligence-B153wIJKD>https://support.rachio.com/en_us/rachio-weather-intelligence-B153wIJKD</a>
+<a href=https://support.rachio.com/en_us/rachio-weather-intelligence-B153wIJKD#section-11><b>Weather Underground (PWS) & Rachio</b></a>
+
+While Acurite works with Wunderground but not pwsweather.com,
+other PWS brands may communicate to pwsweather.com (but not Wunderground).
+There <i>was</i> a mechanism for transferring Wunderground PWS data to pwsweather.com,
+allowing rachio and b-hyve controllers to refine their smart irrigation calculations
+with very local Acurite PWS data:   <a href=http://beta.wufyi.com/>http://beta.wufyi.com</a>
+
+All 3 of these irrigation controller suppliers employ Wi-Fi,
+which may lack signal strength at typical controller installation locations.
+Thick wires (gauge numbers below 18) are problematic.
+
+rachio - most expensive and best support,
+              but control only by smartphone
+RainMachine - less expensive, decent support, smartphone and simple local controls;
+                        Mini-8 fits existing timer housing
+                        and uses existing 24VAC power,
+                        detects rain sensor switch...
+                        perhaps better Wi-Fi implementation;
+                        can be initialized near access point
+                        before installation at irrigation wiring.
+                        <a href=https://support.rainmachine.com/hc/en-us/articles/228019028-WiFi-Range>https://support.rainmachine.com/hc/en-us/articles/228019028-WiFi-Range</a>
+b-hyve - least expensive @ $92.50, smartphone and elaborate local controls;
+              should be within 30 ft of WiFi access point.
+              Power cord with plug
+              Support, code and app documentation are concerns.
+
+</pre></font>
+</td></tr><tr><td align=center>
+maintained by <a href="http://github.com/blekenbleu">blekenbleu</a><br>
+</td></tr></table></div>
+
+</body>
+</html>
