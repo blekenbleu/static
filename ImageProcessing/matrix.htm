@@ -1,0 +1,28 @@
+<html><head>
+<link rel='stylesheet' type='text/css' href='../my.css'>
+
+<title>Linear Equations, Matrices and PseudoInverse</title>
+</head><body>
+<div align=center>
+<table class="my_table"><tr><td style="padding-left:50">
+<font size=-1><i><a href="index.htm">back</a></i></font>
+
+<h2>Linear Equations, Matrices and PseudoInverse</h2>
+<dl><dt>objective:
+<dd>solve polynomial coefficients to fit <a href=https://github.com/blekenbleu/CorrCA/blob/PPM/BicubicFit.md>chromatic aberration data</a>
+<dt>polynomial model:
+<dd><code>`C0 + C1*x + C2*y + C3*x*x + C4*y*y + C5*x*x*x + C6*y*y*y + C7*x*y + C8*x*x*y + C9*x*y*y</code>,
+<br>where <code>x</code> and <code>y</code> are pixel coordinates,
+<br>and the result approximates red or blue pixel misregistration relative to green at those coordinates.
+<br>4 solutions are wanted:&nbsp; red and blue in x and y directions
+
+</dl>
+Solving these are one of the more computationally expensive steps
+in chromatic aberration reduction.<br>
+The other expensive step is measuring those misregistration from test target images.
+
+</td></tr><tr><td align=center>
+maintained by <a href="https://github.com/blekenbleu">blekenbleu</a><br>
+</td></tr></table></div>
+
+</body></html> 
