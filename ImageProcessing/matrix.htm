@@ -14,12 +14,38 @@
 <dd><code>`C0 + C1*x + C2*y + C3*x*x + C4*y*y + C5*x*x*x + C6*y*y*y + C7*x*y + C8*x*x*y + C9*x*y*y</code>,
 <br>where <code>x</code> and <code>y</code> are pixel coordinates,
 <br>and the result approximates red or blue pixel misregistration relative to green at those coordinates.
+<br>This model may be too simple (underspecified) or <a href=https://en.wikipedia.org/wiki/Overfitting>overfit</a>.<br>
+&emsp; however, gnuplots of model vs data seem reasonable...
 <br>4 solutions are wanted:&nbsp; red and blue in x and y directions
+<dt>in theory
+<dd>solving for 10 unknown coefficients wants 10 equations
+<br>with 10 sets of independent variables and a set of 10 results
+<dt>practically
+<dd>data is noisy
+<dt>in matrix algebra terms,<dd> we have 10 unknowns <b>C0-9</b>,<br>
+an array of measured offsets and a matrix of linearly independent sample variables.<br>
+If there were 10 offset measurements and corresponding sample variables,<br>
+the <a href=https://www.mathsisfun.com/algebra/systems-linear-equations-matrices.html>matrix algebra</a> expression is <b>MC = O</b>, where:<ul>
+<li><b>M</b> is a 10x10 array of linearly independent sample variables,
+<li><b>C</b> are the unknown coefficients,
+<li><b>O</b> are measured offsets.
+</ul>
+Chromatic aberration characterized by only 10 measurements is arguably suspect;<br>
+doing so would yield a solution for <b>C = MiO</b>, where <b>Mi</b> is
+<a href=https://www.mathsisfun.com/algebra/matrix-inverse.html>the inverse of <b>M</b></a>.
+<dt>in reality, a calibration slide has hundreds of sample targets
+<dd>those measurements comprise an <a href=https://en.wikipedia.org/wiki/Overdetermined_system>overdetermined system</a>
+<br>a <a href=https://en.wikipedia.org/wiki/Overdetermined_system#Approximate_solutions>approximate solution</a> is appropriate. My favorite approach is <a href=https://en.wikipedia.org/wiki/Moore-Penrose_inverse>Moore-Penrose pseudoinverse</a>.
 
 </dl>
-Solving these are one of the more computationally expensive steps
+Solving for 4x10 polynomial model coefficients by
+<a href=https://en.wikipedia.org/wiki/Gauss%E2%80%93Newton_algorithm#Solving_overdetermined_systems_of_equations>Gauss-Newton iteration</a><br>
+is one of the more computationally expensive steps
 in chromatic aberration reduction.<br>
-The other expensive step is measuring those misregistration from test target images.
+(Another expensive step is measuring red and blue misregistrations from test target images.)<br>
+I have, in the past, more than once coded Moore-Penrose pseudoinverse,<br>
+but <a href=https://arxiv.org/pdf/0804.4809>more cleverness</a> has since been applied,<br>
+and <a href=https://github.com/FerryYoungFan/NaiveMatrixLib>this implementation</a> seems interesting.
 
 </td></tr><tr><td align=center>
 maintained by <a href="https://github.com/blekenbleu">blekenbleu</a><br>
