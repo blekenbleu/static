@@ -4,3 +4,4 @@ _site/
 .jekyll-metadata
 story/knoll/check5k.jpg
 story/knoll/CANDID*.txt
+*.zip
