@@ -13,37 +13,58 @@
 <a href=https://ambientweather.com/ws-2902-smart-weather-station><b>Ambient Weather WS-2902</b></a> is
 <a href=https://www.wunderground.com/pws/buying-guide>most popular on Weather Underground</a>,<br>
 but <a href=https://www.amazon.com/portal/customer-reviews/B01N5TEHLI/&filterByStar=all_stars&reviewerType=all_reviews&filterByKeyword=eero/ref=cm_cr_arp_d_viewopt_kywd?filterByKeyword=eero>problematic for dual band 2.4+5GHz Wi-Fi and specifically eero</a>.
-<p><a href=https://www.sainlogic.com/products/sainlogic-smart-weather-station-sa68-plus-5g>SainLogic SA68 Plus</a> is cheaper and has dual-band Wi-Fi,<br>
+<p><a href=https://www.sainlogic.com/products/sainlogic-smart-weather-station-sa68-plus-5g>SainLogic SA68 Plus</a> is cheaper and works with dual-band Wi-Fi,<br>
 but SainLogic has a dodgy reputation.<br>
 Their <a href=https://www.sainlogic.com/blogs/weather-station/precision-meets-plug-and-play-meet-the-sainlogic-sa68-plus-5g>SA68 Plus - 5G Product Spotlight</a> claims to address those issues.<br>
-SainLogic has 8 models seemingly using the same outdoor sensor array,<br>
+SainLogic lists 8 models seemingly using the same outdoor sensor array,<br>
 differentiated by 4 different indoor display units,<br>
- then 4 Plus models that add 5GHz WiFi.<br>
+ then 4 Plus models which add 5GHz WiFi.<br>
 SA68 has 8-inch display;&nbsp; others have 6.5, 7.5, or 8.5-inch displays.
 </p>
 
 <ul>
 <li><a href=https://cdn.shopify.com/s/files/1/0912/1280/8488/files/SA68_Plus_Uesr_Manual.pdf>quick setup guide</a> (88 pages, so not really quick)
-<li><a href=https://www.sainlogic.com/pages/sa68-plus-key-features>"key features"</a>
-<li><a href=https://www.sainlogic.com/pages/sainlogic-product-support>product support</a>
+<br> &emsp; Wi-Fi description seems totally obsolete...
+<li><a href=https://www.sainlogic.com/pages/sa68-plus-key-features>"key features"</a> - no longer using Weatherseed app
+<li><a href=https://www.sainlogic.com/pages/sainlogic-product-support>product support</a> - obsoleted Wi-Fi setup procedure
 <li><a href=https://manuals.plus/m/988f3907c633d58481f26b102a6453c48b110921b8afd968127ad2a5c3922ec3>Product document</a>
 <li><a href=https://www.amazon.com/dp/B0H7RF7TN2>Amazon listing</a>
 <li><a href=https://www.youtube.com/watch?v=-ApAvjp-63U>Inercom app video</a> - <a href=https://apps.apple.com/us/app/inercom/id6743191701>iPhone app</a>
-<br>&emsp; <i>includes</i> bluetooth pairing for Wi-Fi configuration,
-<br>&emsp;  outdoor sensor pairing, outdoor sensor installation
+<br>&emsp; <i>includes</i> Bluetooth pairing for Wi-Fi configuration,
+<br>&emsp;  outdoor sensor pairing, outdoor sensor installation.
+<li><a href=https://www.youtube.com/watch?v=JyOXDcekrJI>This video</a> shows a finger going thru calibration values,
+<br>but no information about what values mean...
 </ul><dl>
-<dt><i>24 Sep 2026</i>
+<dt><br><i>24 Sep 2026</i>
 <dd>Step 2 is about sensor AA cells;&nbsp; panel uses AAA cells.<br>
 Panel battery cover removal is <b>very</b> hard.<p>
 Stubby #2 Phillips for sensor battery cover fine-threaded screw;<br>
-battery changes will be a PITA after mounting..</p>
+ &emsp; battery changes will be a PITA after mounting..</p>
 Panel handling always accidently activates some "button".<br>
 Sensor pairing worked as described;<br>
 Bluetooth pairing did not work at all.
-<br>- Bluetooth pairing requires <code>inercom</code> app,
+<br>- Bluetooth pairing requires <code>Inercom</code> app,
 <br> &emsp; which requires verification code that did not arrive in a dozen attempts...<br>
-<br>Code arrived promptly on first 26 Sep attempt,<br>
- then Inercom app detetected SA68 Plus and connected to dual band eero Wi-Fi.
+<dt><i>26 Sep</i>
+<dd>SainLogic replied to email support request, wanting more information by images.
+<br>My email response with images provoked "delivery incomplete"...
+<br><code>Inercom</code> verification code arrived promptly on today's first attempt,<br>
+ then app (<i>not</i> iOS Bluetooth settings) detected SA68 Plus and connected to dual band eero Wi-Fi.
+<dt><i>28 Sep</i>
+<dd>Already a <a href=https://www.wunderground.com/>Weather Underground</a>, went to <code>My Profile >
+ <a href=https://www.wunderground.com/member/devices/new>Devices > Add New Device</a></code>.
+<br> SainLogic SA68 Plus is now listed; received ID <code>IWEAVE6</code> and key
+<li>Weather Underground settings are buried in Inercom app under gear icon.
+<br> &emsp; After entering API key, ID and that key,
+<br> &emsp; <a href=https://www.wunderground.com/dashboard/pws/IWEAVE6>Weather Underground</a> reported <b>IWEAVE6</b>
+	<code>CONNECTED</code> and Online,
+<br> &emsp; but Inercom app reported it offline, and Fing no longer found it...
+<li><a href=https://www.amazon.com/portal/customer-reviews/srp/-/R28L8AF9A62UZL/ref=cm_cr_getr_d_rvw_ttl?ie=UTF8>another customer</a>
+	also reported losing Wi-Fi when configuring WU.
+<br>Reconnected by
+<br> &emsp; <code>Switch Wifi</code> in Inercom and <b>WIND +</b> on console for Bluetooth mode,
+<br> &emsp; then after a few minutes, IWEAVE6 began reporting conditions.
+<li>Moving panel to another eero access point (same Wi-Fi net) again required reconnecting...
 </dl>
 
 </td></tr><tr><td align=center> <hr>
