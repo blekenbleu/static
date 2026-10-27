@@ -9,23 +9,19 @@ Honeywell TH6220D1002<ul>
 <li>lacks fan circulate mode
 <li>assumes single-stage heat
 <li>wired to Y1 instead of Y2
-<li>switches to Aux Heat for more than 1 degree setting increase</ul>
+<li>sets Aux Heat for > 1&deg; setting increase</ul>
 <h4>Assumptions</h4><ul>
 <li>ASPF426016EA furnace provides 24VAC for controls,
 <br><i>to which it only responds</i>.
-<li>ST55 should use Y2 for single-stage cool,
-<br> so that ASPF426016EA "knows" to set full blower speed.
-<li>ASPF426016EA responds to W2 by full (40A) heat and to W1 by half.
-<li>GSZ130421AE heat pump wants W2 for defrost
-<li>OT18-60A wants W2 for temperatures too low for GSZ130421AE
+<br> full (40A) heat by W2 and half by W1.
+<li>GSZ130421AE heat pump sets W1 for defrost
+<li>OT18-60A sets W2 for temps too low for GSZ130421AE
 <li><a href=https://documents.alpinehomeair.com/product/Goodman%20GSZ14%20Service%20Manual.pdf>Service Instructions</a>
 </ul>
 <h4>Sensi ST55</h4><ul>
-<li>will be configured for 2-stage heat (Y2, W1) and 1-stage cool (Y2 + O)
-<li>should be "smart" enough to NOT set Aux (W1) heat for setting increases > 1
-<li>should set W1 <i>only</i> for too slow Y2 temperature increase rates.<br>
-<br>
-<li>Lacking outside temperature input, ST55 cannot know when W2 is wanted.
-<li>If/when OT18-60A or GSZ130421AE defrost sets W2,
-<br>ST55 should detect indoor temp > setting and drop Y2 (and W1).</ul> 
+<li>3-stage heat (Y2, W1, W2) and 1-stage cool (Y2 + O)
+<li>should NOT set Aux (W1) heat for setting increases > 1
+<li>sets W[12] <i>only</i> for too slow Y2 temperature increase rates
+<li>If/when OT18-60A sets W2,
+<br>ST55 drops Y2 (and W[12]) when indoor temp > setting.</ul> 
 </font></td></tr></table><body></html>
